@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,6 +99,52 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-midnight-background text-midnight-text font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .container {
+    @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 text-white bg-midnight-primary rounded-md hover:bg-opacity-90 transition-all duration-200 font-medium;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 text-midnight-accent border border-midnight-accent rounded-md hover:bg-midnight-accent hover:text-white transition-all duration-200 font-medium;
+  }
+
+  .card {
+    @apply bg-midnight-surface rounded-xl p-6 border border-opacity-10 border-white shadow-lg;
+  }
+  
+  .glass-card {
+    @apply bg-midnight-surface bg-opacity-50 backdrop-blur-sm border border-white border-opacity-10 rounded-xl shadow-lg;
   }
 }
