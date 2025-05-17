@@ -1,89 +1,154 @@
 
-import React, { useEffect, useState } from "react";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+"use client"
 
-type LogoProps = {
-  name: string;
-  id: number;
-  img: React.ElementType;
-};
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  type SVGProps,
+} from "react"
+import { AnimatePresence, motion } from "framer-motion"
 
-type LogoCarouselProps = {
-  logos: LogoProps[];
-  autoplaySpeed?: number;
-  showArrows?: boolean;
-};
+interface Logo {
+  name: string
+  id: number
+  img: React.ComponentType<React.SVGProps<SVGSVGElement>>
+}
+
+interface LogoColumnProps {
+  logos: Logo[]
+  index: number
+  currentTime: number
+}
+
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+  return shuffled
+}
+
+const distributeLogos = (allLogos: Logo[], columnCount: number): Logo[][] => {
+  const shuffled = shuffleArray(allLogos)
+  const columns: Logo[][] = Array.from({ length: columnCount }, () => [])
+
+  shuffled.forEach((logo, index) => {
+    columns[index % columnCount].push(logo)
+  })
+
+  const maxLength = Math.max(...columns.map((col) => col.length))
+  columns.forEach((col) => {
+    while (col.length < maxLength) {
+      col.push(shuffled[Math.floor(Math.random() * shuffled.length)])
+    }
+  })
+
+  return columns
+}
+
+const LogoColumn: React.FC<LogoColumnProps> = React.memo(
+  ({ logos, index, currentTime }) => {
+    const cycleInterval = 2000
+    const columnDelay = index * 200
+    const adjustedTime = (currentTime + columnDelay) % (cycleInterval * logos.length)
+    const currentIndex = Math.floor(adjustedTime / cycleInterval)
+    const CurrentLogo = useMemo(() => logos[currentIndex].img, [logos, currentIndex])
+
+    return (
+      <motion.div
+        className="relative h-14 w-24 overflow-hidden md:h-24 md:w-48"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: index * 0.1,
+          duration: 0.5,
+          ease: "easeOut",
+        }}
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`${logos[currentIndex].id}-${currentIndex}`}
+            className="absolute inset-0 flex items-center justify-center"
+            initial={{ y: "10%", opacity: 0, filter: "blur(8px)" }}
+            animate={{
+              y: "0%",
+              opacity: 1,
+              filter: "blur(0px)",
+              transition: {
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                mass: 1,
+                bounce: 0.2,
+                duration: 0.5,
+              },
+            }}
+            exit={{
+              y: "-20%",
+              opacity: 0,
+              filter: "blur(6px)",
+              transition: {
+                type: "tween",
+                ease: "easeIn",
+                duration: 0.3,
+              },
+            }}
+          >
+            <CurrentLogo className="h-52 w-52 max-h-[80%] max-w-[80%] object-contain" />
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
+    )
+  }
+)
+
+interface LogoCarouselProps {
+  logos: Logo[]
+  columnCount?: number
+  autoplaySpeed?: number
+  showArrows?: boolean
+}
 
 export function LogoCarousel({ 
   logos, 
+  columnCount = 4, 
   autoplaySpeed = 3000,
   showArrows = false 
 }: LogoCarouselProps) {
-  // Set up autoplay plugin with options
-  const [autoplayPlugin] = useState(() => 
-    Autoplay({ 
-      delay: autoplaySpeed,
-      stopOnInteraction: false,
-      rootNode: (emblaRoot) => emblaRoot.parentElement,
-    })
-  );
-  
-  // Initialize carousel with autoplay plugin
-  const [emblaRef, emblaApi] = useEmblaCarousel({ 
-    align: "start",
-    loop: true,
-    dragFree: true,
-    skipSnaps: true,
-  }, [autoplayPlugin]);
-  
-  // Create individual logo items
-  const logoItems = logos.map((logo) => (
-    <CarouselItem key={logo.id} className="basis-1/4 pl-4">
-      <div className="flex flex-col items-center justify-center p-4 group transition-all duration-300 hover:scale-105">
-        <div className="relative h-52 w-52 flex items-center justify-center bg-logo-blue/10 rounded-full p-8">
-          <logo.img className="h-full w-full object-contain text-gray-400 group-hover:text-logo-blue transition-colors duration-300" />
-        </div>
-      </div>
-    </CarouselItem>
-  ));
+  const [logoSets, setLogoSets] = useState<Logo[][]>([])
+  const [currentTime, setCurrentTime] = useState(0)
+
+  const updateTime = useCallback(() => {
+    setCurrentTime((prevTime) => prevTime + 100)
+  }, [])
+
+  useEffect(() => {
+    const intervalId = setInterval(updateTime, 100)
+    return () => clearInterval(intervalId)
+  }, [updateTime])
+
+  useEffect(() => {
+    const distributedLogos = distributeLogos(logos, columnCount)
+    setLogoSets(distributedLogos)
+  }, [logos, columnCount])
 
   return (
     <div className="w-full max-w-5xl mx-auto relative">
-      <Carousel
-        ref={emblaRef}
-        className="w-full"
-      >
-        <CarouselContent className="py-4">
-          {logoItems}
-        </CarouselContent>
-        
-        {showArrows && (
-          <>
-            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
-              <button 
-                onClick={() => emblaApi?.scrollPrev()}
-                className="h-10 w-10 rounded-full bg-logo-blue/10 hover:bg-logo-blue/20 flex items-center justify-center text-logo-blue transition-colors"
-                aria-label="Previous slide"
-              >
-                <ArrowLeft className="h-5 w-5" />
-              </button>
-            </div>
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
-              <button 
-                onClick={() => emblaApi?.scrollNext()}
-                className="h-10 w-10 rounded-full bg-logo-blue/10 hover:bg-logo-blue/20 flex items-center justify-center text-logo-blue transition-colors"
-                aria-label="Next slide"
-              >
-                <ArrowRight className="h-5 w-5" />
-              </button>
-            </div>
-          </>
-        )}
-      </Carousel>
+      <div className="flex justify-center space-x-8 py-4">
+        {logoSets.map((logos, index) => (
+          <LogoColumn
+            key={index}
+            logos={logos}
+            index={index}
+            currentTime={currentTime}
+          />
+        ))}
+      </div>
     </div>
-  );
+  )
 }
 
+export { LogoColumn };
