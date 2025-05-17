@@ -9,6 +9,7 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import { CheckCircle, Mail, MessageSquare } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Index = () => {
   return (
@@ -48,17 +49,16 @@ const Index = () => {
               </ul>
             </div>
             <div className="rounded-xl overflow-hidden shadow-xl bg-midnight-surface p-1">
-              <div className="bg-gradient-to-br from-midnight-primary/20 to-midnight-accent/20 rounded-lg p-8">
-                <blockquote className="text-xl italic mb-6">
-                  "We finally have a consistent flow of qualified leads coming in every week. No more feast and famine."
-                </blockquote>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-midnight-primary/20 overflow-hidden mr-4"></div>
-                  <div>
-                    <p className="font-bold">Sarah Johnson</p>
-                    <p className="text-midnight-subtext">Agency Founder</p>
-                  </div>
-                </div>
+              <div className="rounded-lg overflow-hidden">
+                <AspectRatio ratio={16/9}>
+                  <iframe 
+                    className="w-full h-full" 
+                    src="https://www.youtube.com/embed/SfD6BD-NaO0" 
+                    title="Testimonial Video" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen>
+                  </iframe>
+                </AspectRatio>
               </div>
             </div>
           </div>
