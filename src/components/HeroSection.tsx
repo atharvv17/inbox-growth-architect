@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -14,89 +13,73 @@ const AppleIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://w
   </svg>;
 
 // Client Array for the carousel with the new uploaded logos
-const clientLogos = [
-  {
-    id: 1,
-    name: "BCG",
-    img: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png",
-  },
-  {
-    id: 2,
-    name: "Triangle",
-    img: "/lovable-uploads/9a21e2a4-61c3-4cf0-94f8-d87e25d471b8.png",
-  },
-  {
-    id: 3,
-    name: "KW",
-    img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png",
-  },
-  {
-    id: 5,
-    name: "Leadium",
-    img: "/lovable-uploads/d92a0edd-00b0-4780-a32e-ac96f44d2682.png",
-  },
-  {
-    id: 6,
-    name: "Pipeful",
-    img: "/lovable-uploads/910cd93c-893f-4b51-b240-8d9556a22858.png",
-  },
-  {
-    id: 7,
-    name: "Acme",
-    img: "/lovable-uploads/65a95b5c-61f4-4b33-b5dc-508bb9b01942.png",
-  },
-  {
-    id: 8,
-    name: "SalesRoads",
-    img: "/lovable-uploads/a0c813cd-8deb-48e2-8b0f-3e39a130ff2c.png",
-  },
-  {
-    id: 9,
-    name: "Growth Arrows",
-    img: "/lovable-uploads/c7279023-198f-42b9-a23d-0b3c5eb3e9a9.png",
-  },
-  {
-    id: 10,
-    name: "Unbounce",
-    img: "/lovable-uploads/fb15dbd2-a014-467d-818b-2a1c301de056.png",
-  },
-  {
-    id: 11,
-    name: "KPMG",
-    img: "/lovable-uploads/d68b7475-2375-4299-b26a-d5ee7a16216c.png",
-  },
-  {
-    id: 12,
-    name: "Zapier",
-    img: "/lovable-uploads/d317e6ab-923a-4dc9-a864-9f0851e151ee.png",
-  },
-  {
-    id: 16,
-    name: "Oracle",
-    img: "/lovable-uploads/88da1b12-db70-4d0b-bbac-ab2d90d04565.png",
-  },
-  {
-    id: 17,
-    name: "Webflow",
-    img: "/lovable-uploads/6b448d8a-b1f7-4443-80b8-1c11d7455563.png",
-  },
-  // Duplicate logos to make the carousel look fuller
-  {
-    id: 13,
-    name: "BCG Repeat",
-    img: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png",
-  },
-  {
-    id: 14,
-    name: "Triangle Repeat",
-    img: "/lovable-uploads/9a21e2a4-61c3-4cf0-94f8-d87e25d471b8.png",
-  },
-  {
-    id: 15,
-    name: "KW Repeat",
-    img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png",
-  },
-];
+const clientLogos = [{
+  id: 1,
+  name: "BCG",
+  img: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png"
+}, {
+  id: 2,
+  name: "Triangle",
+  img: "/lovable-uploads/9a21e2a4-61c3-4cf0-94f8-d87e25d471b8.png"
+}, {
+  id: 3,
+  name: "KW",
+  img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png"
+}, {
+  id: 5,
+  name: "Leadium",
+  img: "/lovable-uploads/d92a0edd-00b0-4780-a32e-ac96f44d2682.png"
+}, {
+  id: 6,
+  name: "Pipeful",
+  img: "/lovable-uploads/910cd93c-893f-4b51-b240-8d9556a22858.png"
+}, {
+  id: 7,
+  name: "Acme",
+  img: "/lovable-uploads/65a95b5c-61f4-4b33-b5dc-508bb9b01942.png"
+}, {
+  id: 8,
+  name: "SalesRoads",
+  img: "/lovable-uploads/a0c813cd-8deb-48e2-8b0f-3e39a130ff2c.png"
+}, {
+  id: 9,
+  name: "Growth Arrows",
+  img: "/lovable-uploads/c7279023-198f-42b9-a23d-0b3c5eb3e9a9.png"
+}, {
+  id: 10,
+  name: "Unbounce",
+  img: "/lovable-uploads/fb15dbd2-a014-467d-818b-2a1c301de056.png"
+}, {
+  id: 11,
+  name: "KPMG",
+  img: "/lovable-uploads/d68b7475-2375-4299-b26a-d5ee7a16216c.png"
+}, {
+  id: 12,
+  name: "Zapier",
+  img: "/lovable-uploads/d317e6ab-923a-4dc9-a864-9f0851e151ee.png"
+}, {
+  id: 16,
+  name: "Oracle",
+  img: "/lovable-uploads/88da1b12-db70-4d0b-bbac-ab2d90d04565.png"
+}, {
+  id: 17,
+  name: "Webflow",
+  img: "/lovable-uploads/6b448d8a-b1f7-4443-80b8-1c11d7455563.png"
+},
+// Duplicate logos to make the carousel look fuller
+{
+  id: 13,
+  name: "BCG Repeat",
+  img: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png"
+}, {
+  id: 14,
+  name: "Triangle Repeat",
+  img: "/lovable-uploads/9a21e2a4-61c3-4cf0-94f8-d87e25d471b8.png"
+}, {
+  id: 15,
+  name: "KW Repeat",
+  img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png"
+}];
 
 // Client Array for testimonials - also updating to use the new logo images
 const clients = [{
@@ -155,7 +138,6 @@ const clients = [{
   logo: "/lovable-uploads/6b448d8a-b1f7-4443-80b8-1c11d7455563.png",
   description: "Web Development Platform"
 }];
-
 const HeroSection: React.FC = () => {
   return <>
       <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-midnight-background">
@@ -246,22 +228,7 @@ const HeroSection: React.FC = () => {
             }} className="w-full">
                 <CarouselContent>
                   {/* First slide */}
-                  <CarouselItem className="basis-full md:basis-1/2 lg:basis-1/3">
-                    <div className="p-6 border border-logo-blue/10 rounded-lg bg-midnight-surface">
-                      <div className="flex flex-col h-full">
-                        <blockquote className="text-gray-300 mb-4">"Their sales pipeline system generated 12 qualified leads in the first month alone."</blockquote>
-                        <div className="mt-auto flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-logo-blue/20 flex items-center justify-center mr-3">
-                            <AppleIcon className="w-6 h-6 text-logo-blue" />
-                          </div>
-                          <div className="text-left">
-                            <p className="font-medium text-white">James Cook</p>
-                            <p className="text-xs text-gray-400">Marketing Director</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </CarouselItem>
+                  
 
                   {/* Second slide */}
                   <CarouselItem className="basis-full md:basis-1/2 lg:basis-1/3">
@@ -282,22 +249,7 @@ const HeroSection: React.FC = () => {
                   </CarouselItem>
 
                   {/* Third slide */}
-                  <CarouselItem className="basis-full md:basis-1/2 lg:basis-1/3">
-                    <div className="p-6 border border-logo-blue/10 rounded-lg bg-midnight-surface">
-                      <div className="flex flex-col h-full">
-                        <blockquote className="text-gray-300 mb-4">"Completely transformed our approach to customer acquisition and retention."</blockquote>
-                        <div className="mt-auto flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-logo-blue/20 flex items-center justify-center mr-3">
-                            <SupabaseIcon className="w-6 h-6 text-logo-blue" />
-                          </div>
-                          <div className="text-left">
-                            <p className="font-medium text-white">Michael Chen</p>
-                            <p className="text-xs text-gray-400">Founder & CEO</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </CarouselItem>
+                  
                 </CarouselContent>
               </Carousel>
             </div>
