@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, {
@@ -102,7 +103,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
 
     return (
       <motion.div
-        className="relative h-24 w-32 overflow-visible md:h-36 md:w-56"
+        className="relative h-24 w-32 overflow-visible md:h-40 md:w-60"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -141,7 +142,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
             }}
           >
             {typeof currentLogo.img === 'string' ? (
-              <div className="rounded-full bg-white h-24 w-24 md:h-36 md:w-36 flex items-center justify-center overflow-hidden">
+              <div className="rounded-full bg-white h-32 w-32 md:h-40 md:w-40 flex items-center justify-center overflow-hidden">
                 <img 
                   src={currentLogo.img} 
                   alt={currentLogo.name} 
@@ -149,7 +150,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
                 />
               </div>
             ) : (
-              <div className="rounded-full bg-white h-24 w-24 md:h-36 md:w-36 flex items-center justify-center">
+              <div className="rounded-full bg-white h-32 w-32 md:h-40 md:w-40 flex items-center justify-center">
                 {React.createElement(currentLogo.img, {
                   className: "h-full w-full text-gray-800 object-contain"
                 })}
@@ -193,8 +194,8 @@ export function LogoCarousel({
   }, [logos, columnCount])
 
   return (
-    <div className="w-full max-w-5xl mx-auto relative">
-      <div className="flex justify-center space-x-12 py-8">
+    <div className="w-full max-w-6xl mx-auto relative">
+      <div className="flex justify-center space-x-16 py-12">
         {logoSets.map((logos, index) => (
           <LogoColumn
             key={index}
