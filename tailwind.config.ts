@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -67,12 +66,18 @@ export default {
 				midnight: {
 					background: '#0F0F10',
 					surface: '#1A1B1F',
-					primary: '#3D5AFE',
-					accent: '#8E44FF',
-					text: '#EDEDED',
+					primary: '#00CFFF',  // Changed to match logo color
+					accent: '#1EAEDB',   // Adjusted for a complementary color
+					text: '#FFFFFF',
 					subtext: '#A3A3A3',
 					success: '#00C896',
 					warning: '#FFB547'
+				},
+				// Logo-based colors
+				logo: {
+					blue: '#00CFFF',     // Bright cyan from logo
+					lightBlue: '#7EEAFF', // Lighter version
+					darkBlue: '#0095B8',  // Darker version
 				}
 			},
 			borderRadius: {
@@ -113,7 +118,8 @@ export default {
 				'fade-in-right': 'fade-in-right 0.5s ease-out'
 			},
 			fontFamily: {
-				inter: ['Inter', 'sans-serif']
+				inter: ['Inter', 'sans-serif'],
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
 			}
 		}
 	},
