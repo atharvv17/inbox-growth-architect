@@ -226,9 +226,9 @@ const Index = () => {
       
 
       {/* New Testimonials Section */}
-      <section className="py-8 md:py-12 bg-midnight-surface overflow-hidden">
+      <section className="py-6 md:py-10 bg-midnight-surface overflow-hidden">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text-center mb-4">
             <p className="text-logo-blue text-sm uppercase tracking-wider mb-1 font-medium">Client Stories</p>
             <h2 className="text-3xl font-bold mb-2">What Our Clients Say</h2>
             <p className="text-lg text-midnight-subtext max-w-2xl mx-auto">
@@ -236,26 +236,26 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="relative flex gap-3 justify-center mx-auto max-w-7xl overflow-hidden">
+          <div className="relative flex gap-4 justify-center mx-auto max-w-7xl overflow-hidden">
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-midnight-surface via-transparent to-midnight-surface z-10"></div>
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-midnight-surface via-transparent to-midnight-surface z-10"></div>
             
             <TestimonialsColumn 
-              className="min-w-[280px] max-h-[520px] overflow-hidden"
+              className="min-w-[320px] max-h-[650px] overflow-hidden"
               testimonials={testimonialColumns[0]}
-              duration={15}
-            />
-            
-            <TestimonialsColumn
-              className="min-w-[280px] max-h-[520px] overflow-hidden mt-28"
-              testimonials={testimonialColumns[1]} 
               duration={20}
             />
             
             <TestimonialsColumn
-              className="min-w-[280px] max-h-[520px] overflow-hidden"
+              className="min-w-[320px] max-h-[650px] overflow-hidden mt-28"
+              testimonials={testimonialColumns[1]} 
+              duration={25}
+            />
+            
+            <TestimonialsColumn
+              className="min-w-[320px] max-h-[650px] overflow-hidden"
               testimonials={testimonialColumns[2]}
-              duration={13} 
+              duration={18} 
             />
           </div>
         </div>
