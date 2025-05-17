@@ -103,7 +103,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
 
     return (
       <motion.div
-        className="relative h-32 w-40 overflow-visible md:h-48 md:w-72" // Increased from h-24/w-32 to h-32/w-40 and md:h-40/w-60 to md:h-48/w-72
+        className="relative h-24 w-32 overflow-visible md:h-40 md:w-60"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -142,7 +142,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
             }}
           >
             {typeof currentLogo.img === 'string' ? (
-              <div className="rounded-full bg-white h-40 w-40 md:h-52 md:w-52 flex items-center justify-center overflow-hidden"> {/* Increased from h-32/w-32 to h-40/w-40 and md:h-40/w-40 to md:h-52/w-52 */}
+              <div className="rounded-full bg-white h-32 w-32 md:h-40 md:w-40 flex items-center justify-center overflow-hidden">
                 <img 
                   src={currentLogo.img} 
                   alt={currentLogo.name} 
@@ -150,7 +150,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
                 />
               </div>
             ) : (
-              <div className="rounded-full bg-white h-40 w-40 md:h-52 md:w-52 flex items-center justify-center"> {/* Increased from h-32/w-32 to h-40/w-40 and md:h-40/w-40 to md:h-52/w-52 */}
+              <div className="rounded-full bg-white h-32 w-32 md:h-40 md:w-40 flex items-center justify-center">
                 {React.createElement(currentLogo.img, {
                   className: "h-full w-full text-gray-800 object-contain"
                 })}
@@ -194,8 +194,8 @@ export function LogoCarousel({
   }, [logos, columnCount])
 
   return (
-    <div className="w-full max-w-7xl mx-auto relative"> {/* Increased from max-w-6xl to max-w-7xl */}
-      <div className="flex justify-center space-x-20 py-16"> {/* Increased from space-x-16 to space-x-20 and py-12 to py-16 */}
+    <div className="w-full max-w-6xl mx-auto relative">
+      <div className="flex justify-center space-x-16 py-12">
         {logoSets.map((logos, index) => (
           <LogoColumn
             key={index}
