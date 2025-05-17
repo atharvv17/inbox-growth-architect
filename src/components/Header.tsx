@@ -7,7 +7,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img alt="LeveragedGrowth.co" className="h-24" src="/lovable-uploads/0aebd4e9-9841-4ad4-8f83-9fe3ab1d41ce.png" />
+            <img alt="LeveragedGrowth.co" className="h-28" src="/lovable-uploads/0aebd4e9-9841-4ad4-8f83-9fe3ab1d41ce.png" />
           </a>
           
           {/* Navigation */}
