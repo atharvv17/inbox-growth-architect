@@ -115,21 +115,7 @@ const Index = () => {
       </section>
 
       {/* Why Our Clients Choose Us - UPDATED SECTION */}
-      <section className="section">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Our Clients Choose Us</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ClientBenefitCard icon={<Rocket className="h-12 w-12" />} title="Plug-and-Play Revenue Engine" description="Seamlessly integrate our system and watch your revenue scale effortlessly." />
-            <ClientBenefitCard icon={<Zap className="h-12 w-12" />} title="Fast Setup: 7 Days or Less" description="Get fully operational in under a week—no delays, no hassles." />
-            <ClientBenefitCard icon={<Tag className="h-12 w-12" />} title="White-Labeled CRM" description="Maintain your brand identity with a fully white-labeled solution." />
-            <ClientBenefitCard icon={<User className="h-12 w-12" />} title="Dedicated Campaign Manager" description="Your personal expert, focused on your success and results." />
-            <ClientBenefitCard icon={<Calendar className="h-12 w-12" />} title="Optional Appointment Setters" description="Save time and close more deals with ready-to-go appointment setters." />
-            <ClientBenefitCard icon={<ChartBar className="h-12 w-12" />} title="Performance Tracking Dashboard" description="Real-time analytics to track ROI and optimize campaign performance." />
-          </div>
-        </div>
-      </section>
+      
 
       {/* What Makes Us Different */}
       
