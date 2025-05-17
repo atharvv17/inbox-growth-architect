@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -16,27 +15,32 @@ const Index = () => {
     {
       number: 1,
       title: "Deep Discovery & ICP Clarity",
-      description: "Understand audience, pain points, and differentiation"
+      description: "Understand audience, pain points, and differentiation",
+      detailedDescription: "We dive into your business, ideal customer profile, and market positioning — uncovering what makes your offer resonate and what your buyers truly care about."
     },
     {
       number: 2,
       title: "System Setup & Warmup",
-      description: "Tech setup, profile edits, inbox prep"
+      description: "Tech setup, profile edits, inbox prep",
+      detailedDescription: "We configure custom domains, optimize LinkedIn profiles, and prep inboxes for maximum deliverability and credibility — setting the stage for consistent outreach."
     },
     {
       number: 3,
       title: "Copywriting & Data Sourcing",
-      description: "Human-sourced data + crafted messaging"
+      description: "Human-sourced data + crafted messaging",
+      detailedDescription: "Our team writes handcrafted messaging tailored to your voice, offer, and audience. Every lead is manually sourced to ensure quality, intent, and relevance."
     },
     {
       number: 4,
       title: "Launch & Daily Execution",
-      description: "Campaign goes live, replies monitored"
+      description: "Campaign goes live, replies monitored",
+      detailedDescription: "Your outbound system goes live — we send, track, and manage replies daily. You stay focused on calls, while we keep the engine running."
     },
     {
       number: 5,
       title: "Optimize & Scale",
       description: "Continuous testing, lead quality refinement",
+      detailedDescription: "We analyze performance, A/B test sequences, and continuously refine targeting and messaging — so your lead quality gets sharper over time.",
       isLast: true
     }
   ];

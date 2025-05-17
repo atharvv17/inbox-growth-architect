@@ -5,6 +5,7 @@ interface ProcessStepProps {
   number: number;
   title: string;
   description: string;
+  detailedDescription?: string;
   isLast?: boolean;
 }
 
@@ -51,7 +52,10 @@ const ProcessTimeline: React.FC<{steps: ProcessStepProps[]}> = ({ steps }) => {
             {/* Content */}
             <div className={`md:w-5/12 pt-8 pl-10 md:pl-0 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
               <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
-              <p className="text-midnight-subtext">{step.description}</p>
+              <p className="text-midnight-subtext mb-4">{step.description}</p>
+              {step.detailedDescription && (
+                <p className="text-midnight-subtext text-sm">{step.detailedDescription}</p>
+              )}
             </div>
             
             {/* Spacer for alternating layout */}
