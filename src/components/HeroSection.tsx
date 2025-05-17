@@ -4,108 +4,61 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-black">
-      <div className="absolute inset-0 z-0">
-        {/* Dark background with subtle gradient */}
-        <div className="absolute inset-0 bg-[#1A1B1F]"></div>
-        
-        {/* Subtle blue/teal glow effect at the bottom */}
-        <div className="absolute bottom-0 left-0 right-0 w-full h-[400px] bg-gradient-to-r from-[#1EAEDB]/20 via-[#1EAEDB]/30 to-[#00C896]/20 blur-[150px] rounded-full mx-auto"></div>
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black text-white">
+      {/* Background decoration elements */}
+      <div className="absolute top-1/4 left-1/4 w-40 h-40 border border-white/10 rounded-full blur-sm"></div>
+      <div className="absolute bottom-1/3 right-1/4 w-32 h-32 border border-white/10 rounded-full blur-sm"></div>
+      
+      {/* Triangle decorations */}
+      <div className="absolute left-[10%] top-1/3">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" opacity="0.2">
+          <path d="M60 10L110 100H10L60 10Z" stroke="white" strokeWidth="1" />
+        </svg>
+      </div>
+      <div className="absolute right-[10%] bottom-1/4">
+        <svg width="150" height="150" viewBox="0 0 150 150" fill="none" opacity="0.15">
+          <path d="M75 10L140 130H10L75 10Z" stroke="white" strokeWidth="1" />
+        </svg>
       </div>
       
-      <div className="container relative z-10 mx-auto px-4 flex flex-col items-center justify-center h-full">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 animate-fade-in text-white tracking-tight">
-            We Build Predictable Sales <br />
-            Pipelines for B2B Companies
+      {/* Main content container */}
+      <div className="container relative z-10 mx-auto px-4">
+        <div className="max-w-5xl mx-auto">
+          {/* Two-line headline with highlighted backgrounds */}
+          <h1 className="text-[3.5rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[6.5rem] leading-tight font-bold mb-8 tracking-tight">
+            <span className="inline-block bg-[#3b4890] px-6 py-2 mb-4">
+              We Build Predictable Sales
+            </span>
+            <br />
+            <span className="inline-block bg-[#70504a] px-6 py-2">
+              Pipelines for B2B Companies
+            </span>
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 animate-fade-in">
-            Done-for-you outreach, CRM systems & appointment booking — installed in 7 days
-          </p>
-          <Button 
-            className="bg-white hover:bg-white/90 text-black rounded-full text-lg px-8 py-6 h-auto"
-            size="lg">
-            Book a Free Growth Audit
-          </Button>
-        </div>
-        
-        {/* Visual element - Dashboard mockup with data visualization */}
-        <div className="relative w-full max-w-5xl mx-auto mt-4 animate-fade-in">
-          <div className="bg-gradient-to-r from-midnight-surface/80 via-midnight-surface to-midnight-surface/80 rounded-xl border border-white/10 backdrop-blur-sm p-4 md:p-6 shadow-2xl">
-            <div className="aspect-video w-full overflow-hidden rounded-md">
-              {/* Dashboard UI - You can replace this with a more detailed mockup if needed */}
-              <div className="bg-midnight-background w-full h-full rounded-md flex flex-col p-4">
-                {/* Dashboard header */}
-                <div className="flex justify-between items-center mb-4 border-b border-white/10 pb-4">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-midnight-success rounded-full"></div>
-                    <div className="w-3 h-3 bg-midnight-warning rounded-full"></div>
-                    <div className="w-3 h-3 bg-midnight-primary rounded-full"></div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="h-6 w-20 bg-white/10 rounded-full"></div>
-                    <div className="h-6 w-6 bg-white/10 rounded-full"></div>
-                    <div className="h-6 w-6 bg-white/10 rounded-full"></div>
-                  </div>
-                </div>
-                
-                {/* Dashboard content */}
-                <div className="grid grid-cols-12 gap-4 h-full">
-                  {/* Sidebar navigation */}
-                  <div className="col-span-2 bg-midnight-surface/50 rounded-md p-2 flex flex-col space-y-3">
-                    {[1, 2, 3, 4, 5].map(i => (
-                      <div key={i} className={`h-8 ${i === 1 ? 'bg-midnight-primary/20' : 'bg-white/5'} rounded-md`}></div>
-                    ))}
-                  </div>
-                  
-                  {/* Main dashboard area */}
-                  <div className="col-span-10 grid grid-rows-3 gap-4">
-                    {/* Top row - metrics */}
-                    <div className="grid grid-cols-3 gap-4">
-                      {[1, 2, 3].map(i => (
-                        <div key={i} className="bg-midnight-surface/50 rounded-md p-3">
-                          <div className="h-2 w-16 bg-white/20 rounded-full mb-2"></div>
-                          <div className="h-6 w-24 bg-white/30 rounded-full"></div>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    {/* Middle row - chart */}
-                    <div className="row-span-1 bg-midnight-surface/50 rounded-md p-4">
-                      <div className="h-3 w-24 bg-white/20 rounded-full mb-4"></div>
-                      <div className="flex items-end justify-between h-24 px-2">
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => {
-                          const height = `${20 + Math.random() * 60}%`;
-                          return (
-                            <div key={i} style={{height}} className={`w-12 rounded-t-sm ${i % 3 === 0 ? 'bg-midnight-primary' : i % 3 === 1 ? 'bg-midnight-success' : 'bg-white/20'}`}></div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                    
-                    {/* Bottom row - table */}
-                    <div className="row-span-1 bg-midnight-surface/50 rounded-md p-4">
-                      <div className="h-3 w-32 bg-white/20 rounded-full mb-4"></div>
-                      <div className="space-y-3">
-                        {[1, 2, 3].map(i => (
-                          <div key={i} className="flex justify-between items-center border-b border-white/5 pb-2">
-                            <div className="flex items-center space-x-2">
-                              <div className="h-5 w-5 bg-white/10 rounded-full"></div>
-                              <div className="h-3 w-24 bg-white/20 rounded-full"></div>
-                            </div>
-                            <div className="h-3 w-16 bg-white/10 rounded-full"></div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          
+          {/* Tags */}
+          <div className="flex flex-wrap gap-4 mb-10">
+            <span className="bg-[#f8a896] text-black px-4 py-1 rounded-full text-sm font-medium">
+              Tech Founders
+            </span>
+            <span className="bg-[#f5d47b] text-black px-4 py-1 rounded-full text-sm font-medium ml-auto">
+              General Partners
+            </span>
           </div>
           
-          {/* Reflection effect */}
-          <div className="absolute inset-x-0 -bottom-10 h-10 bg-gradient-to-b from-[#1EAEDB]/10 to-transparent blur-md"></div>
+          {/* Descriptive text */}
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mb-10">
+            Done-for-you outreach, CRM systems & appointment booking — installed in 7 days. 
+            We help you scale content strategies to attract quality leads and deepen relationships.
+          </p>
+          
+          {/* CTA Button */}
+          <div>
+            <Button 
+              className="bg-transparent hover:bg-white/10 text-white border border-white rounded-full text-lg px-8 py-6 h-auto"
+              size="lg">
+              Book a Free Growth Audit
+            </Button>
+          </div>
         </div>
       </div>
     </section>
