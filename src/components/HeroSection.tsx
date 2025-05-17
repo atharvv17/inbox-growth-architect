@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -49,19 +50,29 @@ const clientLogos = [
     name: "Acme",
     img: "/lovable-uploads/65a95b5c-61f4-4b33-b5dc-508bb9b01942.png",
   },
-  // Duplicate logos to make the carousel look fuller
   {
     id: 8,
+    name: "SalesRoads",
+    img: "/lovable-uploads/a0c813cd-8deb-48e2-8b0f-3e39a130ff2c.png",
+  },
+  {
+    id: 9,
+    name: "Growth Arrows",
+    img: "/lovable-uploads/c7279023-198f-42b9-a23d-0b3c5eb3e9a9.png",
+  },
+  // Duplicate logos to make the carousel look fuller
+  {
+    id: 10,
     name: "BCG Repeat",
     img: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png",
   },
   {
-    id: 9,
+    id: 11,
     name: "Triangle Repeat",
     img: "/lovable-uploads/9a21e2a4-61c3-4cf0-94f8-d87e25d471b8.png",
   },
   {
-    id: 10,
+    id: 12,
     name: "KW Repeat",
     img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png",
   },
@@ -93,6 +104,16 @@ const clients = [{
   name: "Leadium",
   logo: "/lovable-uploads/d92a0edd-00b0-4780-a32e-ac96f44d2682.png",
   description: "Sales Pipeline Automation"
+}, {
+  id: 6,
+  name: "SalesRoads",
+  logo: "/lovable-uploads/a0c813cd-8deb-48e2-8b0f-3e39a130ff2c.png",
+  description: "Sales Enablement"
+}, {
+  id: 7,
+  name: "Growth Arrows",
+  logo: "/lovable-uploads/c7279023-198f-42b9-a23d-0b3c5eb3e9a9.png",
+  description: "Revenue Growth"
 }];
 
 const HeroSection: React.FC = () => {
