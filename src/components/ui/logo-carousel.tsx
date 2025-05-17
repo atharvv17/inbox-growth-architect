@@ -99,12 +99,15 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
             }}
           >
             {typeof currentLogo.img === 'string' ? (
-              <div className="rounded-full bg-white p-4 h-20 w-20 md:h-28 md:w-28 flex items-center justify-center overflow-hidden">
-                <img 
-                  src={currentLogo.img} 
-                  alt={currentLogo.name} 
-                  className="h-full w-full object-contain"
-                />
+              <div className="rounded-full bg-white p-2 h-20 w-20 md:h-28 md:w-28 flex items-center justify-center overflow-hidden">
+                <div className="h-full w-full relative flex items-center justify-center">
+                  <img 
+                    src={currentLogo.img} 
+                    alt={currentLogo.name} 
+                    className="max-h-full max-w-full object-contain"
+                    style={{ aspectRatio: '1/1' }}
+                  />
+                </div>
               </div>
             ) : (
               <div className="rounded-full bg-white p-4 h-20 w-20 md:h-28 md:w-28 flex items-center justify-center">
