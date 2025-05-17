@@ -1,10 +1,8 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
-
 const HeroSection: React.FC = () => {
-  return <section className="relative min-h-screen flex flex-col items-center pt-32 overflow-hidden bg-midnight-background">
+  return <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-midnight-background">
       <div className="absolute inset-0 z-0">
         {/* Dark background */}
         <div className="absolute inset-0 bg-[#0A0A0A]"></div>
@@ -59,64 +57,6 @@ const HeroSection: React.FC = () => {
             </a>
           </div>
         </div>
-        
-        {/* Portfolio Clients Section */}
-        <div className="w-full mt-16 mb-8 relative z-10">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">Portfolio Clients</h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            {/* Client 1 */}
-            <div className="flex flex-col items-center">
-              <div className="w-24 h-24 md:w-32 md:h-32 bg-[#212121] rounded-full flex items-center justify-center mb-4">
-                <div className="text-white w-12 md:w-16">
-                  <svg viewBox="0 0 100 100" fill="currentColor">
-                    <rect x="15" y="15" width="30" height="70" />
-                    <path d="M45,15 a40,40 0 1,1 0,70" fill="none" stroke="currentColor" strokeWidth="30" />
-                  </svg>
-                </div>
-              </div>
-              <h3 className="text-white font-bold">Primary</h3>
-              <p className="text-gray-400 text-sm">Top Venture Fund</p>
-            </div>
-            
-            {/* Client 2 */}
-            <div className="flex flex-col items-center">
-              <div className="w-24 h-24 md:w-32 md:h-32 bg-[#1A2A3A] rounded-full flex items-center justify-center mb-4">
-                <div className="text-white w-12 md:w-16">
-                  <svg viewBox="0 0 100 100" fill="currentColor">
-                    <path d="M50,15 a35,35 0 1,1 0,70 a35,35 0 1,1 0,-70 M30,50 v35 h15 v-35 h-15" />
-                  </svg>
-                </div>
-              </div>
-              <h3 className="text-white font-bold">Greylock</h3>
-              <p className="text-gray-400 text-sm">Top Venture Fund</p>
-            </div>
-            
-            {/* Client 3 */}
-            <div className="flex flex-col items-center">
-              <div className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center mb-4">
-                <div className="text-black w-16 md:w-20">
-                  <svg viewBox="0 0 100 40" fill="currentColor">
-                    <path d="M0,10 h15 l15,20 h15 l-15,-20 h-15 M40,10 h15 v20 h-15 M60,10 h15 a10,10 0 0,1 0,20 h-15 v-20" />
-                  </svg>
-                </div>
-              </div>
-              <h3 className="text-white font-bold">CLIMB by VSC</h3>
-              <p className="text-gray-400 text-sm">Climate Tech Podcast</p>
-            </div>
-            
-            {/* Client 4 */}
-            <div className="flex flex-col items-center">
-              <div className="w-24 h-24 md:w-32 md:h-32 bg-[#212121] rounded-full flex items-center justify-center mb-4">
-                <div className="w-16 md:w-20 h-16 md:h-20 bg-[#2DCFB1] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-mono text-lg md:text-xl">{'{...}'}</span>
-                </div>
-              </div>
-              <h3 className="text-white font-bold">Floating Points</h3>
-              <p className="text-gray-400 text-sm">Tech Podcast</p>
-            </div>
-          </div>
-        </div>
       </div>
       
       {/* Bottom fade with logo color tint */}
@@ -126,5 +66,4 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-logo-blue/5 to-transparent opacity-50 mix-blend-overlay"></div>
     </section>;
 };
-
 export default HeroSection;
