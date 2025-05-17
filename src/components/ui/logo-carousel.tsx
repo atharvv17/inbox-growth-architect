@@ -105,12 +105,12 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
                     src={currentLogo.img} 
                     alt={currentLogo.name} 
                     className="w-full h-full object-cover" 
-                    style={{ padding: '2%' }}
+                    style={{ padding: '0' }}
                   />
                 </div>
               </div>
             ) : (
-              <div className="rounded-full bg-white p-3 h-20 w-20 md:h-28 md:w-28 flex items-center justify-center">
+              <div className="rounded-full bg-white p-2 h-20 w-20 md:h-28 md:w-28 flex items-center justify-center">
                 {React.createElement(currentLogo.img, {
                   className: "h-full w-full text-gray-800 object-contain"
                 })}
