@@ -43,7 +43,7 @@ export function LogoCarousel({
   const logoItems = logos.map((logo) => (
     <CarouselItem key={logo.id} className="basis-1/4 pl-4">
       <div className="flex flex-col items-center justify-center p-4 group transition-all duration-300 hover:scale-105">
-        <div className="relative h-32 w-32 flex items-center justify-center bg-logo-blue/10 rounded-full p-8">
+        <div className="relative h-40 w-40 flex items-center justify-center bg-logo-blue/10 rounded-full p-8">
           <logo.img className="h-full w-full object-contain text-gray-400 group-hover:text-logo-blue transition-colors duration-300" />
         </div>
       </div>
