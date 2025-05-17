@@ -7,7 +7,8 @@ import TestimonialCard from "@/components/TestimonialCard";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import { CheckCircle, Mail, MessageSquare } from "lucide-react";
+import ClientBenefitCard from "@/components/ClientBenefitCard";
+import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Handshake, CalendarCheck, User } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Index = () => {
@@ -146,6 +147,42 @@ const Index = () => {
               ]}
               outcome="A daily stream of inbound conversations from decision-makers who already know what you do and want to talk"
               buttonText="Learn More"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Why Our Clients Choose Us - NEW SECTION */}
+      <section className="section">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Why Our Clients Choose Us</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            <ClientBenefitCard
+              icon={<Briefcase className="h-10 w-10" />}
+              title="Plug-and-Play Revenue Engine"
+              description="Quickly start generating predictable revenue with minimal setup."
+            />
+            <ClientBenefitCard
+              icon={<Zap className="h-10 w-10" />}
+              title="Fast Setup: 7 Days or Less"
+              description="Get your system live and operational within a week."
+            />
+            <ClientBenefitCard
+              icon={<Handshake className="h-10 w-10" />}
+              title="White-Labeled CRM"
+              description="Your brand, your CRM—seamlessly integrated and client-facing."
+            />
+            <ClientBenefitCard
+              icon={<User className="h-10 w-10" />}
+              title="Dedicated Campaign Manager"
+              description="A single point of contact to oversee performance and strategy."
+            />
+            <ClientBenefitCard
+              icon={<CalendarCheck className="h-10 w-10" />}
+              title="Optional Appointment Setters"
+              description="Let our trained reps fill your calendar—only if you want them to."
             />
           </div>
         </div>
