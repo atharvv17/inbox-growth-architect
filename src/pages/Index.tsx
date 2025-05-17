@@ -168,11 +168,11 @@ const Index = () => {
       </section>
 
       {/* Our Process */}
-      <section className="section bg-white text-black" id="process">
+      <section className="section bg-midnight-background text-midnight-text" id="process">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Our Process</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
               How we take you from uncertainty to predictable pipeline
             </p>
           </div>
