@@ -6,9 +6,9 @@ const Header: React.FC = () => {
   return <header className="py-2 absolute top-0 left-0 right-0 z-10">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - Made larger */}
           <a href="/" className="flex items-center">
-            <img src="/lovable-uploads/49e74208-b2c0-4809-a9dd-cff624caa489.png" alt="LeveragedGrowth.co" className="h-20" />
+            <img src="/lovable-uploads/49e74208-b2c0-4809-a9dd-cff624caa489.png" alt="LeveragedGrowth.co" className="h-28" />
           </a>
           
           {/* Centered Navigation at the top */}
