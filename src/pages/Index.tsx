@@ -3,7 +3,7 @@ import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
-import ProcessStep from "@/components/ProcessStep";
+import ProcessTimeline from "@/components/ProcessTimeline";
 import TestimonialCard from "@/components/TestimonialCard";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import CTASection from "@/components/CTASection";
@@ -12,6 +12,35 @@ import { CheckCircle, Mail, MessageSquare } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Index = () => {
+  const processSteps = [
+    {
+      number: 1,
+      title: "Deep Discovery & ICP Clarity",
+      description: "Understand audience, pain points, and differentiation"
+    },
+    {
+      number: 2,
+      title: "System Setup & Warmup",
+      description: "Tech setup, profile edits, inbox prep"
+    },
+    {
+      number: 3,
+      title: "Copywriting & Data Sourcing",
+      description: "Human-sourced data + crafted messaging"
+    },
+    {
+      number: 4,
+      title: "Launch & Daily Execution",
+      description: "Campaign goes live, replies monitored"
+    },
+    {
+      number: 5,
+      title: "Optimize & Scale",
+      description: "Continuous testing, lead quality refinement",
+      isLast: true
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-midnight-background text-midnight-text">
       <Header />
@@ -139,42 +168,15 @@ const Index = () => {
       </section>
 
       {/* Our Process */}
-      <section className="section bg-midnight-surface" id="process">
+      <section className="section bg-white text-black" id="process">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Our Process</h2>
-            <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               How we take you from uncertainty to predictable pipeline
             </p>
           </div>
-          <div className="max-w-3xl mx-auto">
-            <ProcessStep
-              number={1}
-              title="Deep Discovery & ICP Clarity"
-              description="Understand audience, pain points, and differentiation"
-            />
-            <ProcessStep
-              number={2}
-              title="System Setup & Warmup"
-              description="Tech setup, profile edits, inbox prep"
-            />
-            <ProcessStep
-              number={3}
-              title="Copywriting & Data Sourcing"
-              description="Human-sourced data + crafted messaging"
-            />
-            <ProcessStep
-              number={4}
-              title="Launch & Daily Execution"
-              description="Campaign goes live, replies monitored"
-            />
-            <ProcessStep
-              number={5}
-              title="Optimize & Scale"
-              description="Continuous testing, lead quality refinement"
-              isLast={true}
-            />
-          </div>
+          <ProcessTimeline steps={processSteps} />
         </div>
       </section>
 
