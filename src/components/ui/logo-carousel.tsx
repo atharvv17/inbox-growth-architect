@@ -59,7 +59,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
 
     return (
       <motion.div
-        className="relative h-16 w-28 overflow-hidden md:h-28 md:w-52"
+        className="relative h-24 w-32 overflow-visible md:h-36 md:w-56"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -99,17 +99,15 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
           >
             {typeof currentLogo.img === 'string' ? (
               <div className="rounded-full bg-white h-24 w-24 md:h-36 md:w-36 flex items-center justify-center overflow-hidden">
-                <div className="flex items-center justify-center w-full h-full">
-                  <img 
-                    src={currentLogo.img} 
-                    alt={currentLogo.name} 
-                    className="w-full h-full object-cover" 
-                    style={{ padding: '0' }}
-                  />
-                </div>
+                <img 
+                  src={currentLogo.img} 
+                  alt={currentLogo.name} 
+                  className="w-full h-full object-contain" 
+                  style={{ padding: 0 }}
+                />
               </div>
             ) : (
-              <div className="rounded-full bg-white p-2 h-24 w-24 md:h-36 md:w-36 flex items-center justify-center">
+              <div className="rounded-full bg-white h-24 w-24 md:h-36 md:w-36 flex items-center justify-center">
                 {React.createElement(currentLogo.img, {
                   className: "h-full w-full text-gray-800 object-contain"
                 })}
@@ -154,7 +152,7 @@ export function LogoCarousel({
 
   return (
     <div className="w-full max-w-5xl mx-auto relative">
-      <div className="flex justify-center space-x-10 py-4">
+      <div className="flex justify-center space-x-12 py-8">
         {logoSets.map((logos, index) => (
           <LogoColumn
             key={index}
