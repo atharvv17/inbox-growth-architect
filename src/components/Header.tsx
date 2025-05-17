@@ -1,19 +1,12 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
-
 const Header: React.FC = () => {
-  return (
-    <header className="py-4 absolute top-0 left-0 right-0 z-10">
+  return <header className="py-4 absolute top-0 left-0 right-0 z-10">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img 
-              src="/lovable-uploads/49e74208-b2c0-4809-a9dd-cff624caa489.png" 
-              alt="LeveragedGrowth.co" 
-              className="h-24" 
-            />
+            <img src="/lovable-uploads/49e74208-b2c0-4809-a9dd-cff624caa489.png" alt="LeveragedGrowth.co" className="h-28" />
           </a>
           
           {/* Centered Navigation - Now at the top next to logo */}
@@ -42,8 +35,6 @@ const Header: React.FC = () => {
           </Button>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
