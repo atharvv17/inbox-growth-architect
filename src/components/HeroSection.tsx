@@ -1,93 +1,76 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center pt-20 overflow-hidden bg-black">
+    <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
-        {/* Dark background with gradient glow */}
-        <div className="absolute inset-0 bg-black"></div>
+        {/* Dark background with subtle gradient */}
+        <div className="absolute inset-0 bg-[#1A1B1F]"></div>
         
-        {/* Blue glow effect at the bottom */}
-        <div className="absolute bottom-0 left-0 right-0 w-full h-[400px] bg-[#1EAEDB]/20 blur-[150px] rounded-full mx-auto"></div>
+        {/* Subtle blue/teal glow effect at the bottom */}
+        <div className="absolute bottom-0 left-0 right-0 w-full h-[400px] bg-gradient-to-r from-[#1EAEDB]/20 via-[#1EAEDB]/30 to-[#00C896]/20 blur-[150px] rounded-full mx-auto"></div>
       </div>
       
       <div className="container relative z-10 mx-auto px-4 flex flex-col items-center">
-        <div className="max-w-4xl mx-auto text-center mb-12">
+        <div className="max-w-4xl mx-auto text-center mb-16">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 animate-fade-in text-white tracking-tight">
             We Build Predictable Sales Pipelines for B2B Companies
           </h1>
           <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 animate-fade-in">
             Done-for-you outreach, CRM systems & appointment booking — installed in 7 days
           </p>
-          <div className="flex justify-center">
-            <Button 
-              className="bg-white hover:bg-white/90 text-black rounded-full text-lg px-8 py-6 h-auto"
-              size="lg">
-              Book a Free Growth Audit
-            </Button>
-          </div>
+          <Button 
+            className="bg-white hover:bg-white/90 text-black rounded-full text-lg px-8 py-6 h-auto"
+            size="lg">
+            Book a Free Growth Audit
+          </Button>
         </div>
         
-        {/* Visual element below the text content */}
-        <div className="w-full max-w-5xl mx-auto mt-8 animate-fade-in">
-          <div className="relative bg-gradient-to-b from-[#1EAEDB]/30 to-transparent p-1 rounded-lg shadow-xl">
-            <div className="bg-black/80 rounded-lg overflow-hidden">
-              {/* Dashboard mockup or sales pipeline visual */}
-              <div className="relative aspect-[16/9] w-full">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 p-4">
-                  <div className="bg-black/70 backdrop-blur-sm rounded-lg h-full w-full flex flex-col p-4">
-                    {/* Mock dashboard header */}
-                    <div className="flex justify-between items-center mb-6">
-                      <div className="bg-blue-500/20 h-8 w-40 rounded"></div>
-                      <div className="flex space-x-2">
-                        <div className="bg-gray-500/20 h-8 w-8 rounded-full"></div>
-                        <div className="bg-gray-500/20 h-8 w-8 rounded-full"></div>
-                      </div>
-                    </div>
-                    
-                    {/* Mock dashboard content */}
-                    <div className="grid grid-cols-3 gap-4 mb-6">
-                      <div className="bg-blue-500/10 rounded-lg p-4 h-24 flex flex-col justify-between">
-                        <div className="bg-blue-500/20 h-3 w-20 rounded"></div>
-                        <div className="bg-white/30 h-6 w-16 rounded"></div>
-                      </div>
-                      <div className="bg-green-500/10 rounded-lg p-4 h-24 flex flex-col justify-between">
-                        <div className="bg-green-500/20 h-3 w-20 rounded"></div>
-                        <div className="bg-white/30 h-6 w-16 rounded"></div>
-                      </div>
-                      <div className="bg-purple-500/10 rounded-lg p-4 h-24 flex flex-col justify-between">
-                        <div className="bg-purple-500/20 h-3 w-20 rounded"></div>
-                        <div className="bg-white/30 h-6 w-16 rounded"></div>
-                      </div>
-                    </div>
-                    
-                    {/* Mock pipeline visualization */}
-                    <div className="flex justify-between items-end h-32 mb-4">
-                      <div className="bg-blue-500/20 h-[20%] w-[15%] rounded-t-lg"></div>
-                      <div className="bg-blue-500/30 h-[40%] w-[15%] rounded-t-lg"></div>
-                      <div className="bg-blue-500/40 h-[70%] w-[15%] rounded-t-lg"></div>
-                      <div className="bg-blue-500/50 h-[90%] w-[15%] rounded-t-lg"></div>
-                      <div className="bg-blue-500/60 h-[60%] w-[15%] rounded-t-lg"></div>
-                      <div className="bg-blue-500/30 h-[30%] w-[15%] rounded-t-lg"></div>
-                    </div>
-                    
-                    {/* Mock labels */}
-                    <div className="flex justify-between px-2">
-                      <div className="bg-gray-500/20 h-2 w-12 rounded"></div>
-                      <div className="bg-gray-500/20 h-2 w-12 rounded"></div>
-                      <div className="bg-gray-500/20 h-2 w-12 rounded"></div>
-                      <div className="bg-gray-500/20 h-2 w-12 rounded"></div>
-                      <div className="bg-gray-500/20 h-2 w-12 rounded"></div>
-                      <div className="bg-gray-500/20 h-2 w-12 rounded"></div>
-                    </div>
-                  </div>
-                </div>
+        {/* Visual element - 3D chart visualization similar to reference image */}
+        <div className="w-full max-w-3xl mx-auto mt-8 animate-fade-in relative">
+          <div className="aspect-[16/6] w-full bg-gradient-to-r from-[#1EAEDB]/20 via-[#1EAEDB]/30 to-[#00C896]/20 rounded-full relative overflow-hidden">
+            {/* Chart line visualization */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-4/5 h-1/2 relative">
+                {/* Glowing chart line */}
+                <svg className="w-full h-full" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                  {/* Gradient definition */}
+                  <defs>
+                    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#1EAEDB" stopOpacity="0.8" />
+                      <stop offset="50%" stopColor="#ffffff" stopOpacity="0.9" />
+                      <stop offset="100%" stopColor="#00C896" stopOpacity="0.8" />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Line path */}
+                  <path
+                    d="M0,80 C20,70 40,90 60,75 C80,60 100,50 120,40 C140,30 160,50 180,30 C200,10 220,5 240,15 C260,25 280,15 300,5"
+                    fill="none"
+                    stroke="url(#chartGradient)"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    className="drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
+                  />
+                  
+                  {/* Arrow at the end */}
+                  <path
+                    d="M295,5 L300,5 L298,10"
+                    fill="none"
+                    stroke="#ffffff"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    className="drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
+                  />
+                </svg>
               </div>
             </div>
           </div>
+          
+          {/* Reflection/glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1EAEDB]/20 opacity-50 blur-sm"></div>
         </div>
       </div>
     </section>
