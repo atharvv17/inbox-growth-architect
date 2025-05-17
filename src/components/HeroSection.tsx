@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
-
 const HeroSection: React.FC = () => {
-  return (
-    <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-midnight-background">
+  return <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-midnight-background">
       <div className="absolute inset-0 z-0">
         {/* Dark background */}
         <div className="absolute inset-0 bg-[#0A0A0A]"></div>
@@ -33,7 +30,7 @@ const HeroSection: React.FC = () => {
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <div className="inline-block mb-6 px-4 py-2 border border-logo-blue/40 rounded-full bg-logo-blue/5 backdrop-blur-sm">
-            <span className="text-sm font-medium text-logo-blue">B2B Lead Generation</span>
+            <span className="text-sm font-medium text-logo-blue">DFY Sales Agency</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
@@ -48,10 +45,7 @@ const HeroSection: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Button 
-              className="bg-logo-blue hover:bg-logo-darkBlue text-black font-semibold group flex items-center px-8 py-6 rounded shadow-lg shadow-logo-blue/20 transition-all duration-300" 
-              size="lg"
-            >
+            <Button className="bg-logo-blue hover:bg-logo-darkBlue text-black font-semibold group flex items-center px-8 py-6 rounded shadow-lg shadow-logo-blue/20 transition-all duration-300" size="lg">
               <Calendar className="mr-2 h-5 w-5" />
               <span>Book a Free Growth Audit</span>
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -70,8 +64,6 @@ const HeroSection: React.FC = () => {
       
       {/* Subtle logo color gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-logo-blue/5 to-transparent opacity-50 mix-blend-overlay"></div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
