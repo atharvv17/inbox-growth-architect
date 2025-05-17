@@ -1,18 +1,28 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
+
 const Header: React.FC = () => {
-  return <header className="py-4 absolute top-0 left-0 right-0 z-10">
+  return <header className="py-2 absolute top-0 left-0 right-0 z-10">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img src="/lovable-uploads/49e74208-b2c0-4809-a9dd-cff624caa489.png" alt="LeveragedGrowth.co" className="h-28" />
+            <img src="/lovable-uploads/49e74208-b2c0-4809-a9dd-cff624caa489.png" alt="LeveragedGrowth.co" className="h-20" />
           </a>
           
-          {/* Centered Navigation - Now at the top next to logo */}
+          {/* Centered Navigation at the top */}
           <div className="hidden md:block">
-            <div className="bg-black bg-opacity-50 backdrop-blur-sm rounded-full px-8 py-2">
-              <nav className="flex items-center space-x-12">
+            <div className="bg-black/80 bg-opacity-80 backdrop-blur-sm rounded-full px-8 py-2 relative overflow-hidden">
+              {/* Starry background overlay */}
+              <div className="absolute inset-0 opacity-20" 
+                   style={{
+                     backgroundImage: `radial-gradient(white 1px, transparent 1px)`,
+                     backgroundSize: '15px 15px'
+                   }}>
+              </div>
+              
+              <nav className="flex items-center space-x-12 relative z-10">
                 <a href="#offers" className="text-white hover:text-midnight-primary transition-colors font-medium">
                   Services
                 </a>
@@ -37,4 +47,5 @@ const Header: React.FC = () => {
       </div>
     </header>;
 };
+
 export default Header;
