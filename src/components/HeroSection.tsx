@@ -60,19 +60,34 @@ const clientLogos = [
     name: "Growth Arrows",
     img: "/lovable-uploads/c7279023-198f-42b9-a23d-0b3c5eb3e9a9.png",
   },
-  // Duplicate logos to make the carousel look fuller
   {
     id: 10,
+    name: "Unbounce",
+    img: "/lovable-uploads/fb15dbd2-a014-467d-818b-2a1c301de056.png",
+  },
+  {
+    id: 11,
+    name: "KPMG",
+    img: "/lovable-uploads/d68b7475-2375-4299-b26a-d5ee7a16216c.png",
+  },
+  {
+    id: 12,
+    name: "Zapier",
+    img: "/lovable-uploads/d317e6ab-923a-4dc9-a864-9f0851e151ee.png",
+  },
+  // Duplicate logos to make the carousel look fuller
+  {
+    id: 13,
     name: "BCG Repeat",
     img: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png",
   },
   {
-    id: 11,
+    id: 14,
     name: "Triangle Repeat",
     img: "/lovable-uploads/9a21e2a4-61c3-4cf0-94f8-d87e25d471b8.png",
   },
   {
-    id: 12,
+    id: 15,
     name: "KW Repeat",
     img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png",
   },
@@ -114,6 +129,21 @@ const clients = [{
   name: "Growth Arrows",
   logo: "/lovable-uploads/c7279023-198f-42b9-a23d-0b3c5eb3e9a9.png",
   description: "Revenue Growth"
+}, {
+  id: 8,
+  name: "Unbounce",
+  logo: "/lovable-uploads/fb15dbd2-a014-467d-818b-2a1c301de056.png",
+  description: "Landing Page Optimization"
+}, {
+  id: 9,
+  name: "KPMG",
+  logo: "/lovable-uploads/d68b7475-2375-4299-b26a-d5ee7a16216c.png",
+  description: "Financial Consulting"
+}, {
+  id: 10,
+  name: "Zapier",
+  logo: "/lovable-uploads/d317e6ab-923a-4dc9-a864-9f0851e151ee.png",
+  description: "Workflow Automation"
 }];
 
 const HeroSection: React.FC = () => {
