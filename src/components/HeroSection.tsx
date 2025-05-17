@@ -33,14 +33,14 @@ const HeroSection: React.FC = () => {
             <span className="text-sm font-medium text-logo-blue">DFY Sales Agency</span>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white leading-tight md:text-5xl">
             We Build <span className="relative inline-block">
               Predictable
               <span className="absolute bottom-1 left-0 w-full h-[3px] bg-logo-blue"></span>
             </span> Sales<br />Pipelines for B2B Companies
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-300 mb-10">
+          <p className="text-lg text-gray-300 mb-10 md:text-lg">
             Done-for-you outreach, CRM systems & appointment booking — installed in 7 days
           </p>
           
