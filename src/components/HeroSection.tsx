@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -29,11 +28,6 @@ const clientLogos = [
     id: 3,
     name: "KW",
     img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png",
-  },
-  {
-    id: 4,
-    name: "Apple",
-    img: AppleIcon,
   },
   {
     id: 5,
@@ -109,11 +103,6 @@ const clients = [{
   name: "KW",
   logo: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png",
   description: "Database Architecture"
-}, {
-  id: 4,
-  name: "Apple",
-  logo: AppleIcon,
-  description: "Type System Design"
 }, {
   id: 5,
   name: "Leadium",
