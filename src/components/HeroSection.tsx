@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -6,19 +7,39 @@ const HeroSection: React.FC = () => {
   return <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
         {/* Black background with opacity */}
-        <div className="absolute inset-0 bg-black opacity-95"></div>
+        <div className="absolute inset-0 bg-black"></div>
         
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1EAEDB]/20 to-[#3D5AFE]/20 opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1EAEDB]/10 to-[#3D5AFE]/10 opacity-10"></div>
         
-        {/* Starry background overlay - positioned to start below header */}
+        {/* Minimal polka dots - positioned to start below header */}
         <div 
-          className="absolute inset-0 top-24 opacity-20" 
+          className="absolute inset-0 top-24 opacity-10" 
           style={{
             backgroundImage: `radial-gradient(white 1px, transparent 1px)`,
-            backgroundSize: '15px 15px'
+            backgroundSize: '50px 50px'
           }}
         ></div>
+        
+        {/* Geometric shapes - minimal and subtle */}
+        <div className="absolute inset-0 top-24 opacity-5">
+          {/* Circle */}
+          <div className="absolute top-1/4 left-1/5 w-48 h-48 rounded-full border border-white/20"></div>
+          
+          {/* Rectangle */}
+          <div className="absolute bottom-1/3 right-1/4 w-64 h-40 border border-white/20 rotate-12"></div>
+          
+          {/* Triangle (using CSS) */}
+          <div className="absolute top-2/3 left-1/3 opacity-20"
+               style={{
+                 width: 0,
+                 height: 0,
+                 borderLeft: '25px solid transparent',
+                 borderRight: '25px solid transparent',
+                 borderBottom: '50px solid rgba(255,255,255,0.2)'
+               }}>
+          </div>
+        </div>
       </div>
       
       <div className="container relative z-10">
