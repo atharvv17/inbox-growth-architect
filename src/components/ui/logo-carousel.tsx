@@ -99,8 +99,8 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
             }}
           >
             {typeof currentLogo.img === 'string' ? (
-              <div className="rounded-full bg-white p-2 h-20 w-20 md:h-28 md:w-28 flex items-center justify-center overflow-hidden">
-                <div className="h-full w-full relative flex items-center justify-center">
+              <div className="rounded-full bg-white p-3 h-20 w-20 md:h-28 md:w-28 flex items-center justify-center">
+                <div className="relative flex items-center justify-center w-full h-full" style={{ padding: '5%' }}>
                   <img 
                     src={currentLogo.img} 
                     alt={currentLogo.name} 
