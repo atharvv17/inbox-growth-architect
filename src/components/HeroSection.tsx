@@ -13,10 +13,10 @@ const HeroSection: React.FC = () => {
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 animate-fade-in">
-            The Sales Pipeline You Should've Had Last Year
+            Done-for-You B2B Sales Infrastructure
           </h1>
           <p className="text-xl md:text-2xl text-midnight-subtext mb-8 animate-fade-in">
-            Premium outbound systems that put qualified leads in your inbox — every week.
+            We build sales systems that consistently generate qualified leads and booked calls for B2B businesses — powered by LinkedIn, Cold Email, and Automation.
           </p>
           <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 justify-center">
             <div className="space-y-4 md:space-y-0 animate-fade-in">
