@@ -1,13 +1,14 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+
 const Header: React.FC = () => {
   return <header className="py-6 absolute top-0 left-0 right-0 z-10">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img alt="LeveragedGrowth.co" className="h-28" src="/lovable-uploads/0aebd4e9-9841-4ad4-8f83-9fe3ab1d41ce.png" />
+            <img alt="LeveragedGrowth.co" className="h-32" src="/lovable-uploads/0aebd4e9-9841-4ad4-8f83-9fe3ab1d41ce.png" />
           </a>
           
           {/* Navigation */}
