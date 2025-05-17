@@ -13,15 +13,16 @@ const HeroSection: React.FC = () => {
         <div className="absolute bottom-0 left-0 right-0 w-full h-[400px] bg-[#1EAEDB]/20 blur-[150px] rounded-full mx-auto"></div>
       </div>
       
-      <div className="container relative z-10 mx-auto px-4 flex flex-col md:flex-row items-center">
-        <div className="md:w-1/2 mb-12 md:mb-0 md:pr-8">
+      <div className="container relative z-10 mx-auto px-4 flex flex-col items-center">
+        {/* Centered text content */}
+        <div className="text-center mb-12 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 animate-fade-in text-white tracking-tight leading-tight">
             We Build Predictable Sales Pipelines for B2B Companies
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 animate-fade-in">
             Done-for-you outreach, CRM systems & appointment booking — installed in 7 days
           </p>
-          <div>
+          <div className="flex justify-center mb-16">
             <Button 
               className="bg-white hover:bg-white/90 text-black rounded-full text-lg px-8 py-6 h-auto"
               size="lg">
@@ -30,8 +31,8 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
         
-        {/* Dashboard mockup visualization */}
-        <div className="md:w-1/2 relative">
+        {/* Dashboard mockup visualization - now below the text */}
+        <div className="w-full max-w-3xl mx-auto relative">
           <div className="bg-gradient-to-tr from-[#1EAEDB]/30 to-transparent p-1 rounded-xl shadow-2xl">
             <div className="bg-black/70 backdrop-blur-sm rounded-lg p-4 border border-white/10">
               <img 
