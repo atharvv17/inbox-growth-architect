@@ -13,19 +13,19 @@ const Header: React.FC = () => {
           
           {/* Centered Navigation at the top */}
           <div className="hidden md:block">
-            <div className="bg-black/80 backdrop-blur-sm rounded-full px-8 py-2">
+            <div className="bg-transparent backdrop-blur-sm rounded-full px-8 py-2">
               <nav className="flex items-center space-x-12 relative z-10">
                 <a href="#offers" className="text-white hover:text-midnight-primary transition-colors font-medium">
-                  Services
+                  Features
                 </a>
                 <a href="#process" className="text-white hover:text-midnight-primary transition-colors font-medium">
-                  Process
+                  Pricing
                 </a>
                 <a href="#case-studies" className="text-white hover:text-midnight-primary transition-colors font-medium">
-                  Results
+                  About
                 </a>
                 <Button className="bg-white hover:bg-opacity-90 text-black font-medium rounded-full">
-                  Book a Call
+                  Login
                 </Button>
               </nav>
             </div>
