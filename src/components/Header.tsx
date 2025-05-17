@@ -13,15 +13,7 @@ const Header: React.FC = () => {
           
           {/* Centered Navigation at the top */}
           <div className="hidden md:block">
-            <div className="bg-black/80 bg-opacity-80 backdrop-blur-sm rounded-full px-8 py-2 relative overflow-hidden">
-              {/* Starry background overlay */}
-              <div className="absolute inset-0 opacity-20" 
-                   style={{
-                     backgroundImage: `radial-gradient(white 1px, transparent 1px)`,
-                     backgroundSize: '15px 15px'
-                   }}>
-              </div>
-              
+            <div className="bg-black/80 backdrop-blur-sm rounded-full px-8 py-2">
               <nav className="flex items-center space-x-12 relative z-10">
                 <a href="#offers" className="text-white hover:text-midnight-primary transition-colors font-medium">
                   Services
