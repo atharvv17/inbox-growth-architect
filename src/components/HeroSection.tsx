@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -72,19 +71,19 @@ const HeroSection: React.FC = () => {
         </div>
         
         <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center mb-12 rounded-lg">
+          <div className="max-w-5xl mx-auto text-center mb-12 rounded-lg">
             <div className="inline-block mb-6 px-4 py-2 border border-logo-blue/40 rounded-full bg-logo-blue/5 backdrop-blur-sm">
               <span className="text-sm font-medium text-logo-blue">DFY Sales Agency</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white leading-tight md:text-5xl">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white leading-tight md:text-6xl">
               We Build <span className="relative inline-block">
                 Predictable
                 <span className="absolute bottom-1 left-0 w-full h-[3px] bg-logo-blue"></span>
               </span> Sales<br />Pipelines for B2B Companies
             </h1>
             
-            <p className="text-lg text-gray-300 mb-10 md:text-lg">
+            <p className="text-lg text-gray-300 mb-10 md:text-xl">
               Done-for-you outreach, CRM systems & appointment booking — installed in 7 days
             </p>
             
@@ -113,7 +112,7 @@ const HeroSection: React.FC = () => {
       {/* Portfolio Clients Section */}
       <section className="py-16 bg-midnight-background border-t border-logo-blue/10">
         <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-12">
               <p className="text-logo-blue text-sm uppercase tracking-wider mb-2 font-medium">Portfolio</p>
