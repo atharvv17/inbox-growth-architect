@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -94,7 +93,20 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Offers Section */}
+      {/* Our Process - MOVED ABOVE OUR OFFERS */}
+      <section className="section bg-midnight-background text-midnight-text" id="process">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Our Process</h2>
+            <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
+              How we take you from uncertainty to predictable pipeline
+            </p>
+          </div>
+          <ProcessTimeline steps={processSteps} />
+        </div>
+      </section>
+
+      {/* Our Offers Section - NOW AFTER PROCESS */}
       <section className="section bg-midnight-surface" id="offers">
         <div className="container">
           <div className="text-center mb-16">
@@ -164,19 +176,6 @@ const Index = () => {
               <p className="text-midnight-subtext">Clear insights on open, click, and reply rates</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Our Process */}
-      <section className="section bg-midnight-background text-midnight-text" id="process">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Our Process</h2>
-            <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
-              How we take you from uncertainty to predictable pipeline
-            </p>
-          </div>
-          <ProcessTimeline steps={processSteps} />
         </div>
       </section>
 
