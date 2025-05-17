@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -13,14 +13,12 @@ type LogoProps = {
 
 type LogoCarouselProps = {
   logos: LogoProps[];
-  columnCount?: number;
   autoplaySpeed?: number;
   showArrows?: boolean;
 };
 
 export function LogoCarousel({ 
   logos, 
-  columnCount = 4, 
   autoplaySpeed = 3000,
   showArrows = false 
 }: LogoCarouselProps) {
@@ -43,12 +41,11 @@ export function LogoCarousel({
   
   // Create individual logo items
   const logoItems = logos.map((logo) => (
-    <CarouselItem key={logo.id} className="md:basis-1/3 lg:basis-1/4 pl-4">
-      <div className="flex flex-col items-center justify-center p-4 group transition-all duration-300">
-        <div className="relative h-16 w-16 flex items-center justify-center mb-3">
+    <CarouselItem key={logo.id} className="basis-1/4 pl-4">
+      <div className="flex flex-col items-center justify-center p-4 group transition-all duration-300 hover:scale-105">
+        <div className="relative h-24 w-24 flex items-center justify-center bg-logo-blue/10 rounded-full p-6">
           <logo.img className="h-full w-full object-contain text-gray-400 group-hover:text-logo-blue transition-colors duration-300" />
         </div>
-        <span className="text-sm text-gray-400 font-medium">{logo.name}</span>
       </div>
     </CarouselItem>
   ));
