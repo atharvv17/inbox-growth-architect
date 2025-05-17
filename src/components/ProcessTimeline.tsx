@@ -1,11 +1,13 @@
 
 import React, { useEffect, useRef } from 'react';
+import Image from './Image';
 
 interface ProcessStepProps {
   number: number;
   title: string;
   description: string;
   isLast?: boolean;
+  imageSrc?: string; // Added image source prop
 }
 
 const ProcessTimeline: React.FC<{steps: ProcessStepProps[]}> = ({ steps }) => {
@@ -51,7 +53,18 @@ const ProcessTimeline: React.FC<{steps: ProcessStepProps[]}> = ({ steps }) => {
             {/* Content */}
             <div className={`md:w-5/12 pt-8 pl-10 md:pl-0 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
               <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
-              <p className="text-midnight-subtext">{step.description}</p>
+              <p className="text-midnight-subtext mb-4">{step.description}</p>
+              
+              {/* Image (if provided) */}
+              {step.imageSrc && (
+                <div className="rounded-lg overflow-hidden shadow-lg">
+                  <Image 
+                    src={step.imageSrc}
+                    alt={`Step ${step.number} - ${step.title}`}
+                    className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+              )}
             </div>
             
             {/* Spacer for alternating layout */}

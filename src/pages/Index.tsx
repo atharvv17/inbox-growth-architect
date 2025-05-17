@@ -16,28 +16,33 @@ const Index = () => {
     {
       number: 1,
       title: "Deep Discovery & ICP Clarity",
-      description: "Understand audience, pain points, and differentiation"
+      description: "Understand audience, pain points, and differentiation",
+      imageSrc: "/lovable-uploads/d317e6ab-923a-4dc9-a864-9f0851e151ee.png" // Using uploaded images
     },
     {
       number: 2,
       title: "System Setup & Warmup",
-      description: "Tech setup, profile edits, inbox prep"
+      description: "Tech setup, profile edits, inbox prep",
+      imageSrc: "/lovable-uploads/c7279023-198f-42b9-a23d-0b3c5eb3e9a9.png" 
     },
     {
       number: 3,
       title: "Copywriting & Data Sourcing",
-      description: "Human-sourced data + crafted messaging"
+      description: "Human-sourced data + crafted messaging",
+      imageSrc: "/lovable-uploads/65a95b5c-61f4-4b33-b5dc-508bb9b01942.png" 
     },
     {
       number: 4,
       title: "Launch & Daily Execution",
-      description: "Campaign goes live, replies monitored"
+      description: "Campaign goes live, replies monitored",
+      imageSrc: "/lovable-uploads/d68b7475-2375-4299-b26a-d5ee7a16216c.png" 
     },
     {
       number: 5,
       title: "Optimize & Scale",
       description: "Continuous testing, lead quality refinement",
-      isLast: true
+      isLast: true,
+      imageSrc: "/lovable-uploads/49e74208-b2c0-4809-a9dd-cff624caa489.png" 
     }
   ];
 
