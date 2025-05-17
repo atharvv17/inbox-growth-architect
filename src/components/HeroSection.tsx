@@ -30,11 +30,7 @@ const HeroSection: React.FC = () => {
           }}>
               <p className="text-lg font-medium">No generic lists or copy-paste messaging</p>
             </div>
-            <div className="glass-card p-4 animate-fade-in" style={{
-            animationDelay: '0.6s'
-          }}>
-              <p className="text-lg font-medium">Just real conversations with the right prospects</p>
-            </div>
+            
           </div>
         </div>
       </div>
