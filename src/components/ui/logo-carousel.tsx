@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, {
@@ -103,8 +104,8 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
                   <img 
                     src={currentLogo.img} 
                     alt={currentLogo.name} 
-                    className="w-full h-full object-contain"
-                    style={{ padding: '10%' }}
+                    className="w-full h-full object-cover" 
+                    style={{ padding: '5%' }}
                   />
                 </div>
               </div>
