@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -71,7 +72,7 @@ const HeroSection: React.FC = () => {
         </div>
         
         <div className="container relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-12 rounded-lg">
+          <div className="max-w-4xl mx-auto text-center mb-12 rounded-lg">
             <div className="inline-block mb-6 px-4 py-2 border border-logo-blue/40 rounded-full bg-logo-blue/5 backdrop-blur-sm">
               <span className="text-sm font-medium text-logo-blue">DFY Sales Agency</span>
             </div>
