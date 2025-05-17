@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -69,6 +70,16 @@ const clientLogos = [
     name: "Zapier",
     img: "/lovable-uploads/d317e6ab-923a-4dc9-a864-9f0851e151ee.png",
   },
+  {
+    id: 16,
+    name: "Oracle",
+    img: "/lovable-uploads/88da1b12-db70-4d0b-bbac-ab2d90d04565.png",
+  },
+  {
+    id: 17,
+    name: "Webflow",
+    img: "/lovable-uploads/6b448d8a-b1f7-4443-80b8-1c11d7455563.png",
+  },
   // Duplicate logos to make the carousel look fuller
   {
     id: 13,
@@ -133,6 +144,16 @@ const clients = [{
   name: "Zapier",
   logo: "/lovable-uploads/d317e6ab-923a-4dc9-a864-9f0851e151ee.png",
   description: "Workflow Automation"
+}, {
+  id: 11,
+  name: "Oracle",
+  logo: "/lovable-uploads/88da1b12-db70-4d0b-bbac-ab2d90d04565.png",
+  description: "Database Solutions"
+}, {
+  id: 12,
+  name: "Webflow",
+  logo: "/lovable-uploads/6b448d8a-b1f7-4443-80b8-1c11d7455563.png",
+  description: "Web Development Platform"
 }];
 
 const HeroSection: React.FC = () => {
