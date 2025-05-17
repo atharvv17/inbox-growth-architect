@@ -1,7 +1,9 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 type LogoProps = {
   name: string;
@@ -12,37 +14,32 @@ type LogoProps = {
 type LogoCarouselProps = {
   logos: LogoProps[];
   columnCount?: number;
+  autoplaySpeed?: number;
+  showArrows?: boolean;
 };
 
-export function LogoCarousel({ logos, columnCount = 4 }: LogoCarouselProps) {
-  // Initialize carousel with autoplay options
+export function LogoCarousel({ 
+  logos, 
+  columnCount = 4, 
+  autoplaySpeed = 3000,
+  showArrows = false 
+}: LogoCarouselProps) {
+  // Set up autoplay plugin with options
+  const [autoplayPlugin] = useState(() => 
+    Autoplay({ 
+      delay: autoplaySpeed,
+      stopOnInteraction: false,
+      rootNode: (emblaRoot) => emblaRoot.parentElement,
+    })
+  );
+  
+  // Initialize carousel with autoplay plugin
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
     align: "start",
     loop: true,
-    dragFree: true
-  });
-  
-  // Setup autoplay effect
-  useEffect(() => {
-    if (emblaApi) {
-      // Function to scroll to next slide
-      const autoplay = () => {
-        if (!emblaApi) return;
-        
-        if (emblaApi.canScrollNext()) {
-          emblaApi.scrollNext();
-        } else {
-          emblaApi.scrollTo(0);
-        }
-      };
-      
-      // Set interval for autoplay - adjust timing as needed
-      const interval = setInterval(autoplay, 3000);
-      
-      // Clean up interval on unmount
-      return () => clearInterval(interval);
-    }
-  }, [emblaApi]);
+    dragFree: true,
+    skipSnaps: true,
+  }, [autoplayPlugin]);
   
   // Create individual logo items
   const logoItems = logos.map((logo) => (
@@ -57,18 +54,37 @@ export function LogoCarousel({ logos, columnCount = 4 }: LogoCarouselProps) {
   ));
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
+    <div className="w-full max-w-5xl mx-auto relative">
       <Carousel
         ref={emblaRef}
         className="w-full"
       >
-        <CarouselContent>
+        <CarouselContent className="py-4">
           {logoItems}
         </CarouselContent>
-        <div className="hidden md:flex justify-end mt-6">
-          <CarouselPrevious className="relative static ml-0 translate-y-0 mr-2" />
-          <CarouselNext className="relative static translate-y-0" />
-        </div>
+        
+        {showArrows && (
+          <>
+            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
+              <button 
+                onClick={() => emblaApi?.scrollPrev()}
+                className="h-10 w-10 rounded-full bg-logo-blue/10 hover:bg-logo-blue/20 flex items-center justify-center text-logo-blue transition-colors"
+                aria-label="Previous slide"
+              >
+                <ArrowLeft className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
+              <button 
+                onClick={() => emblaApi?.scrollNext()}
+                className="h-10 w-10 rounded-full bg-logo-blue/10 hover:bg-logo-blue/20 flex items-center justify-center text-logo-blue transition-colors"
+                aria-label="Next slide"
+              >
+                <ArrowRight className="h-5 w-5" />
+              </button>
+            </div>
+          </>
+        )}
       </Carousel>
     </div>
   );
