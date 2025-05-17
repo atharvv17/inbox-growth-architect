@@ -12,7 +12,7 @@ const ProcessStep: React.FC<ProcessStepProps> = ({ number, title, description, i
   return (
     <div className="flex">
       <div className="flex flex-col items-center mr-6">
-        <div className="bg-midnight-primary w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">
+        <div className="bg-midnight-primary w-14 h-14 rounded-full flex items-center justify-center text-white text-xl font-bold">
           {number}
         </div>
         {!isLast && <div className="w-0.5 bg-midnight-primary/30 flex-grow mt-2"></div>}
