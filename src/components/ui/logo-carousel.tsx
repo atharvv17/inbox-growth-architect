@@ -156,17 +156,22 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
           >
             {typeof currentLogo.img === 'string' ? (
               <div className="rounded-full bg-white h-32 w-32 md:h-40 md:w-40 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                <img 
-                  src={currentLogo.img} 
-                  alt={currentLogo.name} 
-                  className="w-full h-full object-contain p-2"
-                />
+                <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center p-2">
+                  <img 
+                    src={currentLogo.img} 
+                    alt={currentLogo.name} 
+                    className="object-contain w-full h-full p-2"
+                    style={{ aspectRatio: "1/1", objectFit: "contain" }}
+                  />
+                </div>
               </div>
             ) : (
               <div className="rounded-full bg-white h-32 w-32 md:h-40 md:w-40 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                {React.createElement(currentLogo.img, {
-                  className: "h-full w-full text-gray-800 object-contain p-2"
-                })}
+                <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center">
+                  {React.createElement(currentLogo.img, {
+                    className: "h-full w-full text-gray-800 object-contain p-4"
+                  })}
+                </div>
               </div>
             )}
           </motion.div>
