@@ -13,12 +13,13 @@ const HeroSection: React.FC = () => {
         <div className="absolute bottom-0 left-0 right-0 w-full h-[400px] bg-gradient-to-r from-[#1EAEDB]/20 via-[#1EAEDB]/30 to-[#00C896]/20 blur-[150px] rounded-full mx-auto"></div>
       </div>
       
-      <div className="container relative z-10 mx-auto px-4 flex flex-col items-center">
+      <div className="container relative z-10 mx-auto px-4 flex flex-col items-center pt-24">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 animate-fade-in text-white tracking-tight">
-            We Build Predictable Sales Pipelines for B2B Companies
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 animate-fade-in text-white tracking-tight">
+            We Build Predictable Sales <br />
+            Pipelines for B2B Companies
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 animate-fade-in">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 animate-fade-in">
             Done-for-you outreach, CRM systems & appointment booking — installed in 7 days
           </p>
           <Button 
