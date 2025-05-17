@@ -30,23 +30,7 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-          <div className="bg-black/40 border border-[#1EAEDB]/20 p-6 rounded-xl backdrop-blur-sm animate-fade-in" style={{
-          animationDelay: '0.2s'
-        }}>
-            <p className="text-lg font-medium text-white">No generic lists or copy-paste messaging</p>
-          </div>
-          <div className="bg-black/40 border border-[#1EAEDB]/20 p-6 rounded-xl backdrop-blur-sm animate-fade-in" style={{
-          animationDelay: '0.4s'
-        }}>
-            <p className="text-lg font-medium text-white">Human-led outreach with strategic follow-ups</p>
-          </div>
-          <div className="bg-black/40 border border-[#1EAEDB]/20 p-6 rounded-xl backdrop-blur-sm animate-fade-in" style={{
-          animationDelay: '0.6s'
-        }}>
-            <p className="text-lg font-medium text-white">Qualified meetings delivered directly to your calendar</p>
-          </div>
-        </div>
+        
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent"></div>
     </section>;
