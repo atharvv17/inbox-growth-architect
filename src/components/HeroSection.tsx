@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
 
 const HeroSection: React.FC = () => {
-  return <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-black">
+  return <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
         {/* Black background with opacity */}
         <div className="absolute inset-0 bg-black opacity-95"></div>
@@ -12,9 +11,9 @@ const HeroSection: React.FC = () => {
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1EAEDB]/20 to-[#3D5AFE]/20 opacity-10"></div>
         
-        {/* Starry background overlay */}
+        {/* Starry background overlay - positioned to start below header */}
         <div 
-          className="absolute inset-0 opacity-20" 
+          className="absolute inset-0 top-24 opacity-20" 
           style={{
             backgroundImage: `radial-gradient(white 1px, transparent 1px)`,
             backgroundSize: '15px 15px'
