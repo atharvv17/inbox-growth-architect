@@ -36,14 +36,57 @@ const distributeLogos = (allLogos: Logo[], columnCount: number): Logo[][] => {
   const shuffled = shuffleArray(allLogos)
   const columns: Logo[][] = Array.from({ length: columnCount }, () => [])
 
+  // First pass: distribute logos evenly
   shuffled.forEach((logo, index) => {
     columns[index % columnCount].push(logo)
   })
 
+  // Ensure no consecutive duplicates in each column
+  columns.forEach((col) => {
+    for (let i = 1; i < col.length; i++) {
+      if (col[i].id === col[i - 1].id) {
+        // Find a different logo from another column to swap with
+        let swapped = false
+        for (let j = 0; j < columns.length; j++) {
+          if (j === columns.indexOf(col)) continue; // Skip the current column
+          
+          for (let k = 0; k < columns[j].length; k++) {
+            if (columns[j][k].id !== col[i - 1].id && columns[j][k].id !== col[i].id) {
+              // Swap the logos
+              const temp = col[i];
+              col[i] = columns[j][k];
+              columns[j][k] = temp;
+              swapped = true;
+              break;
+            }
+          }
+          if (swapped) break;
+        }
+      }
+    }
+  });
+
+  // Fill in any columns that need more logos
   const maxLength = Math.max(...columns.map((col) => col.length))
   columns.forEach((col) => {
     while (col.length < maxLength) {
-      col.push(shuffled[Math.floor(Math.random() * shuffled.length)])
+      // Find a logo that's not the last one in this column
+      const availableLogos = shuffled.filter(logo => 
+        col.length === 0 || logo.id !== col[col.length - 1].id
+      );
+      
+      if (availableLogos.length > 0) {
+        col.push(availableLogos[Math.floor(Math.random() * availableLogos.length)])
+      } else {
+        // Fallback - if all logos would create duplicates, just pick one that's not the last
+        const otherLogos = shuffled.filter(logo => col.length === 0 || logo.id !== col[col.length - 1].id);
+        if (otherLogos.length > 0) {
+          col.push(otherLogos[Math.floor(Math.random() * otherLogos.length)]);
+        } else {
+          // Worst case: just pick any logo
+          col.push(shuffled[Math.floor(Math.random() * shuffled.length)]);
+        }
+      }
     }
   })
 
