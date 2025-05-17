@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
 const HeroSection: React.FC = () => {
-  return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-gradient-to-b from-midnight-background via-midnight-background to-midnight-surface">
+  return <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-gradient-to-b from-midnight-background via-midnight-background to-midnight-surface">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[#0F0F10] opacity-90"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-midnight-primary/20 to-midnight-accent/20 opacity-20"></div>
@@ -27,21 +24,21 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <div className="glass-card p-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <p className="text-lg font-medium">No automations on your main account</p>
-            </div>
-            <div className="glass-card p-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            
+            <div className="glass-card p-4 animate-fade-in" style={{
+            animationDelay: '0.4s'
+          }}>
               <p className="text-lg font-medium">No generic lists or copy-paste messaging</p>
             </div>
-            <div className="glass-card p-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="glass-card p-4 animate-fade-in" style={{
+            animationDelay: '0.6s'
+          }}>
               <p className="text-lg font-medium">Just real conversations with the right prospects</p>
             </div>
           </div>
         </div>
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-midnight-background to-transparent"></div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
