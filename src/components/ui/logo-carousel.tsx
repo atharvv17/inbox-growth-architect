@@ -41,56 +41,69 @@ const distributeLogos = (allLogos: Logo[], columnCount: number): Logo[][] => {
     columns[index % columnCount].push(logo)
   })
 
-  // Ensure no consecutive duplicates in each column
-  columns.forEach((col) => {
-    for (let i = 1; i < col.length; i++) {
-      if (col[i].id === col[i - 1].id) {
-        // Find a different logo from another column to swap with
-        let swapped = false
-        for (let j = 0; j < columns.length; j++) {
-          if (j === columns.indexOf(col)) continue; // Skip the current column
-          
-          for (let k = 0; k < columns[j].length; k++) {
-            if (columns[j][k].id !== col[i - 1].id && columns[j][k].id !== col[i].id) {
-              // Swap the logos
-              const temp = col[i];
-              col[i] = columns[j][k];
-              columns[j][k] = temp;
-              swapped = true;
-              break;
-            }
-          }
-          if (swapped) break;
-        }
+  // Ensure no consecutive duplicates in each column and no duplicates across columns at the same position
+  const columnLength = Math.ceil(shuffled.length / columnCount);
+  
+  // Make sure each column has the same length
+  columns.forEach((col, colIndex) => {
+    while (col.length < columnLength) {
+      const availableLogos = shuffled.filter(logo => col.length === 0 || logo.id !== col[col.length - 1].id);
+      if (availableLogos.length > 0) {
+        col.push(availableLogos[Math.floor(Math.random() * availableLogos.length)]);
+      } else {
+        col.push(shuffled[Math.floor(Math.random() * shuffled.length)]);
       }
     }
   });
-
-  // Fill in any columns that need more logos
-  const maxLength = Math.max(...columns.map((col) => col.length))
-  columns.forEach((col) => {
-    while (col.length < maxLength) {
-      // Find a logo that's not the last one in this column
-      const availableLogos = shuffled.filter(logo => 
-        col.length === 0 || logo.id !== col[col.length - 1].id
-      );
+  
+  // Now check for duplicates at the same position across columns and swap if needed
+  for (let pos = 0; pos < columnLength; pos++) {
+    const logosAtPosition = columns.map((col) => col[pos]?.id).filter(Boolean);
+    const uniqueLogos = new Set(logosAtPosition);
+    
+    // If there are duplicates at this position
+    if (uniqueLogos.size < logosAtPosition.length) {
+      // Find duplicates and fix them
+      const seen = new Map();
+      const duplicates = [];
       
-      if (availableLogos.length > 0) {
-        col.push(availableLogos[Math.floor(Math.random() * availableLogos.length)])
-      } else {
-        // Fallback - if all logos would create duplicates, just pick one that's not the last
-        const otherLogos = shuffled.filter(logo => col.length === 0 || logo.id !== col[col.length - 1].id);
-        if (otherLogos.length > 0) {
-          col.push(otherLogos[Math.floor(Math.random() * otherLogos.length)]);
+      logosAtPosition.forEach((id, idx) => {
+        if (seen.has(id)) {
+          duplicates.push({
+            columnIndex: idx,
+            position: pos,
+            logoId: id
+          });
         } else {
-          // Worst case: just pick any logo
-          col.push(shuffled[Math.floor(Math.random() * shuffled.length)]);
+          seen.set(id, idx);
         }
-      }
+      });
+      
+      // For each duplicate, try to swap with another position in the same column
+      duplicates.forEach(dup => {
+        const column = columns[dup.columnIndex];
+        
+        // Try to find a position to swap with
+        for (let i = 0; i < column.length; i++) {
+          if (i !== pos) {
+            // Check if swapping would not create new duplicates
+            const logoAtOtherPos = column[i].id;
+            const otherPosLogos = columns.map((col) => col[i]?.id).filter(Boolean);
+            
+            if (!otherPosLogos.includes(dup.logoId)) {
+              // Safe to swap
+              const temp = column[pos];
+              column[pos] = column[i];
+              column[i] = temp;
+              break;
+            }
+          }
+        }
+      });
     }
-  })
+  }
 
-  return columns
+  return columns;
 }
 
 const LogoColumn: React.FC<LogoColumnProps> = React.memo(
@@ -142,17 +155,17 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
             }}
           >
             {typeof currentLogo.img === 'string' ? (
-              <div className="rounded-full bg-white h-32 w-32 md:h-40 md:w-40 flex items-center justify-center overflow-hidden">
+              <div className="rounded-full bg-white h-32 w-32 md:h-40 md:w-40 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
                 <img 
                   src={currentLogo.img} 
                   alt={currentLogo.name} 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain p-2"
                 />
               </div>
             ) : (
-              <div className="rounded-full bg-white h-32 w-32 md:h-40 md:w-40 flex items-center justify-center">
+              <div className="rounded-full bg-white h-32 w-32 md:h-40 md:w-40 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
                 {React.createElement(currentLogo.img, {
-                  className: "h-full w-full text-gray-800 object-contain"
+                  className: "h-full w-full text-gray-800 object-contain p-2"
                 })}
               </div>
             )}
