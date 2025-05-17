@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
+
 const HeroSection: React.FC = () => {
   return <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-gradient-to-b from-midnight-background via-midnight-background to-midnight-surface">
       <div className="absolute inset-0 z-0">
@@ -10,15 +12,16 @@ const HeroSection: React.FC = () => {
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 animate-fade-in">
-            Done-for-You B2B Sales Infrastructure
+            We Build Predictable Sales Pipelines for B2B Companies
           </h1>
           <p className="text-xl md:text-2xl text-midnight-subtext mb-8 animate-fade-in">
-            We build sales systems that consistently generate qualified leads and booked calls for B2B businesses — powered by LinkedIn, Cold Email, and Automation.
+            Done-for-you outreach, CRM systems & appointment booking — installed in 7 days
           </p>
           <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 justify-center">
             <div className="space-y-4 md:space-y-0 animate-fade-in">
               <Button className="btn-primary w-full md:w-auto flex items-center" size="lg">
-                Book Strategy Call
+                <Calendar className="mr-2 h-5 w-5" />
+                Book a Free Growth Audit
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
