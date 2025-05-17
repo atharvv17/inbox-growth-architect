@@ -34,26 +34,36 @@ const clientLogos = [
     name: "Apple",
     img: AppleIcon,
   },
-  // Duplicate logos to make the carousel look fuller
   {
     id: 5,
+    name: "Leadium",
+    img: "/lovable-uploads/d92a0edd-00b0-4780-a32e-ac96f44d2682.png",
+  },
+  {
+    id: 6,
+    name: "Pipeful",
+    img: "/lovable-uploads/910cd93c-893f-4b51-b240-8d9556a22858.png",
+  },
+  {
+    id: 7,
+    name: "Acme",
+    img: "/lovable-uploads/65a95b5c-61f4-4b33-b5dc-508bb9b01942.png",
+  },
+  // Duplicate logos to make the carousel look fuller
+  {
+    id: 8,
     name: "BCG Repeat",
     img: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png",
   },
   {
-    id: 6,
+    id: 9,
     name: "Triangle Repeat",
     img: "/lovable-uploads/9a21e2a4-61c3-4cf0-94f8-d87e25d471b8.png",
   },
   {
-    id: 7,
+    id: 10,
     name: "KW Repeat",
     img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png",
-  },
-  {
-    id: 8,
-    name: "Apple Repeat",
-    img: AppleIcon,
   },
 ];
 
@@ -78,6 +88,11 @@ const clients = [{
   name: "Apple",
   logo: AppleIcon,
   description: "Type System Design"
+}, {
+  id: 5,
+  name: "Leadium",
+  logo: "/lovable-uploads/d92a0edd-00b0-4780-a32e-ac96f44d2682.png",
+  description: "Sales Pipeline Automation"
 }];
 
 const HeroSection: React.FC = () => {
