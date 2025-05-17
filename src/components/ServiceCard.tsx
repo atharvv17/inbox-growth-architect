@@ -8,9 +8,17 @@ interface ServiceCardProps {
   features: string[];
   outcome: string;
   icon?: React.ReactNode;
+  buttonText?: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, features, outcome, icon }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ 
+  title, 
+  description, 
+  features, 
+  outcome, 
+  icon,
+  buttonText = "Learn More" 
+}) => {
   return (
     <div className="card h-full flex flex-col">
       <div className="mb-6">
@@ -21,7 +29,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, features,
       <ul className="space-y-3 mb-6 flex-grow">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start">
-            <span className="text-midnight-success mr-2">✓</span>
+            <span className="text-midnight-success mr-2 flex-shrink-0">✓</span>
             <span>{feature}</span>
           </li>
         ))}
@@ -30,7 +38,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, features,
         <p className="font-medium mb-4">
           <span className="text-midnight-success font-bold">Outcome:</span> {outcome}
         </p>
-        <Button className="btn-secondary w-full">Learn More</Button>
+        <Button className="btn-secondary w-full">{buttonText}</Button>
       </div>
     </div>
   );

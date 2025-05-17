@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -118,26 +119,29 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <ServiceCard
               title="Sales Inbox Accelerator"
-              description="Cold Email Infrastructure & Campaign Management"
+              description="Cold Email Infrastructure & Done-For-You Campaign Execution"
               icon={<Mail />}
               features={[
-                "Custom domains, inbox warmup & monitoring",
-                "1-on-1 copy, list building, and reply management",
-                "Weekly optimization and reports"
+                "End-to-End Cold Email Setup: Custom domains, inbox warmup, DNS records, and real-time deliverability monitoring",
+                "Custom Copywriting & Lead Research: 1-on-1 work with our team to craft compelling email sequences and handpick high-quality leads",
+                "Reply Management & Campaign Optimization: Active response management, performance tracking, and weekly optimization sprints",
+                "Reporting & Compliance: Weekly dashboards, reply breakdowns, and full GDPR/Can-Spam compliance"
               ]}
-              outcome="Booked calls through cold email with full compliance"
+              outcome="Your calendar filled with qualified B2B sales calls — built on a compliant cold email machine that works on autopilot"
+              buttonText="Learn More"
             />
             <ServiceCard
               title="LinkedIn Selling System"
-              description="Manual Prospecting & Profile-led Messaging"
+              description="Manual Prospecting with Hyper-Personalized Messaging — Zero Automation"
               icon={<MessageSquare />}
               features={[
-                "Profile optimization for positioning",
-                "10 handcrafted messages per day",
-                "Zero automation on your main account",
-                "Personalized follow-ups and lead handoffs"
+                "Profile Optimization for Authority Positioning: Reworked LinkedIn profile with conversion-focused structure",
+                "Handcrafted Messaging (No Bots): 10 fully personalized messages daily tailored to each prospect's needs",
+                "Zero Automation, Zero Risk: Manual actions only to keep your reputation safe and engagement authentic",
+                "Follow-ups & Lead Handoffs: Strategic conversation management and warm lead transfers directly to you"
               ]}
-              outcome="Inbound conversations and daily replies from ideal clients"
+              outcome="A daily stream of inbound conversations from decision-makers who already know what you do and want to talk"
+              buttonText="Learn More"
             />
           </div>
         </div>
