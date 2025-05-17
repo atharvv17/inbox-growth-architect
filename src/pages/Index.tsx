@@ -9,8 +9,10 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import ClientBenefitCard from "@/components/ClientBenefitCard";
 import FAQSection from "@/components/FAQSection";
+import TestimonialsColumn from "@/components/TestimonialsColumn";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 const Index = () => {
   const processSteps = [{
     number: 1,
@@ -56,6 +58,70 @@ const Index = () => {
     question: "Will this work for my specific industry?",
     answer: "We've successfully generated leads across diverse B2B sectors, from SaaS to professional services. During our discovery process, we'll determine if your offer and audience are a good fit for our methods."
   }];
+  // New testimonials data
+  const testimonialColumns = [
+    [
+      {
+        text: "Working with this team has completely transformed our sales process. We're now closing deals faster than ever before.",
+        image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop",
+        name: "Sarah Johnson",
+        role: "VP of Sales, TechCorp"
+      },
+      {
+        text: "The custom CRM setup alone was worth the investment. Our team loves how intuitive everything is.",
+        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop",
+        name: "Michael Chen",
+        role: "Founder, GrowthGenius"
+      },
+      {
+        text: "I was skeptical at first, but the results speak for themselves. Our pipeline is more predictable than ever.",
+        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&h=300&fit=crop",
+        name: "Alex Rivera",
+        role: "Sales Director, ScaleUp Inc."
+      }
+    ],
+    [
+      {
+        text: "The onboarding process was seamless and we started seeing results within the first two weeks.",
+        image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=300&h=300&fit=crop",
+        name: "Emily Taylor",
+        role: "Marketing Manager, DataFlow"
+      },
+      {
+        text: "Having a dedicated campaign manager has made all the difference. They're like an extension of our team.",
+        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop",
+        name: "David Wong",
+        role: "CEO, ConsultPro"
+      },
+      {
+        text: "The ROI on this service has been incredible. We've already recouped our investment multiple times over.",
+        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop",
+        name: "Jessica Martinez",
+        role: "Operations Director, AgileWorks"
+      }
+    ],
+    [
+      {
+        text: "I wish we had found this service years ago. It would have saved us so much time and money.",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
+        name: "Robert Kim",
+        role: "Founder, InnovateNow"
+      },
+      {
+        text: "The quality of leads has been consistently high, which is rare to find with other services we've tried.",
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop",
+        name: "Linda Carter",
+        role: "Head of Growth, SaaS Solutions"
+      },
+      {
+        text: "We've increased our close rate by over 30% since implementing this system. Absolutely game-changing.",
+        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop",
+        name: "Thomas Wilson",
+        role: "Sales Lead, Enterprise Tech"
+      }
+    ]
+  ];
+
   return <div className="min-h-screen bg-midnight-background text-midnight-text">
       <Header />
       <HeroSection />
@@ -158,21 +224,43 @@ const Index = () => {
       {/* Case Studies */}
       
 
-      {/* Testimonials */}
-      <section className="section bg-midnight-surface">
+      {/* New Testimonials Section */}
+      <section className="section bg-midnight-surface overflow-hidden py-20">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Client Testimonials</h2>
+            <p className="text-logo-blue text-sm uppercase tracking-wider mb-2 font-medium">Client Stories</p>
+            <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
+            <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
+              Real results from businesses just like yours
+            </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <TestimonialCard quote="We didn't just get meetings — we got clarity on what's working." name="Jason Meyer" title="Consulting Agency Owner" />
-            <TestimonialCard quote="Biggest surprise? First warm reply in 48 hours." name="Alex Chen" title="SaaS Co-Founder" />
-            <TestimonialCard quote="Our pipeline is finally predictable." name="Rachel Thompson" title="Sales Consultancy Founder" />
+          
+          <div className="relative flex gap-6 justify-center mx-auto max-w-7xl overflow-hidden">
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-midnight-surface via-transparent to-midnight-surface z-10"></div>
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-midnight-surface via-transparent to-midnight-surface z-10"></div>
+            
+            <TestimonialsColumn 
+              className="min-w-[320px] max-h-[600px] overflow-hidden"
+              testimonials={testimonialColumns[0]}
+              duration={15}
+            />
+            
+            <TestimonialsColumn
+              className="min-w-[320px] max-h-[600px] overflow-hidden mt-40"
+              testimonials={testimonialColumns[1]} 
+              duration={20}
+            />
+            
+            <TestimonialsColumn
+              className="min-w-[320px] max-h-[600px] overflow-hidden"
+              testimonials={testimonialColumns[2]}
+              duration={13} 
+            />
           </div>
         </div>
       </section>
 
-      {/* FAQ Section - NEW */}
+      {/* FAQ Section */}
       <FAQSection faqs={faqs} />
 
       {/* Final CTA */}
