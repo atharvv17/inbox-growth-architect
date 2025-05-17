@@ -1,6 +1,7 @@
 
-import React from "react";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import React, { useEffect } from "react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import useEmblaCarousel from "embla-carousel-react";
 
 type LogoProps = {
   name: string;
@@ -14,42 +15,61 @@ type LogoCarouselProps = {
 };
 
 export function LogoCarousel({ logos, columnCount = 4 }: LogoCarouselProps) {
-  // Calculate items per slide based on column count
-  const itemsPerSlide = columnCount * 2;
+  // Initialize carousel with autoplay options
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    align: "start",
+    loop: true,
+    dragFree: true
+  });
   
-  // Create slides by grouping logos
-  const slides = [];
-  for (let i = 0; i < logos.length; i += itemsPerSlide) {
-    slides.push(logos.slice(i, i + itemsPerSlide));
-  }
+  // Setup autoplay effect
+  useEffect(() => {
+    if (emblaApi) {
+      // Function to scroll to next slide
+      const autoplay = () => {
+        if (!emblaApi) return;
+        
+        if (emblaApi.canScrollNext()) {
+          emblaApi.scrollNext();
+        } else {
+          emblaApi.scrollTo(0);
+        }
+      };
+      
+      // Set interval for autoplay - adjust timing as needed
+      const interval = setInterval(autoplay, 3000);
+      
+      // Clean up interval on unmount
+      return () => clearInterval(interval);
+    }
+  }, [emblaApi]);
+  
+  // Create individual logo items
+  const logoItems = logos.map((logo) => (
+    <CarouselItem key={logo.id} className="md:basis-1/3 lg:basis-1/4 pl-4">
+      <div className="flex flex-col items-center justify-center p-4 group transition-all duration-300">
+        <div className="relative h-16 w-16 flex items-center justify-center mb-3">
+          <logo.img className="h-full w-full object-contain text-gray-400 group-hover:text-logo-blue transition-colors duration-300" />
+        </div>
+        <span className="text-sm text-gray-400 font-medium">{logo.name}</span>
+      </div>
+    </CarouselItem>
+  ));
 
   return (
-    <Carousel
-      className="w-full max-w-5xl"
-      opts={{
-        align: "start",
-        loop: true,
-      }}
-    >
-      <CarouselContent>
-        {slides.map((slide, slideIndex) => (
-          <CarouselItem key={slideIndex} className="basis-full">
-            <div className={`grid grid-cols-${columnCount} md:grid-cols-${columnCount} gap-8`}>
-              {slide.map((logo) => (
-                <div
-                  key={logo.id}
-                  className="flex flex-col items-center justify-center space-y-3 p-4"
-                >
-                  <div className="relative h-16 w-16 flex items-center justify-center">
-                    <logo.img className="h-full w-full object-contain" />
-                  </div>
-                  <span className="text-sm text-gray-400 font-medium">{logo.name}</span>
-                </div>
-              ))}
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </Carousel>
+    <div className="w-full max-w-5xl mx-auto">
+      <Carousel
+        ref={emblaRef}
+        className="w-full"
+      >
+        <CarouselContent>
+          {logoItems}
+        </CarouselContent>
+        <div className="hidden md:flex justify-end mt-6">
+          <CarouselPrevious className="relative static ml-0 translate-y-0 mr-2" />
+          <CarouselNext className="relative static translate-y-0" />
+        </div>
+      </Carousel>
+    </div>
   );
 }
