@@ -9,11 +9,12 @@ import React, {
   type SVGProps,
 } from "react"
 import { AnimatePresence, motion } from "framer-motion"
+import Image from "../Image"
 
 interface Logo {
   name: string
   id: number
-  img: React.ComponentType<React.SVGProps<SVGSVGElement>>
+  img: string | React.ComponentType<React.SVGProps<SVGSVGElement>>
 }
 
 interface LogoColumnProps {
@@ -55,7 +56,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
     const columnDelay = index * 200
     const adjustedTime = (currentTime + columnDelay) % (cycleInterval * logos.length)
     const currentIndex = Math.floor(adjustedTime / cycleInterval)
-    const CurrentLogo = useMemo(() => logos[currentIndex].img, [logos, currentIndex])
+    const currentLogo = logos[currentIndex]
 
     return (
       <motion.div
@@ -97,7 +98,21 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
               },
             }}
           >
-            <CurrentLogo className="h-52 w-52 max-h-[80%] max-w-[80%] object-contain" />
+            {typeof currentLogo.img === 'string' ? (
+              <div className="rounded-full bg-white p-4 h-20 w-20 md:h-28 md:w-28 flex items-center justify-center overflow-hidden">
+                <img 
+                  src={currentLogo.img} 
+                  alt={currentLogo.name} 
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            ) : (
+              <div className="rounded-full bg-white p-4 h-20 w-20 md:h-28 md:w-28 flex items-center justify-center">
+                {React.createElement(currentLogo.img, {
+                  className: "h-full w-full text-gray-800 object-contain"
+                })}
+              </div>
+            )}
           </motion.div>
         </AnimatePresence>
       </motion.div>
