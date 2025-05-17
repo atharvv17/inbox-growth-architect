@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, ChartBar, Flag, TrendingUp } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 
 const HeroSection: React.FC = () => {
   return <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-gradient-to-b from-midnight-background via-midnight-background to-midnight-surface">
@@ -11,13 +11,6 @@ const HeroSection: React.FC = () => {
       </div>
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="mb-10 animate-fade-in">
-            <img 
-              src="/lovable-uploads/bcebf928-5f7e-453d-91cf-787f9d9fd776.png" 
-              alt="Leveraged Growth" 
-              className="h-20 mx-auto"
-            />
-          </div>
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 animate-fade-in">
             We Build Predictable Sales Pipelines for B2B Companies
           </h1>
@@ -34,29 +27,13 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            
             <div className="glass-card p-4 animate-fade-in" style={{
-              animationDelay: '0.4s'
-            }}>
+            animationDelay: '0.4s'
+          }}>
               <p className="text-lg font-medium">No generic lists or copy-paste messaging</p>
             </div>
-            <div className="glass-card p-4 animate-fade-in" style={{
-              animationDelay: '0.6s'
-            }}>
-              <div className="flex items-center mb-2">
-                <ChartBar className="mr-2 h-5 w-5 text-midnight-success" />
-                <span className="font-medium">Real results</span>
-              </div>
-              <p className="text-lg">Measurable pipeline growth in weeks</p>
-            </div>
-            <div className="glass-card p-4 animate-fade-in" style={{
-              animationDelay: '0.8s'
-            }}>
-              <div className="flex items-center mb-2">
-                <TrendingUp className="mr-2 h-5 w-5 text-midnight-primary" />
-                <span className="font-medium">Scalable systems</span>
-              </div>
-              <p className="text-lg">Built for long-term growth</p>
-            </div>
+            
           </div>
         </div>
       </div>
