@@ -8,8 +8,10 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import ClientBenefitCard from "@/components/ClientBenefitCard";
+import FAQSection from "@/components/FAQSection";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 const Index = () => {
   const processSteps = [{
     number: 1,
@@ -38,6 +40,30 @@ const Index = () => {
     detailedDescription: "We analyze performance, A/B test sequences, and continuously refine targeting and messaging — so your lead quality gets sharper over time.",
     isLast: true
   }];
+  // FAQ content
+  const faqs = [
+    {
+      question: "How long does it take to see results?",
+      answer: "Most clients start seeing qualified meetings within 2-3 weeks of campaign launch. The exact timeline depends on your industry, offer, and target audience, but our process is designed for rapid implementation and quick wins."
+    },
+    {
+      question: "Do you guarantee a certain number of leads?",
+      answer: "We focus on quality over quantity and don't promise specific lead numbers. Instead, we guarantee our methodology, expertise, and continuous optimization. Our goal is lasting pipeline growth, not just vanity metrics."
+    },
+    {
+      question: "What makes your approach different from other agencies?",
+      answer: "Unlike most agencies, we handle everything end-to-end: strategy, tech setup, message crafting, lead sourcing, and daily execution. We also emphasize human-driven outreach (no bots) and ethical, compliance-focused methods."
+    },
+    {
+      question: "How do you ensure email deliverability?",
+      answer: "We implement thorough domain setup, strategic inbox warming, reputation monitoring, and personalized sending patterns. Our approach prioritizes long-term domain health over quick wins that might damage your sending reputation."
+    },
+    {
+      question: "Will this work for my specific industry?",
+      answer: "We've successfully generated leads across diverse B2B sectors, from SaaS to professional services. During our discovery process, we'll determine if your offer and audience are a good fit for our methods."
+    }
+  ];
+
   return <div className="min-h-screen bg-midnight-background text-midnight-text">
       <Header />
       <HeroSection />
@@ -115,7 +141,48 @@ const Index = () => {
       </section>
 
       {/* Why Our Clients Choose Us - UPDATED SECTION */}
-      
+      <section className="section bg-midnight-background" id="benefits">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Why Our Clients Choose Us</h2>
+            <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
+              Everything you need to start growing your business immediately
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ClientBenefitCard 
+              icon={<Rocket className="h-8 w-8 text-logo-blue" />}
+              title="Plug-and-Play Revenue Engine"
+              description="Seamlessly integrate our system and watch your revenue scale effortlessly."
+            />
+            <ClientBenefitCard 
+              icon={<Zap className="h-8 w-8 text-logo-blue" />}
+              title="Fast Setup: 7 Days or Less"
+              description="Get fully operational in under a week—no delays, no hassles."
+            />
+            <ClientBenefitCard 
+              icon={<Tag className="h-8 w-8 text-logo-blue" />}
+              title="White-Labeled CRM"
+              description="Maintain your brand identity with a fully white-labeled solution."
+            />
+            <ClientBenefitCard 
+              icon={<User className="h-8 w-8 text-logo-blue" />}
+              title="Dedicated Campaign Manager"
+              description="Your personal expert, focused on your success and results."
+            />
+            <ClientBenefitCard 
+              icon={<Calendar className="h-8 w-8 text-logo-blue" />}
+              title="Optional Appointment Setters"
+              description="Save time and close more deals with ready-to-go appointment setters."
+            />
+            <ClientBenefitCard 
+              icon={<ChartBar className="h-8 w-8 text-logo-blue" />}
+              title="Performance Tracking Dashboard"
+              description="Real-time analytics to track ROI and optimize campaign performance."
+            />
+          </div>
+        </div>
+      </section>
 
       {/* What Makes Us Different */}
       
@@ -150,6 +217,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section - NEW */}
+      <FAQSection faqs={faqs} />
 
       {/* Final CTA */}
       <CTASection title="Let's Build Your Outbound Machine" subtitle="Your sales calendar shouldn't be empty — let's fix that." buttonText="Book Your Strategy Call Now" />
