@@ -226,31 +226,7 @@ const HeroSection: React.FC = () => {
               align: "start",
               loop: true
             }} className="w-full">
-                <CarouselContent>
-                  {/* First slide */}
-                  
-
-                  {/* Second slide */}
-                  <CarouselItem className="basis-full md:basis-1/2 lg:basis-1/3">
-                    <div className="p-6 border border-logo-blue/10 rounded-lg bg-midnight-surface">
-                      <div className="flex flex-col h-full">
-                        <blockquote className="text-gray-300 mb-4">"Their outreach system helped us close our first enterprise deal within weeks."</blockquote>
-                        <div className="mt-auto flex items-center">
-                          <div className="w-10 h-10 rounded-full bg-logo-blue/20 flex items-center justify-center mr-3">
-                            <VercelIcon className="w-6 h-6 text-logo-blue" />
-                          </div>
-                          <div className="text-left">
-                            <p className="font-medium text-white">Sarah Johnson</p>
-                            <p className="text-xs text-gray-400">Sales Director</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </CarouselItem>
-
-                  {/* Third slide */}
-                  
-                </CarouselContent>
+                
               </Carousel>
             </div>
           </div>

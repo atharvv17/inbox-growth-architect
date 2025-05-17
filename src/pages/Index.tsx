@@ -11,7 +11,6 @@ import ClientBenefitCard from "@/components/ClientBenefitCard";
 import FAQSection from "@/components/FAQSection";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-
 const Index = () => {
   const processSteps = [{
     number: 1,
@@ -41,29 +40,22 @@ const Index = () => {
     isLast: true
   }];
   // FAQ content
-  const faqs = [
-    {
-      question: "How long does it take to see results?",
-      answer: "Most clients start seeing qualified meetings within 2-3 weeks of campaign launch. The exact timeline depends on your industry, offer, and target audience, but our process is designed for rapid implementation and quick wins."
-    },
-    {
-      question: "Do you guarantee a certain number of leads?",
-      answer: "We focus on quality over quantity and don't promise specific lead numbers. Instead, we guarantee our methodology, expertise, and continuous optimization. Our goal is lasting pipeline growth, not just vanity metrics."
-    },
-    {
-      question: "What makes your approach different from other agencies?",
-      answer: "Unlike most agencies, we handle everything end-to-end: strategy, tech setup, message crafting, lead sourcing, and daily execution. We also emphasize human-driven outreach (no bots) and ethical, compliance-focused methods."
-    },
-    {
-      question: "How do you ensure email deliverability?",
-      answer: "We implement thorough domain setup, strategic inbox warming, reputation monitoring, and personalized sending patterns. Our approach prioritizes long-term domain health over quick wins that might damage your sending reputation."
-    },
-    {
-      question: "Will this work for my specific industry?",
-      answer: "We've successfully generated leads across diverse B2B sectors, from SaaS to professional services. During our discovery process, we'll determine if your offer and audience are a good fit for our methods."
-    }
-  ];
-
+  const faqs = [{
+    question: "How long does it take to see results?",
+    answer: "Most clients start seeing qualified meetings within 2-3 weeks of campaign launch. The exact timeline depends on your industry, offer, and target audience, but our process is designed for rapid implementation and quick wins."
+  }, {
+    question: "Do you guarantee a certain number of leads?",
+    answer: "We focus on quality over quantity and don't promise specific lead numbers. Instead, we guarantee our methodology, expertise, and continuous optimization. Our goal is lasting pipeline growth, not just vanity metrics."
+  }, {
+    question: "What makes your approach different from other agencies?",
+    answer: "Unlike most agencies, we handle everything end-to-end: strategy, tech setup, message crafting, lead sourcing, and daily execution. We also emphasize human-driven outreach (no bots) and ethical, compliance-focused methods."
+  }, {
+    question: "How do you ensure email deliverability?",
+    answer: "We implement thorough domain setup, strategic inbox warming, reputation monitoring, and personalized sending patterns. Our approach prioritizes long-term domain health over quick wins that might damage your sending reputation."
+  }, {
+    question: "Will this work for my specific industry?",
+    answer: "We've successfully generated leads across diverse B2B sectors, from SaaS to professional services. During our discovery process, we'll determine if your offer and audience are a good fit for our methods."
+  }];
   return <div className="min-h-screen bg-midnight-background text-midnight-text">
       <Header />
       <HeroSection />
@@ -150,36 +142,12 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ClientBenefitCard 
-              icon={<Rocket className="h-8 w-8 text-logo-blue" />}
-              title="Plug-and-Play Revenue Engine"
-              description="Seamlessly integrate our system and watch your revenue scale effortlessly."
-            />
-            <ClientBenefitCard 
-              icon={<Zap className="h-8 w-8 text-logo-blue" />}
-              title="Fast Setup: 7 Days or Less"
-              description="Get fully operational in under a week—no delays, no hassles."
-            />
-            <ClientBenefitCard 
-              icon={<Tag className="h-8 w-8 text-logo-blue" />}
-              title="White-Labeled CRM"
-              description="Maintain your brand identity with a fully white-labeled solution."
-            />
-            <ClientBenefitCard 
-              icon={<User className="h-8 w-8 text-logo-blue" />}
-              title="Dedicated Campaign Manager"
-              description="Your personal expert, focused on your success and results."
-            />
-            <ClientBenefitCard 
-              icon={<Calendar className="h-8 w-8 text-logo-blue" />}
-              title="Optional Appointment Setters"
-              description="Save time and close more deals with ready-to-go appointment setters."
-            />
-            <ClientBenefitCard 
-              icon={<ChartBar className="h-8 w-8 text-logo-blue" />}
-              title="Performance Tracking Dashboard"
-              description="Real-time analytics to track ROI and optimize campaign performance."
-            />
+            <ClientBenefitCard icon={<Rocket className="h-8 w-8 text-logo-blue" />} title="Plug-and-Play Revenue Engine" description="Seamlessly integrate our system and watch your revenue scale effortlessly." />
+            <ClientBenefitCard icon={<Zap className="h-8 w-8 text-logo-blue" />} title="Fast Setup: 7 Days or Less" description="Get fully operational in under a week—no delays, no hassles." />
+            <ClientBenefitCard icon={<Tag className="h-8 w-8 text-logo-blue" />} title="White-Labeled CRM" description="Maintain your brand identity with a fully white-labeled solution." />
+            <ClientBenefitCard icon={<User className="h-8 w-8 text-logo-blue" />} title="Dedicated Campaign Manager" description="Your personal expert, focused on your success and results." />
+            <ClientBenefitCard icon={<Calendar className="h-8 w-8 text-logo-blue" />} title="Optional Appointment Setters" description="Save time and close more deals with ready-to-go appointment setters." />
+            <ClientBenefitCard icon={<ChartBar className="h-8 w-8 text-logo-blue" />} title="Performance Tracking Dashboard" description="Real-time analytics to track ROI and optimize campaign performance." />
           </div>
         </div>
       </section>
@@ -188,21 +156,7 @@ const Index = () => {
       
 
       {/* Case Studies */}
-      <section className="section" id="case-studies">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Case Studies</h2>
-            <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
-              Real results from real clients
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <CaseStudyCard title="B2B Marketing Agency" stats={["18 booked calls/month", "$20K closed in Month 2"]} />
-            <CaseStudyCard title="SaaS Founder" stats={["9 SQLs in Month 1", "Direct calendar access from cold email"]} />
-            <CaseStudyCard title="Fractional COO" stats={["6 calls booked via LinkedIn in 3 weeks", "Closed 2 high-ticket retainers"]} />
-          </div>
-        </div>
-      </section>
+      
 
       {/* Testimonials */}
       <section className="section bg-midnight-surface">
