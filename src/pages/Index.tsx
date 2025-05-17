@@ -127,18 +127,18 @@ const Index = () => {
       <HeroSection />
       
       {/* Who We Serve Section */}
-      <section className="section">
+      <section className="py-12 md:py-16">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 You're great at closing deals.<br />
                 We're great at starting them.
               </h2>
-              <p className="text-xl text-midnight-subtext mb-8">
+              <p className="text-xl text-midnight-subtext mb-6">
                 We work with:
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 <li className="flex items-center">
                   <CheckCircle className="text-midnight-success mr-3 h-6 w-6" />
                   <span className="text-lg">B2B consultants & agency owners</span>
@@ -170,10 +170,10 @@ const Index = () => {
       </section>
 
       {/* Our Process - MOVED ABOVE OUR OFFERS */}
-      <section className="section bg-midnight-background text-midnight-text" id="process">
+      <section className="py-12 md:py-16 bg-midnight-background text-midnight-text" id="process">
         <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Our Process</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold mb-3">Our Process</h2>
             <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
               How we take you from uncertainty to predictable pipeline
             </p>
@@ -183,10 +183,10 @@ const Index = () => {
       </section>
 
       {/* Our Offers Section - NOW AFTER PROCESS */}
-      <section className="section bg-midnight-surface" id="offers">
+      <section className="py-12 md:py-16 bg-midnight-surface" id="offers">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Our Offers</h2>
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-bold mb-3">Our Offers</h2>
             <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
               Choose the system that works best for your business needs
             </p>
@@ -199,15 +199,15 @@ const Index = () => {
       </section>
 
       {/* Why Our Clients Choose Us - UPDATED SECTION */}
-      <section className="section bg-midnight-background" id="benefits">
+      <section className="py-12 md:py-16 bg-midnight-background" id="benefits">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Our Clients Choose Us</h2>
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-bold mb-3">Why Our Clients Choose Us</h2>
             <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
               Everything you need to start growing your business immediately
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ClientBenefitCard icon={<Rocket className="h-8 w-8 text-logo-blue" />} title="Plug-and-Play Revenue Engine" description="Seamlessly integrate our system and watch your revenue scale effortlessly." />
             <ClientBenefitCard icon={<Zap className="h-8 w-8 text-logo-blue" />} title="Fast Setup: 7 Days or Less" description="Get fully operational in under a week—no delays, no hassles." />
             <ClientBenefitCard icon={<Tag className="h-8 w-8 text-logo-blue" />} title="White-Labeled CRM" description="Maintain your brand identity with a fully white-labeled solution." />
@@ -225,34 +225,34 @@ const Index = () => {
       
 
       {/* New Testimonials Section */}
-      <section className="section bg-midnight-surface overflow-hidden py-20">
+      <section className="py-12 md:py-16 bg-midnight-surface overflow-hidden">
         <div className="container">
-          <div className="text-center mb-16">
-            <p className="text-logo-blue text-sm uppercase tracking-wider mb-2 font-medium">Client Stories</p>
-            <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
+          <div className="text-center mb-10">
+            <p className="text-logo-blue text-sm uppercase tracking-wider mb-1 font-medium">Client Stories</p>
+            <h2 className="text-4xl font-bold mb-3">What Our Clients Say</h2>
             <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
               Real results from businesses just like yours
             </p>
           </div>
           
-          <div className="relative flex gap-6 justify-center mx-auto max-w-7xl overflow-hidden">
+          <div className="relative flex gap-4 justify-center mx-auto max-w-7xl overflow-hidden">
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-midnight-surface via-transparent to-midnight-surface z-10"></div>
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-midnight-surface via-transparent to-midnight-surface z-10"></div>
             
             <TestimonialsColumn 
-              className="min-w-[320px] max-h-[600px] overflow-hidden"
+              className="min-w-[300px] max-h-[550px] overflow-hidden"
               testimonials={testimonialColumns[0]}
               duration={15}
             />
             
             <TestimonialsColumn
-              className="min-w-[320px] max-h-[600px] overflow-hidden mt-40"
+              className="min-w-[300px] max-h-[550px] overflow-hidden mt-32"
               testimonials={testimonialColumns[1]} 
               duration={20}
             />
             
             <TestimonialsColumn
-              className="min-w-[320px] max-h-[600px] overflow-hidden"
+              className="min-w-[300px] max-h-[550px] overflow-hidden"
               testimonials={testimonialColumns[2]}
               duration={13} 
             />
