@@ -4,6 +4,8 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { GradientHeading } from '@/components/ui/gradient-heading';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { LogoCarousel } from '@/components/ui/logo-carousel';
+import VercelIcon from './icons/VercelIcon';
+import SupabaseIcon from './icons/SupabaseIcon';
 
 // Client Logo SVGs
 const AppleIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="50" height="60" viewBox="0 0 814 1000" {...props}>
