@@ -3,43 +3,41 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 
 const Header: React.FC = () => {
-  return (
-    <header className="py-8 absolute top-0 left-0 right-0 z-20">
-      <div className="container mx-auto px-4">
+  return <header className="py-2 absolute top-0 left-0 right-0 z-10">
+      <div className="container mx-auto">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - Made larger */}
           <a href="/" className="flex items-center">
-            <span className="text-white text-2xl font-bold">Leveraged<span className="text-[#1EAEDB]">Growth</span></span>
+            <img src="/lovable-uploads/49e74208-b2c0-4809-a9dd-cff624caa489.png" alt="LeveragedGrowth.co" className="h-48" />
           </a>
           
-          {/* Main Navigation - Centered */}
-          <nav className="hidden lg:block">
-            <div className="flex items-center space-x-8">
-              <a href="#offers" className="text-white hover:text-gray-300 transition-colors font-medium px-4 py-2">
-                SERVICES
-              </a>
-              <a href="#process" className="text-white hover:text-gray-300 transition-colors font-medium px-4 py-2">
-                ABOUT US
-              </a>
-              <a href="#case-studies" className="text-white hover:text-gray-300 transition-colors font-medium px-4 py-2">
-                CASE STUDIES
-              </a>
+          {/* Centered Navigation at the top */}
+          <div className="hidden md:block">
+            <div className="bg-black/80 backdrop-blur-sm rounded-full px-8 py-2">
+              <nav className="flex items-center space-x-12 relative z-10">
+                <a href="#offers" className="text-white hover:text-midnight-primary transition-colors font-medium">
+                  Services
+                </a>
+                <a href="#process" className="text-white hover:text-midnight-primary transition-colors font-medium">
+                  Process
+                </a>
+                <a href="#case-studies" className="text-white hover:text-midnight-primary transition-colors font-medium">
+                  Results
+                </a>
+                <Button className="bg-white hover:bg-opacity-90 text-black font-medium rounded-full">
+                  Book a Call
+                </Button>
+              </nav>
             </div>
-          </nav>
-          
-          {/* CTA Button */}
-          <Button variant="outline" className="hidden md:flex border border-white text-white hover:bg-white/10 rounded-full px-8 py-2">
-            BOOK A CALL
-          </Button>
+          </div>
           
           {/* Mobile menu button */}
-          <Button variant="ghost" className="lg:hidden text-white">
+          <Button variant="ghost" className="md:hidden text-white">
             Menu
           </Button>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
 
 export default Header;
