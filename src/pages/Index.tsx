@@ -8,7 +8,7 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import ClientBenefitCard from "@/components/ClientBenefitCard";
-import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Handshake, CalendarCheck, User } from "lucide-react";
+import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Index = () => {
@@ -152,37 +152,42 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Our Clients Choose Us - NEW SECTION */}
+      {/* Why Our Clients Choose Us - UPDATED SECTION */}
       <section className="section">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Why Our Clients Choose Us</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ClientBenefitCard
-              icon={<Briefcase className="h-10 w-10" />}
+              icon={<Rocket className="h-12 w-12" />}
               title="Plug-and-Play Revenue Engine"
-              description="Quickly start generating predictable revenue with minimal setup."
+              description="Seamlessly integrate our system and watch your revenue scale effortlessly."
             />
             <ClientBenefitCard
-              icon={<Zap className="h-10 w-10" />}
+              icon={<Zap className="h-12 w-12" />}
               title="Fast Setup: 7 Days or Less"
-              description="Get your system live and operational within a week."
+              description="Get fully operational in under a week—no delays, no hassles."
             />
             <ClientBenefitCard
-              icon={<Handshake className="h-10 w-10" />}
+              icon={<Tag className="h-12 w-12" />}
               title="White-Labeled CRM"
-              description="Your brand, your CRM—seamlessly integrated and client-facing."
+              description="Maintain your brand identity with a fully white-labeled solution."
             />
             <ClientBenefitCard
-              icon={<User className="h-10 w-10" />}
+              icon={<User className="h-12 w-12" />}
               title="Dedicated Campaign Manager"
-              description="A single point of contact to oversee performance and strategy."
+              description="Your personal expert, focused on your success and results."
             />
             <ClientBenefitCard
-              icon={<CalendarCheck className="h-10 w-10" />}
+              icon={<Calendar className="h-12 w-12" />}
               title="Optional Appointment Setters"
-              description="Let our trained reps fill your calendar—only if you want them to."
+              description="Save time and close more deals with ready-to-go appointment setters."
+            />
+            <ClientBenefitCard
+              icon={<ChartBar className="h-12 w-12" />}
+              title="Performance Tracking Dashboard"
+              description="Real-time analytics to track ROI and optimize campaign performance."
             />
           </div>
         </div>
