@@ -28,49 +28,83 @@ const HeroSection: React.FC = () => {
           </Button>
         </div>
         
-        {/* Visual element - 3D chart visualization similar to reference image */}
-        <div className="w-full max-w-3xl mx-auto mt-8 animate-fade-in relative">
-          <div className="aspect-[16/6] w-full bg-gradient-to-r from-[#1EAEDB]/20 via-[#1EAEDB]/30 to-[#00C896]/20 rounded-full relative overflow-hidden">
-            {/* Chart line visualization */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-4/5 h-1/2 relative">
-                {/* Glowing chart line */}
-                <svg className="w-full h-full" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
-                  {/* Gradient definition */}
-                  <defs>
-                    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#1EAEDB" stopOpacity="0.8" />
-                      <stop offset="50%" stopColor="#ffffff" stopOpacity="0.9" />
-                      <stop offset="100%" stopColor="#00C896" stopOpacity="0.8" />
-                    </linearGradient>
-                  </defs>
+        {/* Visual element - Dashboard mockup with data visualization */}
+        <div className="relative w-full max-w-5xl mx-auto mt-4 animate-fade-in">
+          <div className="bg-gradient-to-r from-midnight-surface/80 via-midnight-surface to-midnight-surface/80 rounded-xl border border-white/10 backdrop-blur-sm p-4 md:p-6 shadow-2xl">
+            <div className="aspect-video w-full overflow-hidden rounded-md">
+              {/* Dashboard UI - You can replace this with a more detailed mockup if needed */}
+              <div className="bg-midnight-background w-full h-full rounded-md flex flex-col p-4">
+                {/* Dashboard header */}
+                <div className="flex justify-between items-center mb-4 border-b border-white/10 pb-4">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-midnight-success rounded-full"></div>
+                    <div className="w-3 h-3 bg-midnight-warning rounded-full"></div>
+                    <div className="w-3 h-3 bg-midnight-primary rounded-full"></div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="h-6 w-20 bg-white/10 rounded-full"></div>
+                    <div className="h-6 w-6 bg-white/10 rounded-full"></div>
+                    <div className="h-6 w-6 bg-white/10 rounded-full"></div>
+                  </div>
+                </div>
+                
+                {/* Dashboard content */}
+                <div className="grid grid-cols-12 gap-4 h-full">
+                  {/* Sidebar navigation */}
+                  <div className="col-span-2 bg-midnight-surface/50 rounded-md p-2 flex flex-col space-y-3">
+                    {[1, 2, 3, 4, 5].map(i => (
+                      <div key={i} className={`h-8 ${i === 1 ? 'bg-midnight-primary/20' : 'bg-white/5'} rounded-md`}></div>
+                    ))}
+                  </div>
                   
-                  {/* Line path */}
-                  <path
-                    d="M0,80 C20,70 40,90 60,75 C80,60 100,50 120,40 C140,30 160,50 180,30 C200,10 220,5 240,15 C260,25 280,15 300,5"
-                    fill="none"
-                    stroke="url(#chartGradient)"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    className="drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
-                  />
-                  
-                  {/* Arrow at the end */}
-                  <path
-                    d="M295,5 L300,5 L298,10"
-                    fill="none"
-                    stroke="#ffffff"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    className="drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
-                  />
-                </svg>
+                  {/* Main dashboard area */}
+                  <div className="col-span-10 grid grid-rows-3 gap-4">
+                    {/* Top row - metrics */}
+                    <div className="grid grid-cols-3 gap-4">
+                      {[1, 2, 3].map(i => (
+                        <div key={i} className="bg-midnight-surface/50 rounded-md p-3">
+                          <div className="h-2 w-16 bg-white/20 rounded-full mb-2"></div>
+                          <div className="h-6 w-24 bg-white/30 rounded-full"></div>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Middle row - chart */}
+                    <div className="row-span-1 bg-midnight-surface/50 rounded-md p-4">
+                      <div className="h-3 w-24 bg-white/20 rounded-full mb-4"></div>
+                      <div className="flex items-end justify-between h-24 px-2">
+                        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => {
+                          const height = `${20 + Math.random() * 60}%`;
+                          return (
+                            <div key={i} style={{height}} className={`w-12 rounded-t-sm ${i % 3 === 0 ? 'bg-midnight-primary' : i % 3 === 1 ? 'bg-midnight-success' : 'bg-white/20'}`}></div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                    
+                    {/* Bottom row - table */}
+                    <div className="row-span-1 bg-midnight-surface/50 rounded-md p-4">
+                      <div className="h-3 w-32 bg-white/20 rounded-full mb-4"></div>
+                      <div className="space-y-3">
+                        {[1, 2, 3].map(i => (
+                          <div key={i} className="flex justify-between items-center border-b border-white/5 pb-2">
+                            <div className="flex items-center space-x-2">
+                              <div className="h-5 w-5 bg-white/10 rounded-full"></div>
+                              <div className="h-3 w-24 bg-white/20 rounded-full"></div>
+                            </div>
+                            <div className="h-3 w-16 bg-white/10 rounded-full"></div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           
-          {/* Reflection/glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1EAEDB]/20 opacity-50 blur-sm"></div>
+          {/* Reflection effect */}
+          <div className="absolute inset-x-0 -bottom-10 h-10 bg-gradient-to-b from-[#1EAEDB]/10 to-transparent blur-md"></div>
         </div>
       </div>
     </section>
