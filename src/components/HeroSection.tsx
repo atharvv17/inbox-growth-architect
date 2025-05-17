@@ -13,7 +13,7 @@ const HeroSection: React.FC = () => {
         <div className="absolute bottom-0 left-0 right-0 w-full h-[400px] bg-gradient-to-r from-[#1EAEDB]/20 via-[#1EAEDB]/30 to-[#00C896]/20 blur-[150px] rounded-full mx-auto"></div>
       </div>
       
-      <div className="container relative z-10 mx-auto px-4 flex flex-col items-center pt-24">
+      <div className="container relative z-10 mx-auto px-4 flex flex-col items-center justify-center h-full">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 animate-fade-in text-white tracking-tight">
             We Build Predictable Sales <br />
