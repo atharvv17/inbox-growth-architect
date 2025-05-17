@@ -10,7 +10,7 @@ const Header: React.FC = () => {
           <img 
             src="/lovable-uploads/49e74208-b2c0-4809-a9dd-cff624caa489.png" 
             alt="LeveragedGrowth.co" 
-            className="h-20" 
+            className="h-32" 
           />
         </a>
         <nav className="hidden md:flex items-center space-x-8">
