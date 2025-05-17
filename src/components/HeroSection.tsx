@@ -140,7 +140,7 @@ const clients = [{
 }];
 const HeroSection: React.FC = () => {
   return <>
-      <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-midnight-background">
+      <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-midnight-background">
         <div className="absolute inset-0 z-0">
           {/* Dark background */}
           <div className="absolute inset-0 bg-[#0A0A0A]"></div>
@@ -166,24 +166,24 @@ const HeroSection: React.FC = () => {
         </div>
         
         <div className="container relative z-10">
-          <div className="max-w-5xl mx-auto text-center mb-12 rounded-lg">
-            <div className="inline-block mb-6 px-4 py-2 border border-logo-blue/40 rounded-full bg-logo-blue/5 backdrop-blur-sm">
+          <div className="max-w-5xl mx-auto text-center mb-8 rounded-lg">
+            <div className="inline-block mb-4 px-3 py-1.5 border border-logo-blue/40 rounded-full bg-logo-blue/5 backdrop-blur-sm">
               <span className="text-sm font-medium text-logo-blue">DFY Sales Agency</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white leading-tight md:text-6xl">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-white leading-tight md:text-6xl">
               We Build <span className="relative inline-block">
                 Predictable
                 <span className="absolute bottom-1 left-0 w-full h-[3px] bg-logo-blue"></span>
               </span> Sales<br />Pipelines for B2B Companies
             </h1>
             
-            <p className="text-lg text-gray-300 mb-10 md:text-xl">
+            <p className="text-lg text-gray-300 mb-6 md:text-xl">
               Done-for-you outreach, CRM systems & appointment booking — installed in 7 days
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Button className="bg-logo-blue hover:bg-logo-darkBlue text-black font-semibold group flex items-center px-8 py-6 rounded shadow-lg shadow-logo-blue/20 transition-all duration-300" size="lg">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+              <Button className="bg-logo-blue hover:bg-logo-darkBlue text-black font-semibold group flex items-center px-6 py-5 rounded shadow-lg shadow-logo-blue/20 transition-all duration-300" size="lg">
                 <Calendar className="mr-2 h-5 w-5" />
                 <span>Book a Free Growth Audit</span>
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -198,30 +198,30 @@ const HeroSection: React.FC = () => {
         </div>
         
         {/* Bottom fade with logo color tint */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-midnight-background via-midnight-background/95 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-midnight-background via-midnight-background/95 to-transparent"></div>
         
         {/* Subtle logo color gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-logo-blue/5 to-transparent opacity-50 mix-blend-overlay"></div>
       </section>
 
       {/* Portfolio Clients Section */}
-      <section className="py-16 bg-midnight-background border-t border-logo-blue/10">
+      <section className="py-10 bg-midnight-background border-t border-logo-blue/10">
         <div className="container mx-auto">
           <div className="max-w-5xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-12">
-              <p className="text-logo-blue text-sm uppercase tracking-wider mb-2 font-medium">Portfolio</p>
+            <div className="text-center mb-6">
+              <p className="text-logo-blue text-sm uppercase tracking-wider mb-1 font-medium">Portfolio</p>
               <GradientHeading size="xl">Trusted by Industry Leaders</GradientHeading>
-              <p className="text-gray-400 mt-4">We've delivered results for businesses of all sizes</p>
+              <p className="text-gray-400 mt-3">We've delivered results for businesses of all sizes</p>
             </div>
 
             {/* Client Logo Carousel - replacing the static grid */}
-            <div className="mb-12">
+            <div className="mb-8">
               <LogoCarousel logos={clientLogos} autoplaySpeed={2000} showArrows={true} />
             </div>
 
             {/* Show more clients carousel */}
-            <div className="mt-16 text-center">
+            <div className="mt-10 text-center">
               <Carousel opts={{
               align: "start",
               loop: true

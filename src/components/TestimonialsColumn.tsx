@@ -28,25 +28,25 @@ export const TestimonialsColumn: React.FC<TestimonialsColumnProps> = (props) => 
           ease: "linear",
           repeatType: "loop",
         }}
-        className="flex flex-col gap-6 pb-6 bg-midnight-surface"
+        className="flex flex-col gap-4 pb-4 bg-midnight-surface"
       >
         {[
           ...new Array(2).fill(0).map((_, index) => (
             <React.Fragment key={index}>
               {props.testimonials.map(({ text, image, name, role }, i) => (
-                <div className="p-10 rounded-3xl border border-logo-blue/20 shadow-lg shadow-logo-blue/10 max-w-xs w-full bg-midnight-background" key={i}>
-                  <div className="text-midnight-text mb-4 italic">{text}</div>
-                  <div className="flex items-center gap-3 mt-4">
+                <div className="p-6 rounded-2xl border border-logo-blue/20 shadow-lg shadow-logo-blue/10 max-w-xs w-full bg-midnight-background" key={i}>
+                  <div className="text-midnight-text mb-3 italic text-sm">{text}</div>
+                  <div className="flex items-center gap-2 mt-2">
                     <img
-                      width={40}
-                      height={40}
+                      width={36}
+                      height={36}
                       src={image}
                       alt={name}
-                      className="h-10 w-10 rounded-full object-cover border border-logo-blue/30"
+                      className="h-9 w-9 rounded-full object-cover border border-logo-blue/30"
                     />
                     <div className="flex flex-col">
-                      <div className="font-medium tracking-tight leading-5 text-midnight-text">{name}</div>
-                      <div className="leading-5 text-midnight-subtext text-sm tracking-tight">{role}</div>
+                      <div className="font-medium tracking-tight leading-5 text-midnight-text text-sm">{name}</div>
+                      <div className="leading-5 text-midnight-subtext text-xs tracking-tight">{role}</div>
                     </div>
                   </div>
                 </div>

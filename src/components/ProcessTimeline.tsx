@@ -34,25 +34,25 @@ const ProcessTimeline: React.FC<{steps: ProcessStepProps[]}> = ({ steps }) => {
   }, []);
 
   return (
-    <div className="relative mt-10" ref={timelineRef}>
+    <div className="relative mt-8" ref={timelineRef}>
       {/* Vertical line */}
       <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-midnight-primary/60 transition-all duration-700 ease-in-out"></div>
       
       {/* Process steps */}
-      <div className="space-y-24">
+      <div className="space-y-16">
         {steps.map((step, index) => (
           <div key={step.number} className={`timeline-step relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} transition-all duration-700 ease-in-out`}>
             {/* Step number circle */}
             <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1/4">
-              <div className="w-14 h-14 rounded-full bg-midnight-primary flex items-center justify-center text-black text-2xl font-bold transition-all duration-500 hover:scale-110 hover:shadow-glow">
+              <div className="w-12 h-12 rounded-full bg-midnight-primary flex items-center justify-center text-black text-xl font-bold transition-all duration-500 hover:scale-110 hover:shadow-glow">
                 {step.number}
               </div>
             </div>
             
             {/* Content */}
-            <div className={`md:w-5/12 pt-8 pl-10 md:pl-0 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
-              <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
-              <p className="text-midnight-subtext mb-4">{step.description}</p>
+            <div className={`md:w-5/12 pt-6 pl-8 md:pl-0 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+              <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+              <p className="text-midnight-subtext mb-2">{step.description}</p>
               {step.detailedDescription && (
                 <p className="text-midnight-subtext text-sm">{step.detailedDescription}</p>
               )}

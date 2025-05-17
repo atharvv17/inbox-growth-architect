@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -127,32 +128,32 @@ const Index = () => {
       <HeroSection />
       
       {/* Who We Serve Section */}
-      <section className="py-12 md:py-16">
+      <section className="py-8 md:py-12">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3">
                 You're great at closing deals.<br />
                 We're great at starting them.
               </h2>
-              <p className="text-xl text-midnight-subtext mb-6">
+              <p className="text-xl text-midnight-subtext mb-4">
                 We work with:
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 <li className="flex items-center">
-                  <CheckCircle className="text-midnight-success mr-3 h-6 w-6" />
+                  <CheckCircle className="text-midnight-success mr-2 h-5 w-5" />
                   <span className="text-lg">B2B consultants & agency owners</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="text-midnight-success mr-3 h-6 w-6" />
+                  <CheckCircle className="text-midnight-success mr-2 h-5 w-5" />
                   <span className="text-lg">SaaS founders & startups</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="text-midnight-success mr-3 h-6 w-6" />
+                  <CheckCircle className="text-midnight-success mr-2 h-5 w-5" />
                   <span className="text-lg">Fractional execs & coaches</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="text-midnight-success mr-3 h-6 w-6" />
+                  <CheckCircle className="text-midnight-success mr-2 h-5 w-5" />
                   <span className="text-lg">Sales teams needing top-of-funnel support</span>
                 </li>
               </ul>
@@ -170,11 +171,11 @@ const Index = () => {
       </section>
 
       {/* Our Process - MOVED ABOVE OUR OFFERS */}
-      <section className="py-12 md:py-16 bg-midnight-background text-midnight-text" id="process">
+      <section className="py-8 md:py-12 bg-midnight-background text-midnight-text" id="process">
         <div className="container">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold mb-3">Our Process</h2>
-            <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl font-bold mb-2">Our Process</h2>
+            <p className="text-lg text-midnight-subtext max-w-2xl mx-auto">
               How we take you from uncertainty to predictable pipeline
             </p>
           </div>
@@ -183,15 +184,15 @@ const Index = () => {
       </section>
 
       {/* Our Offers Section - NOW AFTER PROCESS */}
-      <section className="py-12 md:py-16 bg-midnight-surface" id="offers">
+      <section className="py-8 md:py-12 bg-midnight-surface" id="offers">
         <div className="container">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold mb-3">Our Offers</h2>
-            <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl font-bold mb-2">Our Offers</h2>
+            <p className="text-lg text-midnight-subtext max-w-2xl mx-auto">
               Choose the system that works best for your business needs
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-5">
             <ServiceCard title="Sales Inbox Accelerator" description="Cold Email Infrastructure & Done-For-You Campaign Execution" icon={<Mail />} features={["End-to-End Cold Email Setup: Custom domains, inbox warmup, DNS records, and real-time deliverability monitoring", "Custom Copywriting & Lead Research: 1-on-1 work with our team to craft compelling email sequences and handpick high-quality leads", "Reply Management & Campaign Optimization: Active response management, performance tracking, and weekly optimization sprints", "Reporting & Compliance: Weekly dashboards, reply breakdowns, and full GDPR/Can-Spam compliance"]} outcome="Your calendar filled with qualified B2B sales calls — built on a compliant cold email machine that works on autopilot" buttonText="Learn More" />
             <ServiceCard title="LinkedIn Selling System" description="Manual Prospecting with Hyper-Personalized Messaging — Zero Automation" icon={<MessageSquare />} features={["Profile Optimization for Authority Positioning: Reworked LinkedIn profile with conversion-focused structure", "Handcrafted Messaging (No Bots): 10 fully personalized messages daily tailored to each prospect's needs", "Zero Automation, Zero Risk: Manual actions only to keep your reputation safe and engagement authentic", "Follow-ups & Lead Handoffs: Strategic conversation management and warm lead transfers directly to you"]} outcome="A daily stream of inbound conversations from decision-makers who already know what you do and want to talk" buttonText="Learn More" />
           </div>
@@ -199,21 +200,21 @@ const Index = () => {
       </section>
 
       {/* Why Our Clients Choose Us - UPDATED SECTION */}
-      <section className="py-12 md:py-16 bg-midnight-background" id="benefits">
+      <section className="py-8 md:py-12 bg-midnight-background" id="benefits">
         <div className="container">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold mb-3">Why Our Clients Choose Us</h2>
-            <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl font-bold mb-2">Why Our Clients Choose Us</h2>
+            <p className="text-lg text-midnight-subtext max-w-2xl mx-auto">
               Everything you need to start growing your business immediately
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <ClientBenefitCard icon={<Rocket className="h-8 w-8 text-logo-blue" />} title="Plug-and-Play Revenue Engine" description="Seamlessly integrate our system and watch your revenue scale effortlessly." />
-            <ClientBenefitCard icon={<Zap className="h-8 w-8 text-logo-blue" />} title="Fast Setup: 7 Days or Less" description="Get fully operational in under a week—no delays, no hassles." />
-            <ClientBenefitCard icon={<Tag className="h-8 w-8 text-logo-blue" />} title="White-Labeled CRM" description="Maintain your brand identity with a fully white-labeled solution." />
-            <ClientBenefitCard icon={<User className="h-8 w-8 text-logo-blue" />} title="Dedicated Campaign Manager" description="Your personal expert, focused on your success and results." />
-            <ClientBenefitCard icon={<Calendar className="h-8 w-8 text-logo-blue" />} title="Optional Appointment Setters" description="Save time and close more deals with ready-to-go appointment setters." />
-            <ClientBenefitCard icon={<ChartBar className="h-8 w-8 text-logo-blue" />} title="Performance Tracking Dashboard" description="Real-time analytics to track ROI and optimize campaign performance." />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <ClientBenefitCard icon={<Rocket className="h-7 w-7 text-logo-blue" />} title="Plug-and-Play Revenue Engine" description="Seamlessly integrate our system and watch your revenue scale effortlessly." />
+            <ClientBenefitCard icon={<Zap className="h-7 w-7 text-logo-blue" />} title="Fast Setup: 7 Days or Less" description="Get fully operational in under a week—no delays, no hassles." />
+            <ClientBenefitCard icon={<Tag className="h-7 w-7 text-logo-blue" />} title="White-Labeled CRM" description="Maintain your brand identity with a fully white-labeled solution." />
+            <ClientBenefitCard icon={<User className="h-7 w-7 text-logo-blue" />} title="Dedicated Campaign Manager" description="Your personal expert, focused on your success and results." />
+            <ClientBenefitCard icon={<Calendar className="h-7 w-7 text-logo-blue" />} title="Optional Appointment Setters" description="Save time and close more deals with ready-to-go appointment setters." />
+            <ClientBenefitCard icon={<ChartBar className="h-7 w-7 text-logo-blue" />} title="Performance Tracking Dashboard" description="Real-time analytics to track ROI and optimize campaign performance." />
           </div>
         </div>
       </section>
@@ -225,34 +226,34 @@ const Index = () => {
       
 
       {/* New Testimonials Section */}
-      <section className="py-12 md:py-16 bg-midnight-surface overflow-hidden">
+      <section className="py-8 md:py-12 bg-midnight-surface overflow-hidden">
         <div className="container">
-          <div className="text-center mb-10">
+          <div className="text-center mb-5">
             <p className="text-logo-blue text-sm uppercase tracking-wider mb-1 font-medium">Client Stories</p>
-            <h2 className="text-4xl font-bold mb-3">What Our Clients Say</h2>
-            <p className="text-xl text-midnight-subtext max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-2">What Our Clients Say</h2>
+            <p className="text-lg text-midnight-subtext max-w-2xl mx-auto">
               Real results from businesses just like yours
             </p>
           </div>
           
-          <div className="relative flex gap-4 justify-center mx-auto max-w-7xl overflow-hidden">
+          <div className="relative flex gap-3 justify-center mx-auto max-w-7xl overflow-hidden">
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-midnight-surface via-transparent to-midnight-surface z-10"></div>
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-midnight-surface via-transparent to-midnight-surface z-10"></div>
             
             <TestimonialsColumn 
-              className="min-w-[300px] max-h-[550px] overflow-hidden"
+              className="min-w-[280px] max-h-[520px] overflow-hidden"
               testimonials={testimonialColumns[0]}
               duration={15}
             />
             
             <TestimonialsColumn
-              className="min-w-[300px] max-h-[550px] overflow-hidden mt-32"
+              className="min-w-[280px] max-h-[520px] overflow-hidden mt-28"
               testimonials={testimonialColumns[1]} 
               duration={20}
             />
             
             <TestimonialsColumn
-              className="min-w-[300px] max-h-[550px] overflow-hidden"
+              className="min-w-[280px] max-h-[520px] overflow-hidden"
               testimonials={testimonialColumns[2]}
               duration={13} 
             />
