@@ -45,22 +45,24 @@ const Index = () => {
   }];
 
   // FAQ content
-  const faqs = [{
-    question: "How long does it take to see results?",
-    answer: "Most clients start seeing qualified meetings within 2-3 weeks of campaign launch. The exact timeline depends on your industry, offer, and target audience, but our process is designed for rapid implementation and quick wins."
-  }, {
-    question: "Do you guarantee a certain number of leads?",
-    answer: "We focus on quality over quantity and don't promise specific lead numbers. Instead, we guarantee our methodology, expertise, and continuous optimization. Our goal is lasting pipeline growth, not just vanity metrics."
-  }, {
-    question: "What makes your approach different from other agencies?",
-    answer: "We use the right combination of automation and human expertise to drive efficient, scalable, and high-converting outreach. Automation helps us streamline systems, track performance, and ensure consistency at scale — but it's the human insight that makes the difference.\n\nOur team of experts personally handles strategy, message crafting, and execution — ensuring that every lead feels heard, every message feels real, and every campaign is aligned with your brand's tone and goals."
-  }, {
-    question: "How do you ensure email deliverability?",
-    answer: "We implement thorough domain setup, strategic inbox warming, reputation monitoring, and personalized sending patterns. Our approach prioritizes long-term domain health over quick wins that might damage your sending reputation."
-  }, {
-    question: "Will this work for my specific industry?",
-    answer: "We've successfully generated leads across diverse B2B sectors, from SaaS to professional services. During our discovery process, we'll determine if your offer and audience are a good fit for our methods."
-  }];
+  const faqs = [
+    {
+      question: "How long does it take to see results?",
+      answer: "Most clients start seeing qualified meetings within 2-3 weeks of campaign launch. The exact timeline depends on your industry, offer, and target audience, but our process is designed for rapid implementation and quick wins."
+    }, {
+      question: "Do you guarantee a certain number of leads?",
+      answer: "We focus on quality over quantity and don't promise specific lead numbers. Instead, we guarantee our methodology, expertise, and continuous optimization. Our goal is lasting pipeline growth, not just vanity metrics."
+    }, {
+      question: "What makes your approach different from other agencies?",
+      answer: "We use the right combination of automation and human expertise to drive efficient, scalable, and high-converting outreach. Automation helps us streamline systems, track performance, and ensure consistency at scale — but it's the human insight that makes the difference.\n\nOur team of experts personally handles strategy, message crafting, and execution — ensuring that every lead feels heard, every message feels real, and every campaign is aligned with your brand's tone and goals."
+    }, {
+      question: "How do you ensure email deliverability?",
+      answer: "We implement thorough domain setup, strategic inbox warming, reputation monitoring, and personalized sending patterns. Our approach prioritizes long-term domain health over quick wins that might damage your sending reputation."
+    }, {
+      question: "Will this work for my specific industry?",
+      answer: "We've successfully generated leads across diverse B2B sectors, from SaaS to professional services. During our discovery process, we'll determine if your offer and audience are a good fit for our methods."
+    }
+  ];
 
   // New testimonials data
   const testimonialColumns = [[{
@@ -158,13 +160,29 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Who We Serve Section - with diagonal cut */}
-      <section className="py-12 bg-[#111827] text-[#F3F4F6] relative">
-        <div className="absolute top-0 left-0 w-full overflow-hidden">
+      {/* Our Process - Updated with vibrant background */}
+      <section className="py-16 bg-gradient-to-br from-[#F8FAFC] via-[#EFF6FF] to-[#F1F5F9] relative" id="process">
+        <div className="container relative z-10">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">Our Process</h2>
+            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
+              How we take you from uncertainty to predictable pipeline
+            </p>
+          </div>
+          {/* Replace the old ProcessTimeline with our new AnimatedProcessTimeline */}
+          <AnimatedProcessTimeline steps={processSteps} />
+        </div>
+        
+        {/* Add diagonal cut to next section */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
-            <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-[#F1F5F9]"></path>
+            <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-[#111827]"></path>
           </svg>
         </div>
+      </section>
+      
+      {/* Who We Serve Section - with diagonal cut */}
+      <section className="py-12 bg-[#111827] text-[#F3F4F6] relative">
         <div className="container relative z-10">
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
@@ -237,25 +255,6 @@ const Index = () => {
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
             <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="fill-[#F8FAFC]"></path>
           </svg>
-        </div>
-      </section>
-
-      {/* Our Process - Updated with vibrant background */}
-      <section className="py-16 bg-gradient-to-br from-[#F8FAFC] via-[#EFF6FF] to-[#F1F5F9] relative" id="process">
-        <div className="container relative z-10">
-          <div className="text-center mb-6">
-            <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">Our Process</h2>
-            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
-              How we take you from uncertainty to predictable pipeline
-            </p>
-          </div>
-          {/* Replace the old ProcessTimeline with our new AnimatedProcessTimeline */}
-          <AnimatedProcessTimeline steps={processSteps} />
-        </div>
-        
-        {/* Add diagonal cut to next section */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-          
         </div>
       </section>
 
