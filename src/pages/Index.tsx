@@ -13,6 +13,7 @@ import { FlowingProcessTimeline } from "@/components/FlowingProcessTimeline";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
+
 const Index = () => {
   // Process steps data
   const processSteps = [{
@@ -167,10 +168,8 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Who We Serve Section - MOVED UP - with inverted curve at top and wavy bottom */}
+      {/* Who We Serve Section with smoother transition to Our Process section */}
       <section className="py-12 bg-white text-[#1E293B] relative">
-        {/* Removed the hidden wave at top since we don't need it */}
-        
         <div className="container relative z-10">
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
@@ -238,16 +237,19 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Add a wave transition to the process section - THIS IS THE NEW WAVY BOTTOM */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-          
+        {/* NEW SMOOTH, ORGANIC WAVE TRANSITION to the process section */}
+        <div className="absolute -bottom-[2px] left-0 w-full overflow-hidden">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[100px]">
+            <path 
+              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
+              className="fill-[#000000]"
+            ></path>
+          </svg>
         </div>
       </section>
       
-      {/* Our Process - Updated with dark background matching logo */}
-      <section className="py-16 bg-[#000000] text-white relative" id="process">
-        {/* Remove the wavy top border since we now have a wave coming from the previous section */}
-        
+      {/* Our Process - With dark background matching logo and NO top wave (since we added it to previous section) */}
+      <section className="pt-20 pb-16 bg-[#000000] text-white relative" id="process">
         <div className="container relative z-10">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-2 text-white">Our Process</h2>
@@ -258,21 +260,16 @@ const Index = () => {
           
           {/* Use the FlowingProcessTimeline component */}
           <FlowingProcessTimeline steps={processSteps} />
-          
-          {/* Final step highlight box */}
-          <div className="mt-12 max-w-2xl mx-auto transform translate-y-0 hover:translate-y-[-5px] transition-all duration-300">
-            
-          </div>
         </div>
         
-        {/* Add wave transition to next section - this creates the curve at the BOTTOM of the process section */}
+        {/* Add wave transition to next section */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
             <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="fill-[#0A0A0A]"></path>
           </svg>
         </div>
       </section>
-
+      
       {/* Our Offers Section - Deep Navy/Graphite Background */}
       <section className="py-16 bg-[#0F172A] text-white relative" id="offers">
         {/* Add inverted curve at top connecting to the Who We Serve section */}
