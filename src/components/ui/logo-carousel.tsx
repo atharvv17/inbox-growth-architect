@@ -45,8 +45,9 @@ export function LogoCarousel({
           <motion.div 
             ref={carouselRef}
             className={`flex ${logoSpacing}`}
+            initial={{ x: 0 }} // Start with logos visible
             animate={{
-              x: [-width, 0]
+              x: -width // Animate to the negative width (moving left)
             }}
             transition={{
               x: {
