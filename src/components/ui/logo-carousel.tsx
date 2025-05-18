@@ -203,10 +203,12 @@ const ScrollingLogoStrip = React.memo(({
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [loopLogos, setLoopLogos] = useState<Logo[]>([]);
-
+  
+  // Ensure we always have enough logos to display at least 4 at a time
   useEffect(() => {
-    // Double the array to create seamless loop effect
-    setLoopLogos([...logos, ...logos]);
+    // Create enough copies of logos to ensure smooth scrolling
+    const repeated = [...logos, ...logos, ...logos];
+    setLoopLogos(repeated);
   }, [logos]);
   
   useEffect(() => {
@@ -227,21 +229,24 @@ const ScrollingLogoStrip = React.memo(({
       if (reverse) {
         if (scroll.scrollLeft <= 0) {
           // Reset to middle when we reach the start
-          scroll.scrollLeft = scroll.scrollWidth / 2;
+          scroll.scrollLeft = scroll.scrollWidth / 3; // Use 1/3 position for smoother loop
         } else {
           // Scroll left
           scroll.scrollLeft -= 1;
         }
       } else {
-        if (scroll.scrollLeft >= scroll.scrollWidth / 2) {
-          // Reset to start when we reach the middle (end of first set)
-          scroll.scrollLeft = 0;
+        if (scroll.scrollLeft >= scroll.scrollWidth / 3 * 2) { // Use 2/3 position for smoother loop
+          // Reset to first third when we reach the second third
+          scroll.scrollLeft = scroll.scrollWidth / 3;
         } else {
           // Scroll right
           scroll.scrollLeft += 1;
         }
       }
     };
+
+    // Set initial scroll position to middle section for infinite loop effect
+    scroll.scrollLeft = scroll.scrollWidth / 3;
 
     // Adjust interval based on desired speed
     const interval = setInterval(animateScroll, speed);
@@ -252,39 +257,42 @@ const ScrollingLogoStrip = React.memo(({
   }, [reverse, speed, delay]);
 
   return (
-    <div 
-      ref={scrollRef}
-      className="flex overflow-x-hidden w-full" 
-      style={{ scrollBehavior: 'auto' }}
-    >
-      <div className="flex gap-16 py-4">
-        {loopLogos.map((logo, i) => (
-          <div 
-            key={`${logo.id}-${i}`} 
-            className="flex-shrink-0"
-          >
-            {typeof logo.img === 'string' ? (
-              <div className="rounded-lg bg-white h-24 w-24 md:h-28 md:w-28 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                <div className="w-full h-full overflow-hidden flex items-center justify-center p-2">
-                  <img 
-                    src={logo.img} 
-                    alt={logo.name} 
-                    className="object-contain w-full h-full"
-                    style={{ aspectRatio: "1/1", objectFit: "contain" }}
-                  />
+    <div className="w-full overflow-hidden">
+      <div 
+        ref={scrollRef}
+        className="flex overflow-x-hidden w-full" 
+        style={{ scrollBehavior: 'auto' }}
+      >
+        <div className="flex py-4">
+          {loopLogos.map((logo, i) => (
+            <div 
+              key={`${logo.id}-${i}`} 
+              className="flex-shrink-0 px-3" // Add padding for spacing between logos
+              style={{ width: "25%" }} // Each logo takes 25% width (4 logos per view)
+            >
+              {typeof logo.img === 'string' ? (
+                <div className="rounded-lg bg-white h-24 w-full flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
+                  <div className="w-full h-full overflow-hidden flex items-center justify-center p-2">
+                    <img 
+                      src={logo.img} 
+                      alt={logo.name} 
+                      className="object-contain w-full h-full"
+                      style={{ aspectRatio: "1/1", objectFit: "contain" }}
+                    />
+                  </div>
                 </div>
-              </div>
-            ) : (
-              <div className="rounded-lg bg-white h-24 w-24 md:h-28 md:w-28 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                <div className="w-full h-full overflow-hidden flex items-center justify-center">
-                  {React.createElement(logo.img, {
-                    className: "h-full w-full text-gray-800 object-contain p-3"
-                  })}
+              ) : (
+                <div className="rounded-lg bg-white h-24 w-full flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
+                  <div className="w-full h-full overflow-hidden flex items-center justify-center">
+                    {React.createElement(logo.img, {
+                      className: "h-full w-full text-gray-800 object-contain p-3"
+                    })}
+                  </div>
                 </div>
-              </div>
-            )}
-          </div>
-        ))}
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -305,11 +313,11 @@ export function LogoCarousel({
   
   return (
     <div className="w-full max-w-6xl mx-auto relative">
-      <div className="space-y-2">
-        <ScrollingLogoStrip logos={group1} speed={40} />
-        <ScrollingLogoStrip logos={group2} speed={35} reverse={true} />
-        <ScrollingLogoStrip logos={group3} speed={30} />
-        <ScrollingLogoStrip logos={group4} speed={45} reverse={true} />
+      <div className="space-y-4">
+        <ScrollingLogoStrip logos={group1} speed={45} delay={0} />
+        <ScrollingLogoStrip logos={group2} speed={40} reverse={true} delay={500} />
+        <ScrollingLogoStrip logos={group3} speed={50} delay={1000} />
+        <ScrollingLogoStrip logos={group4} speed={35} reverse={true} delay={1500} />
       </div>
     </div>
   )
