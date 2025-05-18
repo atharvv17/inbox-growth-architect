@@ -79,8 +79,9 @@ export function LogoCarousel({
   const shuffledLogos = useMemo(() => shuffleArray(logos), [logos]);
 
   useEffect(() => {
-    // Duplicate logos to create a seamless loop
-    setDuplicatedLogos([...shuffledLogos, ...shuffledLogos]);
+    // Create a seamless loop by duplicating logos enough times
+    // Using more duplicates helps ensure continuous movement
+    setDuplicatedLogos([...shuffledLogos, ...shuffledLogos, ...shuffledLogos]);
   }, [shuffledLogos]);
 
   return (
@@ -89,13 +90,14 @@ export function LogoCarousel({
         <motion.div 
           className="flex"
           animate={{
-            x: [-0, -100 * (shuffledLogos.length)]
+            x: [`0%`, `-${(shuffledLogos.length * 100) / 2}%`]
           }}
           transition={{
             repeat: Infinity,
             repeatType: "loop",
             duration: autoplaySpeed,
             ease: "linear",
+            repeatDelay: 0,
           }}
           style={{
             display: "flex",
@@ -109,4 +111,3 @@ export function LogoCarousel({
     </div>
   );
 }
-
