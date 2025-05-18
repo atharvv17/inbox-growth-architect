@@ -227,16 +227,18 @@ const ScrollableCaseStudies: React.FC = () => {
         ))}
       </div>
       
-      {/* Add some styling for hiding scrollbars */}
-      <style jsx global>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
+      {/* Add scrollbar hiding styles using standard style tag */}
+      <style>
+        {`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+          .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}
+      </style>
     </section>
   );
 };
