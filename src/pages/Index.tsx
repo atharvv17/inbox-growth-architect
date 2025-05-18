@@ -300,10 +300,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section - Updated with Dark Gradient */}
-      <section className="py-6 md:py-10 bg-gradient-to-b from-[#0A101F] to-[#111E3F] overflow-hidden relative">
+      {/* Testimonials Section - Updated with Dark Background */}
+      <section className="py-6 md:py-10 bg-[#0F172A] overflow-hidden relative">
         {/* Add subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#9b87f5_1px,transparent_1px)] bg-[length:20px_20px]"></div>
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-[length:20px_20px]"></div>
         
         <div className="container relative z-10">
           <div className="text-center mb-4">
@@ -315,26 +315,29 @@ const Index = () => {
           </div>
           
           <div className="relative flex gap-4 justify-center mx-auto max-w-7xl overflow-hidden">
-            {/* Gradient overlays for fading effect */}
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#111E3F] via-transparent to-[#111E3F] z-10"></div>
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#111E3F] via-transparent to-[#111E3F] z-10"></div>
+            {/* Gradient overlays for fading effect - modified to match background */}
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0F172A] via-transparent to-[#0F172A] z-10"></div>
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#0F172A] via-transparent to-[#0F172A] z-10"></div>
             
             <TestimonialsColumn 
               className="min-w-[320px] max-h-[650px] overflow-hidden"
               testimonials={testimonialColumns[0]}
               duration={20}
+              darkMode={true}
             />
             
             <TestimonialsColumn
               className="min-w-[320px] max-h-[650px] overflow-hidden mt-28"
               testimonials={testimonialColumns[1]} 
               duration={25}
+              darkMode={true}
             />
             
             <TestimonialsColumn
               className="min-w-[320px] max-h-[650px] overflow-hidden"
               testimonials={testimonialColumns[2]}
-              duration={18} 
+              duration={18}
+              darkMode={true}
             />
           </div>
         </div>
