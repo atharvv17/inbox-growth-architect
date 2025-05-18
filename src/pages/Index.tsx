@@ -175,7 +175,7 @@ const Index = () => {
             </p>
           </div>
           
-          {/* Replace the old ProcessTimeline with our new FlowingProcessTimeline */}
+          {/* Use the FlowingProcessTimeline component */}
           <FlowingProcessTimeline steps={processSteps} />
           
           {/* Final step highlight box */}
