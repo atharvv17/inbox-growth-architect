@@ -152,7 +152,7 @@ const Index = () => {
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-[#0A0A0A]"></path>
           </svg>
         </div>
-        <div className="container text-center mb-6 relative z-10 py-[63px]">
+        <div className="container text-center mb-6 relative z-10 py-[40px]">
           <h2 className="text-3xl font-bold text-[#374151] mb-2">
             Trusted by Industry Leaders
           </h2>
@@ -167,14 +167,14 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Adding extra padding at the bottom of this section for better spacing */}
-        <div className="py-[4px]"></div>
+        {/* Reduced padding at the bottom of this section for better spacing */}
+        <div className="py-[0px]"></div>
       </section>
       
-      {/* Who We Serve Section with smoother transition to Our Process section */}
-      <section className="pb-24 -mt-6 bg-white text-[#1E293B] relative py-0 rounded-md">
+      {/* Who We Serve Section with reduced spacing between sections */}
+      <section className="pb-20 -mt-10 bg-white text-[#1E293B] relative py-0 rounded-md">
         <div className="container relative z-10">
-          <div className="grid md:grid-cols-2 gap-6 items-center py-[36px]">
+          <div className="grid md:grid-cols-2 gap-6 items-center py-[20px]">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-3 text-[#1E293B]">
                 You're great at closing deals.<br />
@@ -183,6 +183,8 @@ const Index = () => {
               <p className="text-xl text-[#4B5563] mb-4">
                 We work with:
               </p>
+              
+              {/* ... keep existing code (list items with CheckCircle icons) */}
               <ul className="space-y-2">
                 <li className="flex items-center group">
                   <div className="relative">
@@ -240,7 +242,7 @@ const Index = () => {
           </div>
         </div>
         
-        {/* NEW SMOOTH, ORGANIC WAVE TRANSITION to the process section - shifted further down */}
+        {/* ... keep existing code (wave transition to the process section) */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[120px] py-0">
             <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" className="fill-[#000000]"></path>
