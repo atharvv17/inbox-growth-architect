@@ -1,11 +1,12 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
 import { GradientHeading } from '@/components/ui/gradient-heading';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { LogoCarousel } from '@/components/ui/logo-carousel';
 import { AnimatedText } from '@/components/ui/animated-text';
 import { PipelineAnimation } from '@/components/ui/pipeline-animation';
-import { Logos3 } from "@/components/blocks/logos3";
 import VercelIcon from './icons/VercelIcon';
 import SupabaseIcon from './icons/SupabaseIcon';
 
@@ -15,76 +16,152 @@ const AppleIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://w
   </svg>;
 
 // Client Array for the carousel with the new uploaded logos
-const clientLogos = [
-  // ... keep existing code (clientLogos definition)
-];
+const clientLogos = [{
+  id: 1,
+  name: "BCG",
+  img: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png"
+}, {
+  id: 2,
+  name: "Triangle",
+  img: "/lovable-uploads/9a21e2a4-61c3-4cf0-94f8-d87e25d471b8.png"
+}, {
+  id: 3,
+  name: "KW",
+  img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png"
+}, {
+  id: 5,
+  name: "Leadium",
+  img: "/lovable-uploads/d92a0edd-00b0-4780-a32e-ac96f44d2682.png"
+}, {
+  id: 6,
+  name: "Pipeful",
+  img: "/lovable-uploads/910cd93c-893f-4b51-b240-8d9556a22858.png"
+}, {
+  id: 7,
+  name: "Acme",
+  img: "/lovable-uploads/65a95b5c-61f4-4b33-b5dc-508bb9b01942.png"
+}, {
+  id: 8,
+  name: "SalesRoads",
+  img: "/lovable-uploads/a0c813cd-8deb-48e2-8b0f-3e39a130ff2c.png"
+}, {
+  id: 9,
+  name: "Growth Arrows",
+  img: "/lovable-uploads/c7279023-198f-42b9-a23d-0b3c5eb3e9a9.png"
+}, {
+  id: 10,
+  name: "Unbounce",
+  img: "/lovable-uploads/fb15dbd2-a014-467d-818b-2a1c301de056.png"
+}, {
+  id: 11,
+  name: "KPMG",
+  img: "/lovable-uploads/d68b7475-2375-4299-b26a-d5ee7a16216c.png"
+}, {
+  id: 12,
+  name: "Zapier",
+  img: "/lovable-uploads/d317e6ab-923a-4dc9-a864-9f0851e151ee.png"
+}, {
+  id: 16,
+  name: "Oracle",
+  img: "/lovable-uploads/88da1b12-db70-4d0b-bbac-ab2d90d04565.png"
+}, {
+  id: 17,
+  name: "Webflow",
+  img: "/lovable-uploads/6b448d8a-b1f7-4443-80b8-1c11d7455563.png"
+},
+// New logos added from user uploads
+{
+  id: 18,
+  name: "Infosys",
+  img: "/lovable-uploads/6ed42d65-9b24-446f-b992-be0050026e71.png"
+},
+{
+  id: 19,
+  name: "Gorilla",
+  img: "/lovable-uploads/2581ba47-e3a5-4f74-9981-6637bf7fae07.png"
+},
+{
+  id: 20,
+  name: "LeadSquared",
+  img: "/lovable-uploads/8f2ed93a-50b9-49bc-9b8d-a6229642ced6.png"
+},
+{
+  id: 21,
+  name: "Simplus",
+  img: "/lovable-uploads/1901b8d9-015c-4dbb-8808-e61e92c7dda1.png"
+},
+// Duplicate logos to make the carousel look fuller
+{
+  id: 13,
+  name: "BCG Repeat",
+  img: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png"
+}, {
+  id: 14,
+  name: "Triangle Repeat",
+  img: "/lovable-uploads/9a21e2a4-61c3-4cf0-94f8-d87e25d471b8.png"
+}, {
+  id: 15,
+  name: "KW Repeat",
+  img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png"
+}];
 
 // Client Array for testimonials - also updating to use the new logo images
-const clients = [
-  // ... keep existing code (clients definition)
-];
-
-// Logo data for the Logos3 component
-const logoData = {
-  heading: "Trusted by Industry Leaders",
-  logos: [
-    {
-      id: "logo-1",
-      description: "BCG",
-      image: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png",
-      className: "h-7 w-auto",
-    },
-    {
-      id: "logo-2",
-      description: "Triangle",
-      image: "/lovable-uploads/9a21e2a4-61c3-4cf0-94f8-d87e25d471b8.png",
-      className: "h-7 w-auto",
-    },
-    {
-      id: "logo-3",
-      description: "KW",
-      image: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png",
-      className: "h-7 w-auto",
-    },
-    {
-      id: "logo-5",
-      description: "Leadium",
-      image: "/lovable-uploads/d92a0edd-00b0-4780-a32e-ac96f44d2682.png",
-      className: "h-7 w-auto",
-    },
-    {
-      id: "logo-6",
-      description: "Pipeful",
-      image: "/lovable-uploads/910cd93c-893f-4b51-b240-8d9556a22858.png",
-      className: "h-7 w-auto",
-    },
-    {
-      id: "logo-7",
-      description: "Acme",
-      image: "/lovable-uploads/65a95b5c-61f4-4b33-b5dc-508bb9b01942.png",
-      className: "h-7 w-auto",
-    },
-    {
-      id: "logo-8",
-      description: "SalesRoads",
-      image: "/lovable-uploads/a0c813cd-8deb-48e2-8b0f-3e39a130ff2c.png",
-      className: "h-7 w-auto",
-    },
-    {
-      id: "logo-9",
-      description: "Growth Arrows",
-      image: "/lovable-uploads/c7279023-198f-42b9-a23d-0b3c5eb3e9a9.png",
-      className: "h-7 w-auto",
-    },
-    {
-      id: "logo-10",
-      description: "Unbounce",
-      image: "/lovable-uploads/fb15dbd2-a014-467d-818b-2a1c301de056.png",
-      className: "h-7 w-auto",
-    }
-  ]
-};
-
+const clients = [{
+  id: 1,
+  name: "BCG",
+  logo: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png",
+  description: "Platform Engineering"
+}, {
+  id: 2,
+  name: "Triangle",
+  logo: "/lovable-uploads/9a21e2a4-61c3-4cf0-94f8-d87e25d471b8.png",
+  description: "Frontend Development"
+}, {
+  id: 3,
+  name: "KW",
+  logo: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png",
+  description: "Database Architecture"
+}, {
+  id: 5,
+  name: "Leadium",
+  logo: "/lovable-uploads/d92a0edd-00b0-4780-a32e-ac96f44d2682.png",
+  description: "Sales Pipeline Automation"
+}, {
+  id: 6,
+  name: "SalesRoads",
+  logo: "/lovable-uploads/a0c813cd-8deb-48e2-8b0f-3e39a130ff2c.png",
+  description: "Sales Enablement"
+}, {
+  id: 7,
+  name: "Growth Arrows",
+  logo: "/lovable-uploads/c7279023-198f-42b9-a23d-0b3c5eb3e9a9.png",
+  description: "Revenue Growth"
+}, {
+  id: 8,
+  name: "Unbounce",
+  logo: "/lovable-uploads/fb15dbd2-a014-467d-818b-2a1c301de056.png",
+  description: "Landing Page Optimization"
+}, {
+  id: 9,
+  name: "KPMG",
+  logo: "/lovable-uploads/d68b7475-2375-4299-b26a-d5ee7a16216c.png",
+  description: "Financial Consulting"
+}, {
+  id: 10,
+  name: "Zapier",
+  logo: "/lovable-uploads/d317e6ab-923a-4dc9-a864-9f0851e151ee.png",
+  description: "Workflow Automation"
+}, {
+  id: 11,
+  name: "Oracle",
+  logo: "/lovable-uploads/88da1b12-db70-4d0b-bbac-ab2d90d04565.png",
+  description: "Database Solutions"
+}, {
+  id: 12,
+  name: "Webflow",
+  logo: "/lovable-uploads/6b448d8a-b1f7-4443-80b8-1c11d7455563.png",
+  description: "Web Development Platform"
+}];
 const HeroSection: React.FC = () => {
   return <>
       <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-midnight-background">
@@ -179,12 +256,9 @@ const HeroSection: React.FC = () => {
               <p className="text-gray-400 mt-3">We've delivered results for businesses of all sizes</p>
             </div>
 
-            {/* Client Logo Carousel - replacing the static grid with Logos3 */}
+            {/* Client Logo Carousel - replacing the static grid */}
             <div className="mb-8">
-              <Logos3 
-                heading="" 
-                logos={logoData.logos}
-              />
+              <LogoCarousel logos={clientLogos} autoplaySpeed={2000} showArrows={true} />
             </div>
 
             {/* Show more clients carousel */}
