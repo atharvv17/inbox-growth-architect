@@ -35,7 +35,7 @@ export const TestimonialsColumn: React.FC<TestimonialsColumnProps> = (props) => 
             <React.Fragment key={index}>
               {props.testimonials.map(({ text, image, name, role }, i) => (
                 <div 
-                  className="p-7 rounded-2xl backdrop-blur-md border shadow-lg max-w-xs w-full transition-all duration-300 bg-white/90 border-primary/10 hover:border-primary/30 hover:bg-white"
+                  className="p-7 rounded-2xl backdrop-blur-md border shadow-lg max-w-xs w-full transition-all duration-300 bg-white/90 border-[#00CFFF]/10 hover:border-[#00CFFF]/30 hover:bg-white"
                   key={i}
                 >
                   <div className="mb-4 italic text-md leading-relaxed text-gray-700">
@@ -47,13 +47,13 @@ export const TestimonialsColumn: React.FC<TestimonialsColumnProps> = (props) => 
                       height={44}
                       src={image}
                       alt={name}
-                      className="h-11 w-11 rounded-full object-cover border border-border/50"
+                      className="h-11 w-11 rounded-full object-cover border border-[#00CFFF]/20"
                     />
                     <div className="flex flex-col">
                       <div className="font-medium tracking-tight leading-5 text-md text-gray-800">
                         {name}
                       </div>
-                      <div className="leading-5 text-sm tracking-tight text-gray-500">
+                      <div className="leading-5 text-sm tracking-tight text-[#00CFFF]">
                         {role}
                       </div>
                     </div>
