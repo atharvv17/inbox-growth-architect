@@ -5,7 +5,7 @@ import { PipelineAnimation } from "@/components/ui/pipeline-animation";
 import { Card } from "@/components/ui/card";
 
 const AboutUs = () => {
-  return <section id="about" className="py-16 bg-[#0A0A0A] text-white relative">
+  return <section id="about" className="py-16 bg-white text-[#222222] relative">
       {/* Top wave transition */}
       <div className="absolute top-0 left-0 w-full overflow-hidden">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
@@ -21,9 +21,9 @@ const AboutUs = () => {
               ✦ Our Mission
             </div>
             
-            <h2 className="text-3xl font-bold mb-4 text-white">About LeveragedGrowth</h2>
+            <h2 className="text-3xl font-bold mb-4 text-[#333333]">About LeveragedGrowth</h2>
             
-            <div className="space-y-4 text-[#374151] text-lg">
+            <div className="space-y-4 text-[#555555] text-lg">
               <p>
                 LeveragedGrowth is a done-for-you outbound sales agency that builds predictable pipelines for B2B companies. We specialize in creating cold outreach systems that deliver qualified leads straight to your calendar — without you lifting a finger.
               </p>
@@ -42,7 +42,7 @@ const AboutUs = () => {
         </div>
       </div>
       
-      {/* Bottom wave transition */}
+      {/* Bottom wave transition - updated fill color to light gray */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] rotate-180">
           <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-[#F8FAFC]"></path>
