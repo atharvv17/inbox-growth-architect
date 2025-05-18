@@ -192,8 +192,15 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Who We Serve Section - with dark background and wave connection */}
+      {/* Who We Serve Section - with wave at top and straight bottom */}
       <section className="py-12 bg-[#0A0A0A] text-[#F3F4F6] relative">
+        {/* Add top wave styling (inverted) for visual continuity */}
+        <div className="absolute top-0 left-0 w-full overflow-hidden z-0 hidden">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+            <path d="M0,0 L1200,0 L1200,120 L0,120 Z" fill="#0A0A0A"></path>
+          </svg>
+        </div>
+        
         <div className="container relative z-10">
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
@@ -291,7 +298,31 @@ const Index = () => {
       </section>
 
       {/* Why Our Clients Choose Us - Light Gray Background */}
-      
+      <section className="py-16 bg-[#F9FAFB] text-[#1E293B] relative">
+        <div className="container relative z-10">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">Why Our Clients Choose Us</h2>
+            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
+              The reasons businesses trust us to transform their outbound
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <ClientBenefitCard title="Expertise & Strategy" description="We bring years of experience crafting winning outbound strategies across diverse B2B sectors." icon={<Briefcase />} />
+            <ClientBenefitCard title="Personalized Messaging" description="Our team writes handcrafted messaging tailored to your voice, offer, and audience." icon={<MessageSquare />} />
+            <ClientBenefitCard title="Data-Driven Optimization" description="We continuously analyze performance, A/B test sequences, and refine targeting." icon={<ChartBar />} />
+            <ClientBenefitCard title="Full-Service Execution" description="We handle everything from tech setup to daily execution, so you can focus on closing deals." icon={<Zap />} />
+            <ClientBenefitCard title="Transparent Reporting" description="You get weekly dashboards, reply breakdowns, and full visibility into campaign performance." icon={<Calendar />} />
+            <ClientBenefitCard title="Dedicated Support" description="You'll have a dedicated campaign manager who's always available to answer questions and provide guidance." icon={<User />} />
+          </div>
+        </div>
+        
+        {/* Diagonal transition to Testimonials section */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+            <path d="M0 0L598.97 114.72 1200 0H0z" className="fill-[#F8FAFC]"></path>
+          </svg>
+        </div>
+      </section>
 
       {/* Testimonials Section - Lighter style with pattern overlay */}
       <section className="py-16 bg-gradient-to-b from-[#F8FAFC] to-[#F1F5F9] overflow-hidden relative">
