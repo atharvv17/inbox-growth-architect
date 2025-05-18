@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -62,17 +61,17 @@ const caseStudies: CaseStudy[] = [
     testimonial: "I was skeptical about outsourcing my outbound, but this system delivers consistently qualified leads that actually convert. Game changer for my business."
   },
   {
-    clientName: "ConsultPro",
-    clientRole: "Jessica, Operations Director",
+    clientName: "Jessica Executive Coach",
+    clientRole: "Jessica, Executive Coach",
     headline: "Scaled from 3 to 11 clients in just 60 days",
-    problem: "ConsultPro had great service delivery but struggled with an inconsistent sales process. Their outreach was sporadic and lacked proper tracking.",
+    problem: "Jessica had great coaching skills but struggled with an inconsistent sales process. Her outreach was sporadic and lacked proper tracking.",
     systemBuilt: [
       "Designed multi-touch attribution system across channels",
       "Created industry-specific messaging for 3 target verticals",
       "Built automated nurturing sequences for long-term prospects",
       "Implemented meeting booking and qualification workflow"
     ],
-    videoSrc: "https://www.youtube.com/embed/SfD6BD-NaO0",
+    videoSrc: "https://www.youtube.com/embed/UO8X_ukj_ZY",
     results: {
       leads: "92 qualified opportunities",
       calls: "32 discovery calls",
