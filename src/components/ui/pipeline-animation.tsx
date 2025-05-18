@@ -6,41 +6,62 @@ export const PipelineAnimation = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in');
-          
-          // Start the pipeline animation sequence
-          const steps = entry.target.querySelectorAll('.pipeline-step');
-          steps.forEach((step, index) => {
-            setTimeout(() => {
-              step.classList.add('active');
-              
-              // Activate connection after step
-              const connection = entry.target.querySelectorAll('.pipeline-connection')[index];
-              if (connection) {
-                setTimeout(() => connection.classList.add('active'), 300);
-              }
-            }, 600 * (index + 1));
-          });
-        }
-      });
-    }, { threshold: 0.3 });
+    // Start animation immediately and make it repeat continuously
+    const startAnimation = () => {
+      if (!containerRef.current) return;
+      
+      // Make container visible immediately
+      containerRef.current.classList.add('animate-fade-in');
+      
+      // Function to run a single animation cycle
+      const animateCycle = () => {
+        const steps = containerRef.current?.querySelectorAll('.pipeline-step');
+        const connections = containerRef.current?.querySelectorAll('.pipeline-connection');
+        
+        // Reset all steps and connections first
+        steps?.forEach(step => {
+          step.classList.remove('active');
+        });
+        
+        connections?.forEach(connection => {
+          connection.classList.remove('active');
+        });
+        
+        // Then animate them sequentially
+        steps?.forEach((step, index) => {
+          setTimeout(() => {
+            step.classList.add('active');
+            
+            // Activate connection after step
+            if (connections && index < connections.length) {
+              setTimeout(() => connections[index].classList.add('active'), 300);
+            }
+          }, 600 * (index + 1));
+        });
+      };
+      
+      // Run the first cycle immediately
+      animateCycle();
+      
+      // Then set interval to repeat the animation
+      const animationInterval = setInterval(() => {
+        animateCycle();
+      }, 5000); // Full cycle repeats every 5 seconds
+      
+      // Clean up interval on unmount
+      return () => clearInterval(animationInterval);
+    };
     
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
+    // Start animation right away
+    const animationStart = setTimeout(startAnimation, 500);
     
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
+      clearTimeout(animationStart);
     };
   }, []);
   
   return (
-    <div ref={containerRef} className="w-full py-8 opacity-0">
+    <div ref={containerRef} className="w-full py-8">
       <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-1">
         {/* Lead */}
         <div className="pipeline-step relative px-5 py-3 rounded-lg border border-logo-blue/20 
