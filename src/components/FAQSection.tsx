@@ -1,11 +1,12 @@
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { 
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger
 } from "@/components/ui/accordion";
+import { HelpCircle } from "lucide-react";
 
 interface FAQItem {
   question: string;
@@ -17,6 +18,37 @@ interface FAQSectionProps {
 }
 
 const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
+  const faqRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const faqItems = entry.target.querySelectorAll('.faq-item');
+            faqItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add('animate-fade-in');
+                item.classList.remove('opacity-0');
+              }, 150 * index);
+            });
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (faqRef.current) {
+      observer.observe(faqRef.current);
+    }
+    
+    return () => {
+      if (faqRef.current) {
+        observer.unobserve(faqRef.current);
+      }
+    };
+  }, []);
+  
   return (
     <section className="py-8 md:py-12 bg-midnight-surface" id="faq">
       <div className="container">
@@ -27,16 +59,19 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
           </p>
         </div>
         
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto" ref={faqRef}>
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-midnight-background rounded-lg px-4 border border-logo-blue/20"
+                className="faq-item bg-midnight-background rounded-lg px-4 border border-logo-blue/20 opacity-0 transition-all duration-500"
               >
-                <AccordionTrigger className="text-base font-medium py-3">
-                  {faq.question}
+                <AccordionTrigger className="text-base font-medium py-3 flex items-center">
+                  <span className="flex items-center">
+                    <HelpCircle className="text-logo-blue mr-2 h-4 w-4 flex-shrink-0" />
+                    {faq.question}
+                  </span>
                 </AccordionTrigger>
                 <AccordionContent className="text-midnight-subtext text-sm pb-3">
                   {faq.answer}

@@ -1,8 +1,10 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
 import ProcessTimeline from "@/components/ProcessTimeline";
+import { AnimatedProcessTimeline } from "@/components/AnimatedProcessTimeline";
 import TestimonialCard from "@/components/TestimonialCard";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import CTASection from "@/components/CTASection";
@@ -139,31 +141,58 @@ const Index = () => {
                 We work with:
               </p>
               <ul className="space-y-2">
-                <li className="flex items-center">
-                  <CheckCircle className="text-midnight-success mr-2 h-5 w-5" />
+                <li className="flex items-center group">
+                  <div className="relative">
+                    <CheckCircle className="text-midnight-success mr-2 h-5 w-5 transition-all duration-300 group-hover:text-logo-blue" />
+                    {/* Hover tooltip */}
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-logo-blue/10 border border-logo-blue/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      Need predictable lead flow?
+                    </span>
+                  </div>
                   <span className="text-lg">B2B consultants & agency owners</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle className="text-midnight-success mr-2 h-5 w-5" />
+                <li className="flex items-center group">
+                  <div className="relative">
+                    <CheckCircle className="text-midnight-success mr-2 h-5 w-5 transition-all duration-300 group-hover:text-logo-blue" />
+                    {/* Hover tooltip */}
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-logo-blue/10 border border-logo-blue/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      Ready to scale?
+                    </span>
+                  </div>
                   <span className="text-lg">SaaS founders & startups</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle className="text-midnight-success mr-2 h-5 w-5" />
+                <li className="flex items-center group">
+                  <div className="relative">
+                    <CheckCircle className="text-midnight-success mr-2 h-5 w-5 transition-all duration-300 group-hover:text-logo-blue" />
+                    {/* Hover tooltip */}
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-logo-blue/10 border border-logo-blue/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      Grow your client base?
+                    </span>
+                  </div>
                   <span className="text-lg">Fractional execs & coaches</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle className="text-midnight-success mr-2 h-5 w-5" />
+                <li className="flex items-center group">
+                  <div className="relative">
+                    <CheckCircle className="text-midnight-success mr-2 h-5 w-5 transition-all duration-300 group-hover:text-logo-blue" />
+                    {/* Hover tooltip */}
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-logo-blue/10 border border-logo-blue/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      Need top-of-funnel support?
+                    </span>
+                  </div>
                   <span className="text-lg">Sales teams needing top-of-funnel support</span>
                 </li>
               </ul>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-xl bg-midnight-surface p-1">
+            <div className="rounded-xl overflow-hidden shadow-xl bg-midnight-surface p-1 relative group">
               <div className="rounded-lg overflow-hidden">
                 <AspectRatio ratio={16 / 9}>
                   <iframe className="w-full h-full" src="https://www.youtube.com/embed/SfD6BD-NaO0" title="Testimonial Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
                   </iframe>
                 </AspectRatio>
               </div>
+              
+              {/* Animated border glow on hover */}
+              <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 cyber-border"></div>
             </div>
           </div>
         </div>
@@ -178,7 +207,8 @@ const Index = () => {
               How we take you from uncertainty to predictable pipeline
             </p>
           </div>
-          <ProcessTimeline steps={processSteps} />
+          {/* Replace the old ProcessTimeline with our new AnimatedProcessTimeline */}
+          <AnimatedProcessTimeline steps={processSteps} />
         </div>
       </section>
 

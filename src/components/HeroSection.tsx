@@ -4,6 +4,8 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { GradientHeading } from '@/components/ui/gradient-heading';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { LogoCarousel } from '@/components/ui/logo-carousel';
+import { AnimatedText } from '@/components/ui/animated-text';
+import { PipelineAnimation } from '@/components/ui/pipeline-animation';
 import VercelIcon from './icons/VercelIcon';
 import SupabaseIcon from './icons/SupabaseIcon';
 
@@ -147,21 +149,25 @@ const HeroSection: React.FC = () => {
           
           {/* Logo-colored geometric elements */}
           <div className="absolute inset-0 overflow-hidden">
-            {/* Bright cyan line - horizontal */}
-            <div className="absolute top-1/4 left-0 w-full h-[0.5px] bg-logo-blue/30"></div>
+            {/* Animated glow elements */}
+            <div className="absolute top-1/4 left-0 w-full h-[0.5px] bg-gradient-to-r from-transparent via-logo-blue/60 to-transparent animate-pulse"></div>
             
-            {/* Bright cyan line - vertical */}
-            <div className="absolute top-0 left-1/3 w-[0.5px] h-full bg-logo-blue/20"></div>
+            <div className="absolute top-0 left-1/3 w-[0.5px] h-full bg-gradient-to-b from-transparent via-logo-blue/40 to-transparent"></div>
             
-            {/* Bright cyan dot */}
-            <div className="absolute top-2/3 right-1/4 w-3 h-3 rounded-full bg-logo-blue/40"></div>
+            {/* Animated particles */}
+            <div className="absolute top-2/3 right-1/4 w-2 h-2 rounded-full bg-logo-blue/40 animate-pulse shadow-glow"></div>
+            <div className="absolute top-1/3 left-1/5 w-1 h-1 rounded-full bg-logo-blue/30 animate-[pulse_4s_infinite_1s] shadow-glow"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-1 h-1 rounded-full bg-logo-blue/20 animate-[pulse_3s_infinite_0.5s] shadow-glow"></div>
             
             {/* Subtle glow behind CTA */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-16 w-80 h-80 rounded-full bg-logo-blue/10 blur-[100px]"></div>
             
+            {/* Grid background */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--muted)/0.05)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--muted)/0.05)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+            
             {/* Additional geometric elements to match logo style */}
-            <div className="absolute bottom-1/4 right-1/3 w-40 h-40 rounded-full border border-logo-blue/5"></div>
-            <div className="absolute top-1/3 right-1/4 w-20 h-20 rounded-full border border-logo-blue/5"></div>
+            <div className="absolute bottom-1/4 right-1/3 w-40 h-40 rounded-full border border-logo-blue/5 animate-[spin_20s_linear_infinite] opacity-40"></div>
+            <div className="absolute top-1/3 right-1/4 w-20 h-20 rounded-full border border-logo-blue/5 animate-[spin_15s_linear_infinite_reverse] opacity-30"></div>
           </div>
         </div>
         
@@ -172,18 +178,26 @@ const HeroSection: React.FC = () => {
             </div>
             
             <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-white leading-tight md:text-6xl">
-              We Build <span className="relative inline-block">
-                Predictable
-                <span className="absolute bottom-1 left-0 w-full h-[3px] bg-logo-blue"></span>
-              </span> Sales<br />Pipelines for B2B Companies
+              We Build <AnimatedText 
+                text="Predictable" 
+                delay={500} 
+                speed={70} 
+                highlightWords={["Predictable"]} 
+                className="font-bold" 
+              /> Sales<br />Pipelines for B2B Companies
             </h1>
             
-            <p className="text-lg text-gray-300 mb-6 md:text-xl">
+            <p className="text-lg text-gray-300 mb-6 md:text-xl animate-fade-in opacity-0" style={{ animationDelay: "1s", animationFillMode: "forwards" }}>
               Done-for-you outreach, CRM systems & appointment booking — installed in 7 days
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
-              <Button className="bg-logo-blue hover:bg-logo-darkBlue text-black font-semibold group flex items-center px-6 py-5 rounded shadow-lg shadow-logo-blue/20 transition-all duration-300" size="lg">
+            {/* Pipeline Animation */}
+            <div className="mb-8">
+              <PipelineAnimation />
+            </div>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 animate-fade-in opacity-0" style={{ animationDelay: "1.5s", animationFillMode: "forwards" }}>
+              <Button className="bg-logo-blue hover:bg-logo-darkBlue text-black font-semibold group flex items-center px-6 py-5 rounded shadow-lg shadow-logo-blue/20 transition-all duration-300 hover:shadow-logo-blue/40 pulse-glow" size="lg">
                 <Calendar className="mr-2 h-5 w-5" />
                 <span>Book a Free Growth Audit</span>
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
