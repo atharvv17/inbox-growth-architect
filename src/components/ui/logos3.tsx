@@ -1,4 +1,7 @@
 
+// This template requires the Embla Auto Scroll plugin to be installed:
+// npm install embla-carousel-auto-scroll
+
 "use client";
 
 import AutoScroll from "embla-carousel-auto-scroll";
