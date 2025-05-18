@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, {
@@ -188,11 +189,17 @@ interface LogoCarouselProps {
   showArrows?: boolean
 }
 
-// New component for scrolling animation
-const ScrollingLogoStrip = React.memo(({ logos, speed = 30, reverse = false }: { 
+// Scrolling animation component
+const ScrollingLogoStrip = React.memo(({ 
+  logos, 
+  speed = 30, 
+  reverse = false,
+  delay = 0
+}: { 
   logos: Logo[], 
   speed?: number,
-  reverse?: boolean 
+  reverse?: boolean,
+  delay?: number
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [loopLogos, setLoopLogos] = useState<Logo[]>([]);
@@ -206,8 +213,16 @@ const ScrollingLogoStrip = React.memo(({ logos, speed = 30, reverse = false }: {
     const scroll = scrollRef.current;
     if (!scroll) return;
     
+    // Add initial delay if specified
+    let timeoutId: NodeJS.Timeout | null = null;
+    if (delay > 0) {
+      timeoutId = setTimeout(() => {
+        timeoutId = null;
+      }, delay);
+    }
+    
     const animateScroll = () => {
-      if (!scroll) return;
+      if (!scroll || timeoutId) return;
       
       if (reverse) {
         if (scroll.scrollLeft <= 0) {
@@ -230,8 +245,11 @@ const ScrollingLogoStrip = React.memo(({ logos, speed = 30, reverse = false }: {
 
     // Adjust interval based on desired speed
     const interval = setInterval(animateScroll, speed);
-    return () => clearInterval(interval);
-  }, [reverse, speed]);
+    return () => {
+      clearInterval(interval);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [reverse, speed, delay]);
 
   return (
     <div 
@@ -239,14 +257,14 @@ const ScrollingLogoStrip = React.memo(({ logos, speed = 30, reverse = false }: {
       className="flex overflow-x-hidden w-full" 
       style={{ scrollBehavior: 'auto' }}
     >
-      <div className="flex gap-16 py-6">
+      <div className="flex gap-16 py-4">
         {loopLogos.map((logo, i) => (
           <div 
             key={`${logo.id}-${i}`} 
             className="flex-shrink-0"
           >
             {typeof logo.img === 'string' ? (
-              <div className="rounded-lg bg-white h-28 w-28 md:h-32 md:w-32 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
+              <div className="rounded-lg bg-white h-24 w-24 md:h-28 md:w-28 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
                 <div className="w-full h-full overflow-hidden flex items-center justify-center p-2">
                   <img 
                     src={logo.img} 
@@ -257,10 +275,10 @@ const ScrollingLogoStrip = React.memo(({ logos, speed = 30, reverse = false }: {
                 </div>
               </div>
             ) : (
-              <div className="rounded-lg bg-white h-28 w-28 md:h-32 md:w-32 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
+              <div className="rounded-lg bg-white h-24 w-24 md:h-28 md:w-28 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
                 <div className="w-full h-full overflow-hidden flex items-center justify-center">
                   {React.createElement(logo.img, {
-                    className: "h-full w-full text-gray-800 object-contain p-4"
+                    className: "h-full w-full text-gray-800 object-contain p-3"
                   })}
                 </div>
               </div>
@@ -278,17 +296,20 @@ export function LogoCarousel({
   autoplaySpeed = 3000,
   showArrows = false 
 }: LogoCarouselProps) {
-  // Split the logos into two groups to create alternating directions
-  const firstHalf = logos.slice(0, Math.ceil(logos.length / 2));
-  const secondHalf = logos.slice(Math.ceil(logos.length / 2));
+  // Split logos into 4 groups for different rows
+  const logosPerGroup = Math.ceil(logos.length / 4);
+  const group1 = logos.slice(0, logosPerGroup);
+  const group2 = logos.slice(logosPerGroup, logosPerGroup * 2);
+  const group3 = logos.slice(logosPerGroup * 2, logosPerGroup * 3);
+  const group4 = logos.slice(logosPerGroup * 3);
   
   return (
     <div className="w-full max-w-6xl mx-auto relative">
-      <div className="mb-4">
-        <ScrollingLogoStrip logos={firstHalf} speed={40} />
-      </div>
-      <div>
-        <ScrollingLogoStrip logos={secondHalf} speed={30} reverse={true} />
+      <div className="space-y-2">
+        <ScrollingLogoStrip logos={group1} speed={40} />
+        <ScrollingLogoStrip logos={group2} speed={35} reverse={true} />
+        <ScrollingLogoStrip logos={group3} speed={30} />
+        <ScrollingLogoStrip logos={group4} speed={45} reverse={true} />
       </div>
     </div>
   )
