@@ -27,8 +27,8 @@ export function LogoCarousel({
   const containerWidth = logos.length * logoWidth; 
   
   useEffect(() => {
-    // Animation speed control - slower speed (reduced further)
-    const speed = 0.15; // pixels per millisecond (reduced from 0.3)
+    // Animation speed control - even slower for better visibility
+    const speed = 0.1; // pixels per millisecond (reduced from 0.15)
     
     const startTime = Date.now();
     
@@ -67,21 +67,17 @@ export function LogoCarousel({
               >
                 {typeof logo.img === 'string' ? (
                   <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                    <div className="w-full h-full flex items-center justify-center p-3">
-                      <img 
-                        src={logo.img} 
-                        alt={logo.name} 
-                        className="object-contain w-full h-full"
-                      />
-                    </div>
+                    <img 
+                      src={logo.img} 
+                      alt={logo.name} 
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                 ) : (
                   <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                    <div className="w-full h-full flex items-center justify-center p-4">
-                      {React.createElement(logo.img, {
-                        className: "w-full h-full text-gray-800 object-contain"
-                      })}
-                    </div>
+                    {React.createElement(logo.img, {
+                      className: "w-full h-full text-gray-800 object-cover p-1"
+                    })}
                   </div>
                 )}
               </div>
@@ -95,21 +91,17 @@ export function LogoCarousel({
               >
                 {typeof logo.img === 'string' ? (
                   <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                    <div className="w-full h-full flex items-center justify-center p-3">
-                      <img 
-                        src={logo.img} 
-                        alt={logo.name} 
-                        className="object-contain w-full h-full"
-                      />
-                    </div>
+                    <img 
+                      src={logo.img} 
+                      alt={logo.name} 
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                 ) : (
                   <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                    <div className="w-full h-full flex items-center justify-center p-4">
-                      {React.createElement(logo.img, {
-                        className: "w-full h-full text-gray-800 object-contain"
-                      })}
-                    </div>
+                    {React.createElement(logo.img, {
+                      className: "w-full h-full text-gray-800 object-cover p-1"
+                    })}
                   </div>
                 )}
               </div>
