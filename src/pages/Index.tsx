@@ -169,7 +169,7 @@ const Index = () => {
       </section>
       
       {/* Who We Serve Section with smoother transition to Our Process section */}
-      <section className="py-12 bg-white text-[#1E293B] relative">
+      <section className="py-12 pb-24 bg-white text-[#1E293B] relative">
         <div className="container relative z-10">
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
@@ -249,7 +249,7 @@ const Index = () => {
       </section>
       
       {/* Our Process - With dark background matching logo and NO top wave (since we added it to previous section) */}
-      <section className="pt-20 pb-16 bg-[#000000] text-white relative" id="process">
+      <section className="pt-16 pb-16 bg-[#000000] text-white relative" id="process">
         <div className="container relative z-10">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-2 text-white">Our Process</h2>
