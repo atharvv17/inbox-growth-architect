@@ -2,15 +2,12 @@
 "use client"
 
 import React, {
-  useCallback,
   useEffect,
   useMemo,
   useState,
   useRef,
-  type SVGProps,
 } from "react"
 import { motion } from "framer-motion"
-import Image from "../Image"
 
 interface Logo {
   name: string
@@ -34,14 +31,12 @@ interface LogoItemProps {
 
 const LogoItem: React.FC<LogoItemProps> = React.memo(({ logo, index }) => {
   return (
-    <motion.div
-      className="flex-shrink-0 w-1/4 px-4"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ 
-        delay: index * 0.1, 
-        duration: 0.5, 
-        ease: "easeOut" 
+    <div
+      className="flex-shrink-0 px-4"
+      style={{
+        opacity: 1,
+        transform: "translateY(0px)",
+        transition: `opacity 500ms ease-out ${index * 100}ms, transform 500ms ease-out ${index * 100}ms`
       }}
     >
       {typeof logo.img === 'string' ? (
@@ -64,91 +59,52 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(({ logo, index }) => {
           </div>
         </div>
       )}
-    </motion.div>
+    </div>
   );
 });
 
-interface ScrollingLogoStripProps {
-  logos: Logo[]
-  direction?: 'left' | 'right'
-  speed?: number
-}
-
-const ScrollingLogoStrip: React.FC<ScrollingLogoStripProps> = ({ 
-  logos, 
-  direction = 'left',
-  speed = 25
-}) => {
-  const [duplicatedLogos, setDuplicatedLogos] = useState<Logo[]>([]);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Duplicate logos to create a seamless loop
-    setDuplicatedLogos([...logos, ...logos]);
-  }, [logos]);
-
-  return (
-    <div className="w-full overflow-hidden relative">
-      <motion.div 
-        className="flex whitespace-nowrap"
-        ref={containerRef}
-        animate={{
-          x: direction === 'left' 
-            ? [0, -100 * logos.length] 
-            : [-100 * logos.length, 0]
-        }}
-        transition={{
-          repeat: Infinity,
-          repeatType: "loop",
-          duration: speed,
-          ease: "linear",
-        }}
-      >
-        {duplicatedLogos.map((logo, index) => (
-          <LogoItem key={`${logo.id}-${index}`} logo={logo} index={index % logos.length} />
-        ))}
-      </motion.div>
-    </div>
-  );
-};
-
 interface LogoCarouselProps {
   logos: Logo[]
-  columnCount?: number
   autoplaySpeed?: number
   showArrows?: boolean
 }
 
 export function LogoCarousel({ 
   logos, 
-  columnCount = 4, 
-  autoplaySpeed = 3000,
+  autoplaySpeed = 30,
   showArrows = false 
 }: LogoCarouselProps) {
-  const [logo1, logo2] = useMemo(() => {
-    const shuffled = shuffleArray(logos);
-    const midpoint = Math.ceil(shuffled.length / 2);
-    return [
-      shuffled.slice(0, midpoint),
-      shuffled.slice(midpoint)
-    ];
-  }, [logos]);
+  const [duplicatedLogos, setDuplicatedLogos] = useState<Logo[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const shuffledLogos = useMemo(() => shuffleArray(logos), [logos]);
+
+  useEffect(() => {
+    // Duplicate logos to create a seamless loop
+    setDuplicatedLogos([...shuffledLogos, ...shuffledLogos]);
+  }, [shuffledLogos]);
 
   return (
-    <div className="w-full max-w-6xl mx-auto relative py-8">
-      <div className="mb-6">
-        <ScrollingLogoStrip 
-          logos={logo1} 
-          direction="left" 
-          speed={30} 
-        />
-      </div>
-      <div>
-        <ScrollingLogoStrip 
-          logos={logo2} 
-          direction="right" 
-          speed={40} 
-        />
+    <div className="w-full max-w-6xl mx-auto py-8">
+      <div className="overflow-hidden relative">
+        <motion.div 
+          className="flex"
+          animate={{
+            x: [-0, -100 * (shuffledLogos.length)]
+          }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: autoplaySpeed,
+            ease: "linear",
+          }}
+          style={{
+            display: "flex",
+          }}
+        >
+          {duplicatedLogos.map((logo, index) => (
+            <LogoItem key={`${logo.id}-${index}`} logo={logo} index={index % logos.length} />
+          ))}
+        </motion.div>
       </div>
     </div>
   );
