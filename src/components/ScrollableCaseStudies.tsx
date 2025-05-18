@@ -73,7 +73,9 @@ const ScrollableCaseStudies: React.FC = () => {
     }
   };
 
-  return <section className="bg-white relative overflow-hidden pt-0 pb-2 -mt-6">
+  // Changed -mt-6 to mt-4 to add more space between sections
+  // Added a subtle top border to create visual separation
+  return <section className="bg-white relative overflow-hidden pt-6 pb-2 mt-4 border-t border-gray-100">
       <div className="container mx-auto px-4 mb-4 relative z-20">
         <div className="text-center max-w-3xl mx-auto py-0 my-0">
           <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">Real Results, Real Clients</h2>

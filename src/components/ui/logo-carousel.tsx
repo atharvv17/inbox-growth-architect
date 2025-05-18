@@ -39,8 +39,8 @@ export function LogoCarousel({
 
   return (
     <div className="w-full max-w-6xl mx-auto relative overflow-hidden">
-      {/* Removed my-4 margins and reduced padding */}
-      <div className={`bg-[#F9FAFB] border border-gray-100 rounded-xl shadow-sm ${containerPadding}`}>
+      {/* Added bottom padding (pb-6) to create more space */}
+      <div className={`bg-[#F9FAFB] border border-gray-100 rounded-xl shadow-sm ${containerPadding} mb-6 pb-6`}>
         <motion.div className="overflow-hidden">
           <motion.div 
             ref={carouselRef}
