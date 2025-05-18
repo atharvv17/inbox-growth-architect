@@ -1,9 +1,7 @@
-
 import React, { useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-
 interface CaseStudy {
   clientName: string;
   clientRole: string;
@@ -19,69 +17,56 @@ interface CaseStudy {
   };
   testimonial: string;
 }
-
-const caseStudies: CaseStudy[] = [
-  {
-    clientName: "SalesRoad",
-    clientRole: "Beltaki, Sales Executive",
-    headline: "Booked 14 qualified sales calls in 30 days",
-    problem: "SalesRoad was struggling with an inefficient outbound process. No clear ICP, inconsistent cold outreach, and zero automation meant wasted time and missed opportunities.",
-    systemBuilt: [
-      "Refined ICP targeting Series A-C SaaS companies",
-      "Built personalized 4-email sequence with high conversion rate",
-      "Implemented Clay + Instantly + Smartlead automation",
-      "Set up lead scoring and inbox warm-up protocols"
-    ],
-    videoSrc: "https://www.youtube.com/embed/9t_SkFg-4As",
-    results: {
-      leads: "47 qualified leads",
-      calls: "14 booked calls",
-      pipeline: "$36,000 ARR",
-      timeSaved: "60% less manual work"
-    },
-    testimonial: "The system practically runs itself now. I can focus on closing deals while qualified meetings just show up on my calendar."
+const caseStudies: CaseStudy[] = [{
+  clientName: "SalesRoad",
+  clientRole: "Beltaki, Sales Executive",
+  headline: "Booked 14 qualified sales calls in 30 days",
+  problem: "SalesRoad was struggling with an inefficient outbound process. No clear ICP, inconsistent cold outreach, and zero automation meant wasted time and missed opportunities.",
+  systemBuilt: ["Refined ICP targeting Series A-C SaaS companies", "Built personalized 4-email sequence with high conversion rate", "Implemented Clay + Instantly + Smartlead automation", "Set up lead scoring and inbox warm-up protocols"],
+  videoSrc: "https://www.youtube.com/embed/9t_SkFg-4As",
+  results: {
+    leads: "47 qualified leads",
+    calls: "14 booked calls",
+    pipeline: "$36,000 ARR",
+    timeSaved: "60% less manual work"
   },
-  {
-    clientName: "Jessica Executive Coach",
-    clientRole: "Jessica, Executive Coach",
-    headline: "Scaled from 3 to 11 clients in just 60 days",
-    problem: "Jessica had great coaching skills but struggled with an inconsistent sales process. Her outreach was sporadic and lacked proper tracking.",
-    systemBuilt: [
-      "Designed multi-touch attribution system across channels",
-      "Created industry-specific messaging for 3 target verticals",
-      "Built automated nurturing sequences for long-term prospects",
-      "Implemented meeting booking and qualification workflow"
-    ],
-    videoSrc: "https://www.youtube.com/embed/UO8X_ukj_ZY",
-    results: {
-      leads: "92 qualified opportunities",
-      calls: "32 discovery calls",
-      pipeline: "$87,500 in new business",
-      timeSaved: "20+ hours weekly"
-    },
-    testimonial: "The leads coming through this system are so well-qualified that our close rate has nearly doubled. It's transformed how we approach sales."
-  }
-];
-
+  testimonial: "The system practically runs itself now. I can focus on closing deals while qualified meetings just show up on my calendar."
+}, {
+  clientName: "Jessica Executive Coach",
+  clientRole: "Jessica, Executive Coach",
+  headline: "Scaled from 3 to 11 clients in just 60 days",
+  problem: "Jessica had great coaching skills but struggled with an inconsistent sales process. Her outreach was sporadic and lacked proper tracking.",
+  systemBuilt: ["Designed multi-touch attribution system across channels", "Created industry-specific messaging for 3 target verticals", "Built automated nurturing sequences for long-term prospects", "Implemented meeting booking and qualification workflow"],
+  videoSrc: "https://www.youtube.com/embed/UO8X_ukj_ZY",
+  results: {
+    leads: "92 qualified opportunities",
+    calls: "32 discovery calls",
+    pipeline: "$87,500 in new business",
+    timeSaved: "20+ hours weekly"
+  },
+  testimonial: "The leads coming through this system are so well-qualified that our close rate has nearly doubled. It's transformed how we approach sales."
+}];
 const ScrollableCaseStudies: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-
   const scrollToNext = () => {
     if (scrollContainerRef.current) {
       const containerWidth = scrollContainerRef.current.offsetWidth;
-      scrollContainerRef.current.scrollBy({ left: containerWidth, behavior: 'smooth' });
+      scrollContainerRef.current.scrollBy({
+        left: containerWidth,
+        behavior: 'smooth'
+      });
     }
   };
-
   const scrollToPrevious = () => {
     if (scrollContainerRef.current) {
       const containerWidth = scrollContainerRef.current.offsetWidth;
-      scrollContainerRef.current.scrollBy({ left: -containerWidth, behavior: 'smooth' });
+      scrollContainerRef.current.scrollBy({
+        left: -containerWidth,
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section className="py-16 bg-white relative overflow-hidden">
+  return <section className="bg-white relative overflow-hidden py-[8px]">
       <div className="container mx-auto px-4 mb-6">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold mb-3 text-[#1E293B]">Real Results, Real Clients</h2>
@@ -92,38 +77,24 @@ const ScrollableCaseStudies: React.FC = () => {
         
         {/* Navigation Controls for Desktop */}
         <div className="hidden md:flex justify-end gap-2 mb-4">
-          <button 
-            onClick={scrollToPrevious}
-            className="p-3 rounded-full bg-white border border-[#E5E7EB] shadow-sm hover:shadow-md transition-all"
-            aria-label="Previous case study"
-          >
+          <button onClick={scrollToPrevious} className="p-3 rounded-full bg-white border border-[#E5E7EB] shadow-sm hover:shadow-md transition-all" aria-label="Previous case study">
             <ArrowLeft className="w-5 h-5 text-[#00CFFF]" />
           </button>
-          <button 
-            onClick={scrollToNext}
-            className="p-3 rounded-full bg-white border border-[#E5E7EB] shadow-sm hover:shadow-md transition-all"
-            aria-label="Next case study"
-          >
+          <button onClick={scrollToNext} className="p-3 rounded-full bg-white border border-[#E5E7EB] shadow-sm hover:shadow-md transition-all" aria-label="Next case study">
             <ArrowRight className="w-5 h-5 text-[#00CFFF]" />
           </button>
         </div>
       </div>
       
       {/* Scrollable Container */}
-      <div 
-        ref={scrollContainerRef}
-        className="flex overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
-        style={{
-          scrollbarWidth: 'none', // Firefox
-          msOverflowStyle: 'none', // IE and Edge
-          WebkitOverflowScrolling: 'touch',
-        }}
-      >
-        {caseStudies.map((study, index) => (
-          <div 
-            key={index} 
-            className="flex-shrink-0 w-[90vw] max-w-[900px] snap-center mx-4 first:ml-[calc((100%-min(90vw,900px))/2)] last:mr-[calc((100%-min(90vw,900px))/2)]"
-          >
+      <div ref={scrollContainerRef} className="flex overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide" style={{
+      scrollbarWidth: 'none',
+      // Firefox
+      msOverflowStyle: 'none',
+      // IE and Edge
+      WebkitOverflowScrolling: 'touch'
+    }}>
+        {caseStudies.map((study, index) => <div key={index} className="flex-shrink-0 w-[90vw] max-w-[900px] snap-center mx-4 first:ml-[calc((100%-min(90vw,900px))/2)] last:mr-[calc((100%-min(90vw,900px))/2)]">
             <div className="bg-white rounded-3xl p-8 shadow-lg border border-[#E5E7EB] h-full">
               <div className="mb-6">
                 <div className="flex items-center mb-2">
@@ -146,26 +117,18 @@ const ScrollableCaseStudies: React.FC = () => {
                   <div className="mb-6">
                     <h4 className="text-lg font-semibold text-[#1E293B] mb-2">System We Built</h4>
                     <ul className="space-y-2">
-                      {study.systemBuilt.map((item, i) => (
-                        <li key={i} className="flex items-start">
+                      {study.systemBuilt.map((item, i) => <li key={i} className="flex items-start">
                           <span className="text-[#00CFFF] mr-2">✓</span>
                           <span className="text-[#4B5563]">{item}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </div>
                 </div>
                 
                 <div>
                   <div className="mb-6 rounded-xl overflow-hidden shadow-lg bg-black">
-                    <AspectRatio ratio={16/9}>
-                      <iframe 
-                        src={study.videoSrc} 
-                        title="Client Testimonial" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowFullScreen
-                        className="w-full h-full"
-                      ></iframe>
+                    <AspectRatio ratio={16 / 9}>
+                      <iframe src={study.videoSrc} title="Client Testimonial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full"></iframe>
                     </AspectRatio>
                   </div>
                   
@@ -203,8 +166,7 @@ const ScrollableCaseStudies: React.FC = () => {
                 </Button>
               </div>
             </div>
-          </div>
-        ))}
+          </div>)}
       </div>
       
       {/* Fix the style tag by removing jsx and global attributes */}
@@ -219,8 +181,6 @@ const ScrollableCaseStudies: React.FC = () => {
           }
         `}
       </style>
-    </section>
-  );
+    </section>;
 };
-
 export default ScrollableCaseStudies;
