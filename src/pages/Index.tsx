@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -10,7 +11,6 @@ import Footer from "@/components/Footer";
 import ClientBenefitCard from "@/components/ClientBenefitCard";
 import FAQSection from "@/components/FAQSection";
 import TestimonialsColumn from "@/components/TestimonialsColumn";
-import MethodologySection from "@/components/MethodologySection";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
@@ -182,9 +182,6 @@ const Index = () => {
           <ProcessTimeline steps={processSteps} />
         </div>
       </section>
-
-      {/* Our Methodology Section - NEW */}
-      <MethodologySection />
 
       {/* Our Offers Section - NOW AFTER PROCESS */}
       <section className="py-8 md:py-12 bg-midnight-surface" id="offers">
