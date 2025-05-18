@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -14,8 +13,10 @@ import FAQSection from "@/components/FAQSection";
 import TestimonialsColumn from "@/components/TestimonialsColumn";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { LogoCarousel } from "@/components/ui/logo-carousel";
 
 const Index = () => {
+  // Process steps data
   const processSteps = [{
     number: 1,
     title: "Deep Discovery & ICP Clarity",
@@ -43,6 +44,7 @@ const Index = () => {
     detailedDescription: "We analyze performance, A/B test sequences, and continuously refine targeting and messaging — so your lead quality gets sharper over time.",
     isLast: true
   }];
+  
   // FAQ content
   const faqs = [{
     question: "How long does it take to see results?",
@@ -60,6 +62,7 @@ const Index = () => {
     question: "Will this work for my specific industry?",
     answer: "We've successfully generated leads across diverse B2B sectors, from SaaS to professional services. During our discovery process, we'll determine if your offer and audience are a good fit for our methods."
   }];
+  
   // New testimonials data
   const testimonialColumns = [
     [
@@ -124,28 +127,51 @@ const Index = () => {
     ]
   ];
 
-  return <div className="min-h-screen bg-midnight-background text-midnight-text">
+  // Example logos data
+  const logos = [
+    { name: "Company 1", id: 1, img: "/lovable-uploads/a0c813cd-8deb-48e2-8b0f-3e39a130ff2c.png" },
+    { name: "Company 2", id: 2, img: "/lovable-uploads/88da1b12-db70-4d0b-bbac-ab2d90d04565.png" },
+    { name: "Company 3", id: 3, img: "/lovable-uploads/d317e6ab-923a-4dc9-a864-9f0851e151ee.png" },
+    { name: "Company 4", id: 4, img: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png" },
+    { name: "Company 5", id: 5, img: "/lovable-uploads/d68b7475-2375-4299-b26a-d5ee7a16216c.png" },
+    { name: "Company 6", id: 6, img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png" },
+  ];
+
+  return <div className="min-h-screen bg-[#F9FAFB] text-[#374151]">
       <Header />
       <HeroSection />
       
-      {/* Who We Serve Section */}
-      <section className="py-8 md:py-12">
+      {/* Trusted by Industry Leaders */}
+      <section className="py-8 bg-[#F9FAFB]">
+        <div className="container text-center mb-6">
+          <h2 className="text-3xl font-bold text-[#374151] mb-2">
+            Trusted by Industry Leaders
+          </h2>
+          <p className="text-lg text-[#6B7280] max-w-3xl mx-auto mb-8">
+            Join hundreds of businesses that trust our outbound systems to drive predictable growth
+          </p>
+          <LogoCarousel logos={logos} />
+        </div>
+      </section>
+      
+      {/* Who We Serve Section - Updated with Dark Slate background */}
+      <section className="py-8 md:py-12 bg-[#111827] text-[#F3F4F6]">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-3">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
                 You're great at closing deals.<br />
                 We're great at starting them.
               </h2>
-              <p className="text-xl text-midnight-subtext mb-4">
+              <p className="text-xl text-[#F3F4F6] mb-4">
                 We work with:
               </p>
               <ul className="space-y-2">
                 <li className="flex items-center group">
                   <div className="relative">
-                    <CheckCircle className="text-midnight-success mr-2 h-5 w-5 transition-all duration-300 group-hover:text-logo-blue" />
+                    <CheckCircle className="text-[#67E8F9] mr-2 h-5 w-5 transition-all duration-300 group-hover:text-[#67E8F9]" />
                     {/* Hover tooltip */}
-                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-logo-blue/10 border border-logo-blue/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-[#67E8F9]/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                       Need predictable lead flow?
                     </span>
                   </div>
@@ -153,9 +179,9 @@ const Index = () => {
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
-                    <CheckCircle className="text-midnight-success mr-2 h-5 w-5 transition-all duration-300 group-hover:text-logo-blue" />
+                    <CheckCircle className="text-[#67E8F9] mr-2 h-5 w-5 transition-all duration-300 group-hover:text-[#67E8F9]" />
                     {/* Hover tooltip */}
-                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-logo-blue/10 border border-logo-blue/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-[#67E8F9]/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                       Ready to scale?
                     </span>
                   </div>
@@ -163,9 +189,9 @@ const Index = () => {
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
-                    <CheckCircle className="text-midnight-success mr-2 h-5 w-5 transition-all duration-300 group-hover:text-logo-blue" />
+                    <CheckCircle className="text-[#67E8F9] mr-2 h-5 w-5 transition-all duration-300 group-hover:text-[#67E8F9]" />
                     {/* Hover tooltip */}
-                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-logo-blue/10 border border-logo-blue/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-[#67E8F9]/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                       Grow your client base?
                     </span>
                   </div>
@@ -173,9 +199,9 @@ const Index = () => {
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
-                    <CheckCircle className="text-midnight-success mr-2 h-5 w-5 transition-all duration-300 group-hover:text-logo-blue" />
+                    <CheckCircle className="text-[#67E8F9] mr-2 h-5 w-5 transition-all duration-300 group-hover:text-[#67E8F9]" />
                     {/* Hover tooltip */}
-                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-logo-blue/10 border border-logo-blue/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-[#67E8F9]/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                       Need top-of-funnel support?
                     </span>
                   </div>
@@ -183,7 +209,7 @@ const Index = () => {
                 </li>
               </ul>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-xl bg-midnight-surface p-1 relative group">
+            <div className="rounded-xl overflow-hidden shadow-xl bg-[#1E293B] p-1 relative group">
               <div className="rounded-lg overflow-hidden">
                 <AspectRatio ratio={16 / 9}>
                   <iframe className="w-full h-full" src="https://www.youtube.com/embed/SfD6BD-NaO0" title="Testimonial Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
@@ -198,12 +224,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Process - MOVED ABOVE OUR OFFERS */}
-      <section className="py-8 md:py-12 bg-midnight-background text-midnight-text" id="process">
+      {/* Our Process - Updated with Off-White/Beige Background */}
+      <section className="py-8 md:py-12 bg-[#F8FAFC] text-[#1E293B]" id="process">
         <div className="container">
           <div className="text-center mb-6">
-            <h2 className="text-3xl font-bold mb-2">Our Process</h2>
-            <p className="text-lg text-midnight-subtext max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">Our Process</h2>
+            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
               How we take you from uncertainty to predictable pipeline
             </p>
           </div>
@@ -212,60 +238,82 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Offers Section - NOW AFTER PROCESS */}
-      <section className="py-8 md:py-12 bg-midnight-surface" id="offers">
+      {/* Our Offers Section - Updated with Deep Navy/Graphite Background */}
+      <section className="py-8 md:py-12 bg-[#0F172A] text-white" id="offers">
         <div className="container">
           <div className="text-center mb-6">
-            <h2 className="text-3xl font-bold mb-2">Our Offers</h2>
-            <p className="text-lg text-midnight-subtext max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-2 text-white">Our Offers</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Choose the system that works best for your business needs
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-5">
-            <ServiceCard title="Sales Inbox Accelerator" description="Cold Email Infrastructure & Done-For-You Campaign Execution" icon={<Mail />} features={["End-to-End Cold Email Setup: Custom domains, inbox warmup, DNS records, and real-time deliverability monitoring", "Custom Copywriting & Lead Research: 1-on-1 work with our team to craft compelling email sequences and handpick high-quality leads", "Reply Management & Campaign Optimization: Active response management, performance tracking, and weekly optimization sprints", "Reporting & Compliance: Weekly dashboards, reply breakdowns, and full GDPR/Can-Spam compliance"]} outcome="Your calendar filled with qualified B2B sales calls — built on a compliant cold email machine that works on autopilot" buttonText="Learn More" />
-            <ServiceCard title="LinkedIn Selling System" description="Manual Prospecting with Hyper-Personalized Messaging — Zero Automation" icon={<MessageSquare />} features={["Profile Optimization for Authority Positioning: Reworked LinkedIn profile with conversion-focused structure", "Handcrafted Messaging (No Bots): 10 fully personalized messages daily tailored to each prospect's needs", "Zero Automation, Zero Risk: Manual actions only to keep your reputation safe and engagement authentic", "Follow-ups & Lead Handoffs: Strategic conversation management and warm lead transfers directly to you"]} outcome="A daily stream of inbound conversations from decision-makers who already know what you do and want to talk" buttonText="Learn More" />
+            <ServiceCard 
+              title="Sales Inbox Accelerator" 
+              description="Cold Email Infrastructure & Done-For-You Campaign Execution" 
+              icon={<Mail />} 
+              features={[
+                "End-to-End Cold Email Setup: Custom domains, inbox warmup, DNS records, and real-time deliverability monitoring", 
+                "Custom Copywriting & Lead Research: 1-on-1 work with our team to craft compelling email sequences and handpick high-quality leads", 
+                "Reply Management & Campaign Optimization: Active response management, performance tracking, and weekly optimization sprints", 
+                "Reporting & Compliance: Weekly dashboards, reply breakdowns, and full GDPR/Can-Spam compliance"
+              ]} 
+              outcome="Your calendar filled with qualified B2B sales calls — built on a compliant cold email machine that works on autopilot" 
+              buttonText="Learn More" 
+            />
+            <ServiceCard 
+              title="LinkedIn Selling System" 
+              description="Manual Prospecting with Hyper-Personalized Messaging — Zero Automation" 
+              icon={<MessageSquare />} 
+              features={[
+                "Profile Optimization for Authority Positioning: Reworked LinkedIn profile with conversion-focused structure", 
+                "Handcrafted Messaging (No Bots): 10 fully personalized messages daily tailored to each prospect's needs", 
+                "Zero Automation, Zero Risk: Manual actions only to keep your reputation safe and engagement authentic", 
+                "Follow-ups & Lead Handoffs: Strategic conversation management and warm lead transfers directly to you"
+              ]} 
+              outcome="A daily stream of inbound conversations from decision-makers who already know what you do and want to talk" 
+              buttonText="Learn More" 
+              featured={true}
+              accentColor="#5EEAD4"
+            />
           </div>
         </div>
       </section>
 
-      {/* Why Our Clients Choose Us - UPDATED SECTION */}
-      <section className="py-8 md:py-12 bg-midnight-background" id="benefits">
+      {/* Why Our Clients Choose Us - Updated with White/Light Gray Background */}
+      <section className="py-8 md:py-12 bg-[#F3F4F6]" id="benefits">
         <div className="container">
           <div className="text-center mb-6">
-            <h2 className="text-3xl font-bold mb-2">Why Our Clients Choose Us</h2>
-            <p className="text-lg text-midnight-subtext max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-2 text-black">Why Our Clients Choose Us</h2>
+            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
               Everything you need to start growing your business immediately
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <ClientBenefitCard icon={<Rocket className="h-7 w-7 text-logo-blue" />} title="Plug-and-Play Revenue Engine" description="Seamlessly integrate our system and watch your revenue scale effortlessly." />
-            <ClientBenefitCard icon={<Zap className="h-7 w-7 text-logo-blue" />} title="Fast Setup: 7 Days or Less" description="Get fully operational in under a week—no delays, no hassles." />
-            <ClientBenefitCard icon={<Briefcase className="h-7 w-7 text-logo-blue" />} title="AI-Powered Lead Scoring" description="Prioritize your best prospects with intelligent data-driven lead scoring." />
-            <ClientBenefitCard icon={<User className="h-7 w-7 text-logo-blue" />} title="Dedicated Campaign Manager" description="Your personal expert, focused on your success and results." />
-            <ClientBenefitCard icon={<Calendar className="h-7 w-7 text-logo-blue" />} title="Optional Appointment Setters" description="Save time and close more deals with ready-to-go appointment setters." />
-            <ClientBenefitCard icon={<ChartBar className="h-7 w-7 text-logo-blue" />} title="Performance Tracking Dashboard" description="Real-time analytics to track ROI and optimize campaign performance." />
+            <ClientBenefitCard icon={<Rocket className="h-7 w-7 text-[#3B82F6]" />} title="Plug-and-Play Revenue Engine" description="Seamlessly integrate our system and watch your revenue scale effortlessly." />
+            <ClientBenefitCard icon={<Zap className="h-7 w-7 text-[#3B82F6]" />} title="Fast Setup: 7 Days or Less" description="Get fully operational in under a week—no delays, no hassles." />
+            <ClientBenefitCard icon={<Briefcase className="h-7 w-7 text-[#3B82F6]" />} title="AI-Powered Lead Scoring" description="Prioritize your best prospects with intelligent data-driven lead scoring." />
+            <ClientBenefitCard icon={<User className="h-7 w-7 text-[#3B82F6]" />} title="Dedicated Campaign Manager" description="Your personal expert, focused on your success and results." />
+            <ClientBenefitCard icon={<Calendar className="h-7 w-7 text-[#3B82F6]" />} title="Optional Appointment Setters" description="Save time and close more deals with ready-to-go appointment setters." />
+            <ClientBenefitCard icon={<ChartBar className="h-7 w-7 text-[#3B82F6]" />} title="Performance Tracking Dashboard" description="Real-time analytics to track ROI and optimize campaign performance." />
           </div>
         </div>
       </section>
 
-      {/* What Makes Us Different */}
-      
-      {/* Case Studies */}
-      
-      {/* New Testimonials Section */}
-      <section className="py-6 md:py-10 bg-midnight-surface overflow-hidden">
+      {/* Testimonials Section - Updated with Dark Gradient */}
+      <section className="py-6 md:py-10 bg-gradient-to-b from-black to-[#0F172A] overflow-hidden">
         <div className="container">
           <div className="text-center mb-4">
-            <p className="text-logo-blue text-sm uppercase tracking-wider mb-1 font-medium">Client Stories</p>
-            <h2 className="text-3xl font-bold mb-2">What Our Clients Say</h2>
-            <p className="text-lg text-midnight-subtext max-w-2xl mx-auto">
+            <p className="text-[#67E8F9] text-sm uppercase tracking-wider mb-1 font-medium">Client Stories</p>
+            <h2 className="text-3xl font-bold mb-2 text-white">What Our Clients Say</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Real results from businesses just like yours
             </p>
           </div>
           
           <div className="relative flex gap-4 justify-center mx-auto max-w-7xl overflow-hidden">
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-midnight-surface via-transparent to-midnight-surface z-10"></div>
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-midnight-surface via-transparent to-midnight-surface z-10"></div>
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0F172A] via-transparent to-[#0F172A] z-10"></div>
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#0F172A] via-transparent to-[#0F172A] z-10"></div>
             
             <TestimonialsColumn 
               className="min-w-[320px] max-h-[650px] overflow-hidden"
@@ -288,11 +336,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ Section - Updated in the FAQSection.tsx component */}
       <FAQSection faqs={faqs} />
 
-      {/* Final CTA */}
-      <CTASection title="Let's Build Your Outbound Machine" subtitle="Your sales calendar shouldn't be empty — let's fix that." buttonText="Book Your Strategy Call Now" />
+      {/* Final CTA - Updated in the CTASection.tsx component */}
+      <CTASection 
+        title="Let's Build Your Outbound Machine" 
+        subtitle="Your sales calendar shouldn't be empty — let's fix that." 
+        buttonText="Book Your Strategy Call Now" 
+      />
 
       <Footer />
     </div>;

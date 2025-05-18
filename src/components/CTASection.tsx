@@ -11,12 +11,13 @@ interface CTASectionProps {
 
 const CTASection: React.FC<CTASectionProps> = ({ title, subtitle, buttonText }) => {
   return (
-    <section className="py-12 bg-gradient-to-b from-black to-[#111]">
+    <section className="py-12 bg-gradient-to-b from-black to-[#0F172A]">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-3 text-white">{title}</h2>
           <p className="text-lg text-gray-300 mb-6">{subtitle}</p>
-          <Button className="bg-[#1EAEDB] hover:bg-[#3D5AFE] text-white text-base px-6 py-5 h-auto transition-colors" size="lg">
+          {/* Updated button to Electric Blue or Neon Green with hover animation */}
+          <Button className="bg-[#67E8F9] hover:bg-gradient-to-r hover:from-[#67E8F9] hover:to-[#5EEAD4] text-black font-bold text-base px-6 py-5 h-auto transition-all duration-300 hover:shadow-lg hover:shadow-[#67E8F9]/30 hover:scale-105" size="lg">
             <Calendar className="mr-2 h-5 w-5" />
             {buttonText}
           </Button>

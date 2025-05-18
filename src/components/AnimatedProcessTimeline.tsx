@@ -76,12 +76,16 @@ export const AnimatedProcessTimeline: React.FC<AnimatedProcessTimelineProps> = (
     })
   };
   
+  // Colors for the gradient steps
+  const gradientBackground = "bg-gradient-to-br from-[#E2E8F0] to-white";
+  const stepActiveColor = "#3B82F6"; // Blue accent color
+  
   return (
     <div ref={timelineRef} className="relative max-w-5xl mx-auto mt-10">
       {/* Mobile layout (vertical) */}
       <div className="md:hidden space-y-8 relative">
         {/* Vertical connector line */}
-        <div className="absolute left-4 top-4 bottom-4 w-0.5 bg-midnight-primary/30 z-0"></div>
+        <div className="absolute left-4 top-4 bottom-4 w-0.5 bg-gray-300 z-0"></div>
         
         {steps.map((step, index) => (
           <motion.div 
@@ -96,8 +100,8 @@ export const AnimatedProcessTimeline: React.FC<AnimatedProcessTimelineProps> = (
               <motion.div 
                 className={cn(
                   "w-2 h-2 rounded-full transition-all duration-500",
-                  activeStep === step.number ? "bg-logo-blue" : 
-                  completedSteps.includes(step.number) ? "bg-logo-blue/70" : "bg-midnight-primary/50"
+                  activeStep === step.number ? `bg-[${stepActiveColor}]` : 
+                  completedSteps.includes(step.number) ? "bg-blue-400" : "bg-gray-400"
                 )}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -113,6 +117,8 @@ export const AnimatedProcessTimeline: React.FC<AnimatedProcessTimelineProps> = (
               isActive={activeStep === step.number}
               isCompleted={completedSteps.includes(step.number)}
               onClick={() => handleStepClick(step.number)}
+              className={gradientBackground}
+              accentColor={stepActiveColor}
             />
           </motion.div>
         ))}
@@ -122,7 +128,7 @@ export const AnimatedProcessTimeline: React.FC<AnimatedProcessTimelineProps> = (
       <div className="hidden md:grid grid-cols-5 gap-4 relative">
         {/* Horizontal connector line */}
         <motion.div 
-          className="absolute left-0 right-0 top-1/2 h-0.5 bg-midnight-primary/30 z-0"
+          className="absolute left-0 right-0 top-1/2 h-0.5 bg-gray-300 z-0"
           initial={{ scaleX: 0, originX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -146,8 +152,8 @@ export const AnimatedProcessTimeline: React.FC<AnimatedProcessTimelineProps> = (
             >
               <div className={cn(
                 "w-4 h-4 rounded-full transition-all duration-500",
-                activeStep === step.number ? "bg-logo-blue shadow-glow scale-150" : 
-                completedSteps.includes(step.number) ? "bg-logo-blue/70" : "bg-midnight-primary/50"
+                activeStep === step.number ? `bg-[${stepActiveColor}] shadow-lg shadow-blue-400/30 scale-150` : 
+                completedSteps.includes(step.number) ? "bg-blue-400" : "bg-gray-400"
               )}></div>
             </motion.div>
             
@@ -159,6 +165,8 @@ export const AnimatedProcessTimeline: React.FC<AnimatedProcessTimelineProps> = (
               isActive={activeStep === step.number}
               isCompleted={completedSteps.includes(step.number)}
               onClick={() => handleStepClick(step.number)}
+              className={gradientBackground}
+              accentColor={stepActiveColor}
             />
             
             {/* Connector arrow between steps */}
@@ -169,7 +177,7 @@ export const AnimatedProcessTimeline: React.FC<AnimatedProcessTimelineProps> = (
                 animate={{ opacity: 0.3, x: "50%" }}
                 transition={{ delay: index * 0.3 + 0.5, duration: 0.5 }}
               >
-                <ChevronRight className="h-6 w-6 text-logo-blue" />
+                <ChevronRight className="h-6 w-6 text-blue-500" />
               </motion.div>
             )}
           </motion.div>

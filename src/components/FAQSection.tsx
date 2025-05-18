@@ -50,11 +50,11 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
   }, []);
   
   return (
-    <section className="py-8 md:py-12 bg-midnight-surface" id="faq">
+    <section className="py-8 md:py-12 bg-[#E5E7EB]" id="faq">
       <div className="container">
         <div className="text-center mb-6">
-          <h2 className="text-3xl font-bold mb-2">Frequently Asked Questions</h2>
-          <p className="text-lg text-midnight-subtext max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-2 text-[#1F2937]">Frequently Asked Questions</h2>
+          <p className="text-lg text-[#374151] max-w-2xl mx-auto">
             Everything you need to know about our outbound lead generation services
           </p>
         </div>
@@ -65,15 +65,15 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="faq-item bg-midnight-background rounded-lg px-4 border border-logo-blue/20 opacity-0 transition-all duration-500"
+                className="faq-item bg-white rounded-lg px-4 border border-gray-200 shadow-sm opacity-0 transition-all duration-500"
               >
-                <AccordionTrigger className="text-base font-medium py-3 flex items-center">
+                <AccordionTrigger className="text-base font-medium py-3 flex items-center text-[#1F2937]">
                   <span className="flex items-center">
-                    <HelpCircle className="text-logo-blue mr-2 h-4 w-4 flex-shrink-0" />
+                    <HelpCircle className="text-[#3B82F6] mr-2 h-4 w-4 flex-shrink-0" />
                     {faq.question}
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-midnight-subtext text-sm pb-3">
+                <AccordionContent className="text-[#4B5563] text-sm pb-3">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
