@@ -165,6 +165,9 @@ const Index = () => {
             </div>
           </div>
         </div>
+        
+        {/* Adding extra padding at the bottom of this section for better spacing */}
+        <div className="py-10"></div>
       </section>
       
       {/* Who We Serve Section with smoother transition to Our Process section */}
