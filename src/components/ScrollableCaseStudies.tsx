@@ -1,7 +1,9 @@
+
 import React, { useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+
 interface CaseStudy {
   clientName: string;
   clientRole: string;
@@ -17,6 +19,7 @@ interface CaseStudy {
   };
   testimonial: string;
 }
+
 const caseStudies: CaseStudy[] = [{
   clientName: "SalesRoad",
   clientRole: "Beltaki, Sales Executive",
@@ -46,8 +49,10 @@ const caseStudies: CaseStudy[] = [{
   },
   testimonial: "The leads coming through this system are so well-qualified that our close rate has nearly doubled. It's transformed how we approach sales."
 }];
+
 const ScrollableCaseStudies: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  
   const scrollToNext = () => {
     if (scrollContainerRef.current) {
       const containerWidth = scrollContainerRef.current.offsetWidth;
@@ -57,6 +62,7 @@ const ScrollableCaseStudies: React.FC = () => {
       });
     }
   };
+  
   const scrollToPrevious = () => {
     if (scrollContainerRef.current) {
       const containerWidth = scrollContainerRef.current.offsetWidth;
@@ -66,8 +72,9 @@ const ScrollableCaseStudies: React.FC = () => {
       });
     }
   };
+
   return <section className="bg-white relative overflow-hidden pt-0 pb-2 -mt-6">
-      <div className="container mx-auto px-4 mb-4">
+      <div className="container mx-auto px-4 mb-4 relative z-20">
         <div className="text-center max-w-3xl mx-auto py-0 my-0">
           <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">Real Results, Real Clients</h2>
           <p className="text-lg text-[#4B5563] mb-6">
@@ -87,7 +94,7 @@ const ScrollableCaseStudies: React.FC = () => {
       </div>
       
       {/* Scrollable Container */}
-      <div ref={scrollContainerRef} className="flex overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide" style={{
+      <div ref={scrollContainerRef} className="flex overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide relative z-10" style={{
       scrollbarWidth: 'none',
       // Firefox
       msOverflowStyle: 'none',
@@ -183,4 +190,5 @@ const ScrollableCaseStudies: React.FC = () => {
       </style>
     </section>;
 };
+
 export default ScrollableCaseStudies;

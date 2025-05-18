@@ -53,7 +53,7 @@ export function LogoCarousel({
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: logos.length * 5, // Adjust speed based on number of logos
+                duration: logos.length * 2, // Reduced from 5 to 2 to make it 2.5x faster
                 ease: "linear",
               }
             }}
