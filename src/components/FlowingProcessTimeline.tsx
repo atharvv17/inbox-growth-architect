@@ -27,10 +27,10 @@ export const FlowingProcessTimeline: React.FC<{steps: ProcessStepProps[]}> = ({ 
   return (
     <div className="relative max-w-5xl mx-auto my-12">
       {/* Connecting line */}
-      <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-blue-200 transform md:-translate-x-1/2 hidden md:block"></div>
+      <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#00CFFF]/40 transform md:-translate-x-1/2 hidden md:block"></div>
       
       {/* Mobile vertical line */}
-      <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-200 md:hidden"></div>
+      <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-[#00CFFF]/40 md:hidden"></div>
 
       {/* Steps */}
       <div className="space-y-16">
@@ -43,8 +43,8 @@ export const FlowingProcessTimeline: React.FC<{steps: ProcessStepProps[]}> = ({ 
             <div className={`
               z-10 flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center
               ${index % 2 === 0 ? 'md:order-1' : 'md:order-1'}
-              ${step.isLast ? 'bg-blue-600 text-white' : 'bg-white text-blue-600 border-2 border-blue-400'}
-              shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-blue-200/50
+              ${step.isLast ? 'bg-[#00CFFF] text-black' : 'bg-black text-[#00CFFF] border-2 border-[#00CFFF]/70'}
+              shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[#00CFFF]/30
             `}>
               <span className="font-bold">{step.number}</span>
             </div>
@@ -54,23 +54,23 @@ export const FlowingProcessTimeline: React.FC<{steps: ProcessStepProps[]}> = ({ 
               flex-grow md:w-5/12 ${index % 2 === 0 ? 'md:text-right md:order-0' : 'md:order-2'} pl-12 md:pl-0
               transition-all duration-300 group-hover:transform group-hover:translate-y-[-5px]
             `}>
-              <div className="bg-white/80 backdrop-blur-sm p-4 md:p-6 rounded-lg shadow-lg border border-blue-100">
-                <h3 className="flex items-center text-xl font-bold mb-2 text-blue-900">
+              <div className="bg-black/40 backdrop-blur-sm p-4 md:p-6 rounded-lg shadow-lg border border-[#00CFFF]/20">
+                <h3 className="flex items-center text-xl font-bold mb-2 text-white">
                   {index % 2 !== 0 && (
-                    <span className="inline-flex items-center justify-center w-8 h-8 mr-3 rounded-full bg-blue-100 text-blue-600">
+                    <span className="inline-flex items-center justify-center w-8 h-8 mr-3 rounded-full bg-black/60 text-[#00CFFF]">
                       {step.icon && getIconComponent(step.icon)}
                     </span>
                   )}
                   {step.title}
                   {index % 2 === 0 && (
-                    <span className="inline-flex items-center justify-center w-8 h-8 ml-3 rounded-full bg-blue-100 text-blue-600">
+                    <span className="inline-flex items-center justify-center w-8 h-8 ml-3 rounded-full bg-black/60 text-[#00CFFF]">
                       {step.icon && getIconComponent(step.icon)}
                     </span>
                   )}
                 </h3>
-                <p className="text-gray-600 font-medium mb-3">{step.description}</p>
+                <p className="text-gray-300 font-medium mb-3">{step.description}</p>
                 {step.detailedDescription && (
-                  <p className="text-gray-500 text-sm">{step.detailedDescription}</p>
+                  <p className="text-gray-400 text-sm">{step.detailedDescription}</p>
                 )}
               </div>
               
@@ -79,13 +79,13 @@ export const FlowingProcessTimeline: React.FC<{steps: ProcessStepProps[]}> = ({ 
                 <div className="hidden md:block absolute top-1/2 transform -translate-y-1/2">
                   {index % 2 === 0 ? (
                     <div className="right-0 rotate-180">
-                      <svg className="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="none">
+                      <svg className="w-8 h-8 text-[#00CFFF]/70" viewBox="0 0 24 24" fill="none">
                         <path d="M13 17l5-5-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </div>
                   ) : (
                     <div className="left-0">
-                      <svg className="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="none">
+                      <svg className="w-8 h-8 text-[#00CFFF]/70" viewBox="0 0 24 24" fill="none">
                         <path d="M11 17l-5-5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </div>
@@ -105,7 +105,7 @@ export const FlowingProcessTimeline: React.FC<{steps: ProcessStepProps[]}> = ({ 
         {[...Array(5)].map((_, i) => (
           <div 
             key={i}
-            className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"
+            className="w-2 h-2 rounded-full bg-[#00CFFF] animate-pulse"
             style={{ animationDelay: `${i * 0.5}s` }}
           ></div>
         ))}
@@ -114,13 +114,13 @@ export const FlowingProcessTimeline: React.FC<{steps: ProcessStepProps[]}> = ({ 
       {/* Final step highlight - appears at the bottom */}
       {steps.length > 0 && steps[steps.length - 1].isLast && (
         <div className="mt-8 max-w-md mx-auto transform transition-all duration-500 hover:scale-105">
-          <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-50 to-blue-100 p-6 shadow-xl border border-blue-200">
-            <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"></div>
-            <h4 className="text-lg font-bold text-blue-900 mb-2">The End Result</h4>
-            <p className="text-blue-700">
+          <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-black/70 to-black p-6 shadow-xl border border-[#00CFFF]/30">
+            <div className="absolute inset-0 bg-[radial-gradient(#00CFFF_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"></div>
+            <h4 className="text-lg font-bold text-white mb-2">The End Result</h4>
+            <p className="text-[#00CFFF]/90">
               Your outbound system evolves into a fine-tuned lead generation machine — delivering qualified prospects who are ready to engage, with less wasted time and fewer dead-end conversations.
             </p>
-            <div className="h-1 w-full absolute bottom-0 left-0 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+            <div className="h-1 w-full absolute bottom-0 left-0 bg-gradient-to-r from-[#00CFFF]/80 to-[#00CFFF]"></div>
           </div>
         </div>
       )}
