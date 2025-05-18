@@ -95,9 +95,9 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				inter: ['Inter', 'sans-serif'],
-				'sans': ['Inter', 'system-ui', 'sans-serif'],
-				'space': ['Space Grotesk', 'sans-serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
+				'sans': ['Montserrat', 'system-ui', 'sans-serif'],
+				'space': ['Montserrat', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {
