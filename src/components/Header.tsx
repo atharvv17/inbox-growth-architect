@@ -30,7 +30,7 @@ const Header: React.FC = () => {
                 Process
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#case-studies" className="text-foreground hover:text-primary transition-colors font-medium relative group">
+              <a href="#video-testimonials" className="text-foreground hover:text-primary transition-colors font-medium relative group">
                 Results
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </a>
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
                 Process
               </a>
               <a 
-                href="#case-studies" 
+                href="#video-testimonials" 
                 className="text-foreground hover:text-primary transition-colors font-medium px-4 py-2 w-full text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
