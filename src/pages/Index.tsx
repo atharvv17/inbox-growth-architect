@@ -141,6 +141,7 @@ const Index = () => {
     id: 6,
     img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png"
   }];
+  
   return <div className="min-h-screen bg-[#FAFAFA] text-[#374151] overflow-hidden">
       <Header />
       <HeroSection />
@@ -163,34 +164,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Our Process - Updated with dark background matching logo */}
-      <section className="py-16 bg-[#000000] text-white relative" id="process">
-        <div className="container relative z-10">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-2 text-white">Our Process</h2>
-            <p className="text-lg text-[#A3A3A3] max-w-2xl mx-auto">
-              How we take you from uncertainty to predictable pipeline
-            </p>
-          </div>
-          
-          {/* Use the FlowingProcessTimeline component */}
-          <FlowingProcessTimeline steps={processSteps} />
-          
-          {/* Final step highlight box */}
-          <div className="mt-12 max-w-2xl mx-auto transform translate-y-0 hover:translate-y-[-5px] transition-all duration-300">
-            
-          </div>
-        </div>
-        
-        {/* Add wave transition to next section - this creates the curve at the BOTTOM of the process section */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
-            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="fill-[#0A0A0A]"></path>
-          </svg>
-        </div>
-      </section>
-      
-      {/* Who We Serve Section - with inverted curve at top and straight bottom */}
+      {/* Who We Serve Section - MOVED UP - with inverted curve at top and straight bottom */}
       <section className="py-12 bg-white text-[#1E293B] relative">
         {/* Removed the hidden wave at top since we don't need it */}
         
@@ -261,7 +235,39 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Bottom is now straight, so we've removed the wave transition */}
+        {/* Add a wave transition to the process section now */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-[#000000]"></path>
+          </svg>
+        </div>
+      </section>
+      
+      {/* Our Process - Updated with dark background matching logo */}
+      <section className="py-16 bg-[#000000] text-white relative" id="process">
+        <div className="container relative z-10">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold mb-2 text-white">Our Process</h2>
+            <p className="text-lg text-[#A3A3A3] max-w-2xl mx-auto">
+              How we take you from uncertainty to predictable pipeline
+            </p>
+          </div>
+          
+          {/* Use the FlowingProcessTimeline component */}
+          <FlowingProcessTimeline steps={processSteps} />
+          
+          {/* Final step highlight box */}
+          <div className="mt-12 max-w-2xl mx-auto transform translate-y-0 hover:translate-y-[-5px] transition-all duration-300">
+            
+          </div>
+        </div>
+        
+        {/* Add wave transition to next section - this creates the curve at the BOTTOM of the process section */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="fill-[#0A0A0A]"></path>
+          </svg>
+        </div>
       </section>
 
       {/* Our Offers Section - Deep Navy/Graphite Background */}
