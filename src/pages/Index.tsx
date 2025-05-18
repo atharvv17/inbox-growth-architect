@@ -11,7 +11,6 @@ import FAQSection from "@/components/FAQSection";
 import TestimonialsColumn from "@/components/TestimonialsColumn";
 import { FlowingProcessTimeline } from "@/components/FlowingProcessTimeline";
 import Testimonials from "@/components/Testimonials";
-import AboutUs from "@/components/AboutUs";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
@@ -309,9 +308,6 @@ const Index = () => {
 
       {/* FAQ Section - Updated in the FAQSection.tsx component */}
       <FAQSection faqs={faqs} />
-
-      {/* About Us Section - Added before the Final CTA */}
-      <AboutUs />
 
       {/* Final CTA - Updated in the CTASection.tsx component */}
       <CTASection title="Let's Build Your Outbound Machine" subtitle="Your sales calendar shouldn't be empty — let's fix that." buttonText="Book Your Strategy Call Now" />
