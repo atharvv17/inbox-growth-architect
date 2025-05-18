@@ -67,19 +67,19 @@ export function LogoCarousel({
               >
                 {typeof logo.img === 'string' ? (
                   <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                    <div className="w-[90%] h-[90%] flex items-center justify-center">
+                    <div className="w-full h-full flex items-center justify-center p-3">
                       <img 
                         src={logo.img} 
                         alt={logo.name} 
-                        className="object-contain w-full h-full p-2"
+                        className="object-contain w-full h-full"
                       />
                     </div>
                   </div>
                 ) : (
                   <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                    <div className="w-[90%] h-[90%] flex items-center justify-center">
+                    <div className="w-full h-full flex items-center justify-center p-4">
                       {React.createElement(logo.img, {
-                        className: "w-full h-full text-gray-800 object-contain p-3"
+                        className: "w-full h-full text-gray-800 object-contain"
                       })}
                     </div>
                   </div>
@@ -95,19 +95,19 @@ export function LogoCarousel({
               >
                 {typeof logo.img === 'string' ? (
                   <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                    <div className="w-[90%] h-[90%] flex items-center justify-center">
+                    <div className="w-full h-full flex items-center justify-center p-3">
                       <img 
                         src={logo.img} 
                         alt={logo.name} 
-                        className="object-contain w-full h-full p-2"
+                        className="object-contain w-full h-full"
                       />
                     </div>
                   </div>
                 ) : (
                   <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                    <div className="w-[90%] h-[90%] flex items-center justify-center">
+                    <div className="w-full h-full flex items-center justify-center p-4">
                       {React.createElement(logo.img, {
-                        className: "w-full h-full text-gray-800 object-contain p-3"
+                        className: "w-full h-full text-gray-800 object-contain"
                       })}
                     </div>
                   </div>
