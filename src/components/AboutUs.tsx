@@ -1,3 +1,4 @@
+
 import React from "react";
 import { SectionTitle } from "@/components/ui/section-title";
 import { PipelineAnimation } from "@/components/ui/pipeline-animation";
@@ -18,7 +19,8 @@ const AboutUs = () => {
             
           </div>
           
-          <div className="space-y-6">
+          {/* Changed from "space-y-6" to "space-y-6 mx-auto text-center max-w-2xl" for centering */}
+          <div className="space-y-6 mx-auto text-center max-w-2xl">
             <div className="inline-block px-3 py-1 bg-[#00CFFF]/10 rounded-full text-[#00CFFF] text-sm font-medium mb-2">
               ✦ Our Mission
             </div>
@@ -39,7 +41,8 @@ const AboutUs = () => {
               </p>
             </div>
             
-            <div className="h-1 w-24 bg-gradient-to-r from-[#00CFFF] to-[#7EEAFF] rounded-full mt-6"></div>
+            {/* Centered the gradient line by changing to mx-auto */}
+            <div className="h-1 w-24 bg-gradient-to-r from-[#00CFFF] to-[#7EEAFF] rounded-full mt-6 mx-auto"></div>
           </div>
         </div>
       </div>
