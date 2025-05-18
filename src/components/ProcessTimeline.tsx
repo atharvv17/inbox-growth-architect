@@ -97,12 +97,14 @@ const ProcessTimeline: React.FC<{steps: ProcessStepProps[]}> = ({ steps }) => {
                     <div className="absolute w-full h-full border-2 border-logo-blue/20 rounded-full"></div>
                     <div className="absolute w-3 h-3 bg-logo-blue rounded-full animate-[orbit_4s_linear_infinite]" 
                          style={{animation: "orbit 4s linear infinite"}}></div>
-                    <style jsx>{`
-                      @keyframes orbit {
-                        0% { transform: rotate(0deg) translateX(20px) rotate(0deg); }
-                        100% { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
-                      }
-                    `}</style>
+                    <style>
+                      {`
+                        @keyframes orbit {
+                          0% { transform: rotate(0deg) translateX(20px) rotate(0deg); }
+                          100% { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
+                        }
+                      `}
+                    </style>
                   </div>
                 )}
                 {step.number === 5 && (
@@ -152,14 +154,17 @@ const ProcessTimeline: React.FC<{steps: ProcessStepProps[]}> = ({ steps }) => {
         <div className="absolute top-1/2 right-1/3 w-3 h-3 bg-logo-blue/10 rounded-full animate-[float_15s_ease-in-out_infinite_1s]"></div>
       </div>
       
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-20px); }
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+          }
+        `}
+      </style>
     </div>
   );
 };
 
 export default ProcessTimeline;
+
