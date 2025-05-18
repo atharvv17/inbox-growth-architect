@@ -27,8 +27,8 @@ const testimonialVideos: VideoTestimonial[] = [
     title: "From struggling to 15+ qualified calls monthly",
     author: "Michael Chen",
     role: "CEO, GrowthGenius",
-    videoUrl: "https://www.youtube.com/embed/SfD6BD-NaO0",
-    thumbnail: "https://img.youtube.com/vi/SfD6BD-NaO0/maxresdefault.jpg"
+    videoUrl: "https://www.youtube.com/embed/gab_qaJXTiY",
+    thumbnail: "https://img.youtube.com/vi/gab_qaJXTiY/maxresdefault.jpg"
   },
   {
     id: 3,
