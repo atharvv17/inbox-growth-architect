@@ -174,7 +174,7 @@ const Index = () => {
       {/* Who We Serve Section with reduced spacing between sections */}
       <section className="pb-20 -mt-10 bg-white text-[#1E293B] relative py-0 rounded-md">
         <div className="container relative z-10">
-          <div className="grid md:grid-cols-2 gap-6 items-center py-[20px]">
+          <div className="grid md:grid-cols-2 gap-6 items-center py-[2px] my-[50px]">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-3 text-[#1E293B]">
                 You're great at closing deals.<br />
