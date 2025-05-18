@@ -6,6 +6,7 @@ import React, {
   useMemo,
   useState,
   type SVGProps,
+  useRef,
 } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "../Image"
@@ -187,40 +188,107 @@ interface LogoCarouselProps {
   showArrows?: boolean
 }
 
+// New component for scrolling animation
+const ScrollingLogoStrip = React.memo(({ logos, speed = 30, reverse = false }: { 
+  logos: Logo[], 
+  speed?: number,
+  reverse?: boolean 
+}) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [loopLogos, setLoopLogos] = useState<Logo[]>([]);
+
+  useEffect(() => {
+    // Double the array to create seamless loop effect
+    setLoopLogos([...logos, ...logos]);
+  }, [logos]);
+  
+  useEffect(() => {
+    const scroll = scrollRef.current;
+    if (!scroll) return;
+    
+    const animateScroll = () => {
+      if (!scroll) return;
+      
+      if (reverse) {
+        if (scroll.scrollLeft <= 0) {
+          // Reset to middle when we reach the start
+          scroll.scrollLeft = scroll.scrollWidth / 2;
+        } else {
+          // Scroll left
+          scroll.scrollLeft -= 1;
+        }
+      } else {
+        if (scroll.scrollLeft >= scroll.scrollWidth / 2) {
+          // Reset to start when we reach the middle (end of first set)
+          scroll.scrollLeft = 0;
+        } else {
+          // Scroll right
+          scroll.scrollLeft += 1;
+        }
+      }
+    };
+
+    // Adjust interval based on desired speed
+    const interval = setInterval(animateScroll, speed);
+    return () => clearInterval(interval);
+  }, [reverse, speed]);
+
+  return (
+    <div 
+      ref={scrollRef}
+      className="flex overflow-x-hidden w-full" 
+      style={{ scrollBehavior: 'auto' }}
+    >
+      <div className="flex gap-16 py-6">
+        {loopLogos.map((logo, i) => (
+          <div 
+            key={`${logo.id}-${i}`} 
+            className="flex-shrink-0"
+          >
+            {typeof logo.img === 'string' ? (
+              <div className="rounded-lg bg-white h-28 w-28 md:h-32 md:w-32 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
+                <div className="w-full h-full overflow-hidden flex items-center justify-center p-2">
+                  <img 
+                    src={logo.img} 
+                    alt={logo.name} 
+                    className="object-contain w-full h-full"
+                    style={{ aspectRatio: "1/1", objectFit: "contain" }}
+                  />
+                </div>
+              </div>
+            ) : (
+              <div className="rounded-lg bg-white h-28 w-28 md:h-32 md:w-32 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
+                <div className="w-full h-full overflow-hidden flex items-center justify-center">
+                  {React.createElement(logo.img, {
+                    className: "h-full w-full text-gray-800 object-contain p-4"
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+});
+
 export function LogoCarousel({ 
   logos, 
   columnCount = 4, 
   autoplaySpeed = 3000,
   showArrows = false 
 }: LogoCarouselProps) {
-  const [logoSets, setLogoSets] = useState<Logo[][]>([])
-  const [currentTime, setCurrentTime] = useState(0)
-
-  const updateTime = useCallback(() => {
-    setCurrentTime((prevTime) => prevTime + 100)
-  }, [])
-
-  useEffect(() => {
-    const intervalId = setInterval(updateTime, 100)
-    return () => clearInterval(intervalId)
-  }, [updateTime])
-
-  useEffect(() => {
-    const distributedLogos = distributeLogos(logos, columnCount)
-    setLogoSets(distributedLogos)
-  }, [logos, columnCount])
-
+  // Split the logos into two groups to create alternating directions
+  const firstHalf = logos.slice(0, Math.ceil(logos.length / 2));
+  const secondHalf = logos.slice(Math.ceil(logos.length / 2));
+  
   return (
     <div className="w-full max-w-6xl mx-auto relative">
-      <div className="flex justify-center space-x-16 py-12">
-        {logoSets.map((logos, index) => (
-          <LogoColumn
-            key={index}
-            logos={logos}
-            index={index}
-            currentTime={currentTime}
-          />
-        ))}
+      <div className="mb-4">
+        <ScrollingLogoStrip logos={firstHalf} speed={40} />
+      </div>
+      <div>
+        <ScrollingLogoStrip logos={secondHalf} speed={30} reverse={true} />
       </div>
     </div>
   )
