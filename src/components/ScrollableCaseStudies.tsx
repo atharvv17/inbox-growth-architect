@@ -41,26 +41,6 @@ const caseStudies: CaseStudy[] = [
     testimonial: "The system practically runs itself now. I can focus on closing deals while qualified meetings just show up on my calendar."
   },
   {
-    clientName: "GrowthGenius",
-    clientRole: "Michael, Founder",
-    headline: "Generated $52,000 in new pipeline within 45 days",
-    problem: "As a solo founder, Michael struggled to maintain consistent lead flow while focusing on delivering client work. Manual prospecting was eating up valuable time.",
-    systemBuilt: [
-      "Created hyper-targeted ICP focused on mid-market SaaS",
-      "Developed LinkedIn + Email dual-channel approach",
-      "Implemented automatic follow-up sequences with personalization",
-      "Built CRM integration for seamless lead tracking"
-    ],
-    videoSrc: "https://www.youtube.com/embed/SfD6BD-NaO0",
-    results: {
-      leads: "63 qualified leads",
-      calls: "18 sales meetings",
-      pipeline: "$52,000 potential ARR",
-      timeSaved: "75% of prospecting time"
-    },
-    testimonial: "I was skeptical about outsourcing my outbound, but this system delivers consistently qualified leads that actually convert. Game changer for my business."
-  },
-  {
     clientName: "Jessica Executive Coach",
     clientRole: "Jessica, Executive Coach",
     headline: "Scaled from 3 to 11 clients in just 60 days",
@@ -226,8 +206,8 @@ const ScrollableCaseStudies: React.FC = () => {
         ))}
       </div>
       
-      {/* Add scrollbar hiding styles using standard style tag */}
-      <style>
+      {/* Add scrollbar hiding styles */}
+      <style jsx global>
         {`
           .scrollbar-hide::-webkit-scrollbar {
             display: none;
