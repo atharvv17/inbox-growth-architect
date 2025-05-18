@@ -220,7 +220,11 @@ const HeroSection: React.FC = () => {
             animationDelay: "1.5s",
             animationFillMode: "forwards"
           }}>
-              <Button className="bg-logo-blue hover:bg-logo-darkBlue text-black font-semibold group flex items-center px-6 py-5 rounded shadow-lg shadow-logo-blue/20 transition-all duration-300 hover:shadow-logo-blue/40 pulse-glow" size="lg">
+              <Button 
+                className="bg-logo-blue hover:bg-logo-darkBlue text-black font-semibold group flex items-center px-6 py-5 rounded shadow-lg shadow-logo-blue/20 transition-all duration-300 hover:shadow-logo-blue/40 pulse-glow" 
+                size="lg"
+                onClick={() => window.open("https://calendly.com/leveragegrowthbiz/30min?month=2025-05", "_blank")}
+              >
                 <Calendar className="mr-2 h-5 w-5" />
                 <span>Book a Free Growth Audit</span>
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

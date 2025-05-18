@@ -74,6 +74,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <Button 
         className="w-full transition-all hover:scale-105"
         style={{ backgroundColor: accentColor, color: "#000" }}
+        onClick={() => window.open("https://calendly.com/leveragegrowthbiz/30min?month=2025-05", "_blank")}
       >
         {buttonText}
       </Button>

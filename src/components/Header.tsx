@@ -34,7 +34,10 @@ const Header: React.FC = () => {
                 Results
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <Button className="bg-primary hover:bg-primary/90 text-black font-medium px-5 py-2 rounded-md transition-colors shadow-lg shadow-primary/20">
+              <Button 
+                className="bg-primary hover:bg-primary/90 text-black font-medium px-5 py-2 rounded-md transition-colors shadow-lg shadow-primary/20"
+                onClick={() => window.open("https://calendly.com/leveragegrowthbiz/30min?month=2025-05", "_blank")}
+              >
                 Book a Call
               </Button>
             </nav>
@@ -77,7 +80,10 @@ const Header: React.FC = () => {
               </a>
               <Button 
                 className="bg-primary hover:bg-primary/90 text-black font-medium px-5 py-2 w-4/5 rounded-md"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  window.open("https://calendly.com/leveragegrowthbiz/30min?month=2025-05", "_blank");
+                  setMobileMenuOpen(false);
+                }}
               >
                 Book a Call
               </Button>
