@@ -32,14 +32,6 @@ const testimonialVideos: VideoTestimonial[] = [
   },
   {
     id: 3,
-    title: "Our outbound journey to predictable growth",
-    author: "Jessica Martinez",
-    role: "Founder, ScaleUp Inc.",
-    videoUrl: "https://www.youtube.com/embed/SfD6BD-NaO0",
-    thumbnail: "https://img.youtube.com/vi/SfD6BD-NaO0/maxresdefault.jpg"
-  },
-  {
-    id: 4,
     title: "Scaled SAAS to $10k/month",
     author: "Bailey",
     role: "SAAS Founder",
@@ -64,7 +56,7 @@ const VideoTestimonials: React.FC = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonialVideos.map((video) => (
             <motion.div
               key={video.id}
