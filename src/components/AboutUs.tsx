@@ -3,6 +3,7 @@ import React from "react";
 import { SectionTitle } from "@/components/ui/section-title";
 import { PipelineAnimation } from "@/components/ui/pipeline-animation";
 import { Card } from "@/components/ui/card";
+
 const AboutUs = () => {
   return <section id="about" className="py-16 bg-[#0A0A0A] text-white relative">
       {/* Top wave transition */}
@@ -13,14 +14,9 @@ const AboutUs = () => {
       </div>
       
       <div className="container relative z-10">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#00CFFF]/20 via-[#7EEAFF]/20 to-[#00CFFF]/20 rounded-lg blur opacity-30"></div>
-            
-          </div>
-          
-          {/* Changed from "space-y-6" to "space-y-6 mx-auto text-center max-w-2xl" for centering */}
-          <div className="space-y-6 mx-auto text-center max-w-2xl">
+        {/* Changed from grid layout to a single centered column */}
+        <div className="mx-auto max-w-3xl px-4">
+          <div className="space-y-8 text-center">
             <div className="inline-block px-3 py-1 bg-[#00CFFF]/10 rounded-full text-[#00CFFF] text-sm font-medium mb-2">
               ✦ Our Mission
             </div>
@@ -41,7 +37,6 @@ const AboutUs = () => {
               </p>
             </div>
             
-            {/* Centered the gradient line by changing to mx-auto */}
             <div className="h-1 w-24 bg-gradient-to-r from-[#00CFFF] to-[#7EEAFF] rounded-full mt-6 mx-auto"></div>
           </div>
         </div>
@@ -55,4 +50,5 @@ const AboutUs = () => {
       </div>
     </section>;
 };
+
 export default AboutUs;

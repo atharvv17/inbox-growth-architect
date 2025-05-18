@@ -1,7 +1,10 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Mail, Calendar, MessageSquare, User, ChartBar } from 'lucide-react';
+
 export const PipelineAnimation = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     // Start animation immediately and make it repeat continuously
     const startAnimation = () => {
@@ -54,5 +57,11 @@ export const PipelineAnimation = () => {
       clearTimeout(animationStart);
     };
   }, []);
-  return;
+
+  // Added return statement with a div container
+  return (
+    <div ref={containerRef} className="w-full opacity-0">
+      {/* Pipeline animation content would go here */}
+    </div>
+  );
 };
