@@ -13,6 +13,7 @@ import { FlowingProcessTimeline } from "@/components/FlowingProcessTimeline";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
+
 const Index = () => {
   // Process steps data
   const processSteps = [{
@@ -170,7 +171,7 @@ const Index = () => {
       {/* Who We Serve Section with smoother transition to Our Process section */}
       <section className="py-12 pb-16 bg-white text-[#1E293B] relative">
         <div className="container relative z-10">
-          <div className="grid md:grid-cols-2 gap-6 items-center">
+          <div className="grid md:grid-cols-2 gap-6 items-center -mt-4">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-3 text-[#1E293B]">
                 You're great at closing deals.<br />
@@ -244,7 +245,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Our Process - With dark background matching logo and NO top wave (since we added it to previous section) */}
+      {/* Our Process - With dark background matching logo and NO top wave */}
       <section className="pt-16 pb-16 bg-[#000000] text-white relative" id="process">
         <div className="container relative z-10">
           <div className="text-center mb-10">
