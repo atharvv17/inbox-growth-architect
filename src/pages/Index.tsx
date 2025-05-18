@@ -300,24 +300,24 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section - Updated with Dark Background */}
-      <section className="py-6 md:py-10 bg-[#0F172A] overflow-hidden relative">
+      {/* Testimonials Section - Updated with consistent design */}
+      <section className="py-6 md:py-10 bg-background overflow-hidden relative">
         {/* Add subtle pattern overlay */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-[length:20px_20px]"></div>
         
         <div className="container relative z-10">
           <div className="text-center mb-4">
-            <p className="text-white text-sm uppercase tracking-wider mb-1 font-medium">Client Stories</p>
-            <h2 className="text-3xl font-bold mb-2 text-white">What Our Clients Say</h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-primary text-sm uppercase tracking-wider mb-1 font-medium">Client Stories</p>
+            <h2 className="text-3xl font-bold mb-2 text-foreground">What Our Clients Say</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Real results from businesses just like yours
             </p>
           </div>
           
           <div className="relative flex gap-4 justify-center mx-auto max-w-7xl overflow-hidden">
-            {/* Gradient overlays for fading effect - modified to match background */}
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0F172A] via-transparent to-[#0F172A] z-10"></div>
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#0F172A] via-transparent to-[#0F172A] z-10"></div>
+            {/* Gradient overlays for fading effect - using CSS variables for consistency */}
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background via-transparent to-background z-10"></div>
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-background via-transparent to-background z-10"></div>
             
             <TestimonialsColumn 
               className="min-w-[320px] max-h-[650px] overflow-hidden"

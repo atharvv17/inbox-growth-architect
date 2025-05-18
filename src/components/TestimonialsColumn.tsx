@@ -38,21 +38,21 @@ export const TestimonialsColumn: React.FC<TestimonialsColumnProps> = (props) => 
             <React.Fragment key={index}>
               {props.testimonials.map(({ text, image, name, role }, i) => (
                 <div 
-                  className={`p-7 rounded-2xl backdrop-blur-md ${darkMode ? 'bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/10' : 'bg-black/5 border border-black/10 hover:border-black/20 hover:bg-black/10'} shadow-lg max-w-xs w-full transition-all duration-300`}
+                  className="p-7 rounded-2xl backdrop-blur-md bg-muted/20 border border-border/30 shadow-lg max-w-xs w-full hover:border-primary/20 hover:bg-muted/30 transition-all duration-300"
                   key={i}
                 >
-                  <div className={`${darkMode ? 'text-white/90' : 'text-black/90'} mb-4 italic text-md leading-relaxed`}>{text}</div>
+                  <div className="text-foreground/90 mb-4 italic text-md leading-relaxed">{text}</div>
                   <div className="flex items-center gap-3 mt-3">
                     <img
                       width={44}
                       height={44}
                       src={image}
                       alt={name}
-                      className={`h-11 w-11 rounded-full object-cover ${darkMode ? 'border border-white/30' : 'border border-black/30'}`}
+                      className="h-11 w-11 rounded-full object-cover border border-border/50"
                     />
                     <div className="flex flex-col">
-                      <div className={`font-medium tracking-tight leading-5 ${darkMode ? 'text-white' : 'text-black'} text-md`}>{name}</div>
-                      <div className={`leading-5 ${darkMode ? 'text-gray-300' : 'text-gray-600'} text-sm tracking-tight`}>{role}</div>
+                      <div className="font-medium tracking-tight leading-5 text-foreground text-md">{name}</div>
+                      <div className="leading-5 text-muted-foreground text-sm tracking-tight">{role}</div>
                     </div>
                   </div>
                 </div>
