@@ -16,11 +16,11 @@ interface VideoTestimonial {
 const testimonialVideos: VideoTestimonial[] = [
   {
     id: 1,
-    title: "How we increased sales by 127% in 90 days",
-    author: "Sarah Johnson",
-    role: "Marketing Director, TechCorp",
-    videoUrl: "https://www.youtube.com/embed/SfD6BD-NaO0",
-    thumbnail: "https://img.youtube.com/vi/SfD6BD-NaO0/maxresdefault.jpg"
+    title: "6 new deals in the first month of working with us",
+    author: "Kieran",
+    role: "Instagram Agency Owner",
+    videoUrl: "https://www.youtube.com/embed/I8n9f9D157c",
+    thumbnail: "https://img.youtube.com/vi/I8n9f9D157c/maxresdefault.jpg"
   },
   {
     id: 2,
