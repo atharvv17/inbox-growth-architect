@@ -11,9 +11,11 @@ import FAQSection from "@/components/FAQSection";
 import TestimonialsColumn from "@/components/TestimonialsColumn";
 import { FlowingProcessTimeline } from "@/components/FlowingProcessTimeline";
 import Testimonials from "@/components/Testimonials";
+import VideoTestimonials from "@/components/VideoTestimonials"; 
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
+
 const Index = () => {
   // Process steps data
   const processSteps = [{
@@ -300,6 +302,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Add our new Video Testimonials section here, after the "Our Offers" section */}
+      <VideoTestimonials />
+
       {/* Why Our Clients Choose Us - Light Gray Background */}
       
 
@@ -315,4 +320,5 @@ const Index = () => {
       <Footer />
     </div>;
 };
+
 export default Index;
