@@ -155,7 +155,7 @@ const Index = () => {
           </svg>
         </div>
         <div className="container text-center mb-6 relative z-10 py-[40px]">
-          <h2 className="text-3xl font-bold text-[#222222] mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#222222] mb-2">
             Trusted by Industry Leaders
           </h2>
           <p className="text-lg text-[#403E43] max-w-3xl mx-auto mb-8">
