@@ -68,7 +68,7 @@ const ScrollableCaseStudies: React.FC = () => {
   };
   return <section className="bg-white relative overflow-hidden py-[8px]">
       <div className="container mx-auto px-4 mb-6">
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto py-0 my-0">
           <h2 className="text-3xl font-bold mb-3 text-[#1E293B]">Real Results, Real Clients</h2>
           <p className="text-lg text-[#4B5563] mb-8">
             See how our outbound system transforms businesses just like yours
