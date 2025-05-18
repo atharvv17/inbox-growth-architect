@@ -191,63 +191,63 @@ const Index = () => {
       </section>
       
       {/* Who We Serve Section - with inverted curve at top and straight bottom */}
-      <section className="py-12 bg-[#0A0A0A] text-[#F3F4F6] relative">
+      <section className="py-12 bg-white text-[#1E293B] relative">
         {/* Removed the hidden wave at top since we don't need it */}
         
         <div className="container relative z-10">
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-[#1E293B]">
                 You're great at closing deals.<br />
                 We're great at starting them.
               </h2>
-              <p className="text-xl text-[#F3F4F6] mb-4">
+              <p className="text-xl text-[#4B5563] mb-4">
                 We work with:
               </p>
               <ul className="space-y-2">
                 <li className="flex items-center group">
                   <div className="relative">
-                    <CheckCircle className="text-white mr-2 h-5 w-5 transition-all duration-300 group-hover:text-white" />
+                    <CheckCircle className="text-[#00CFFF] mr-2 h-5 w-5 transition-all duration-300 group-hover:text-[#00CFFF]" />
                     {/* Hover tooltip */}
-                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-white/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#F1F5F9] border border-[#00CFFF]/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                       Need predictable lead flow?
                     </span>
                   </div>
-                  <span className="text-lg text-white">B2B consultants & agency owners</span>
+                  <span className="text-lg text-[#1E293B]">B2B consultants & agency owners</span>
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
-                    <CheckCircle className="text-white mr-2 h-5 w-5 transition-all duration-300 group-hover:text-white" />
+                    <CheckCircle className="text-[#00CFFF] mr-2 h-5 w-5 transition-all duration-300 group-hover:text-[#00CFFF]" />
                     {/* Hover tooltip */}
-                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-white/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#F1F5F9] border border-[#00CFFF]/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                       Ready to scale?
                     </span>
                   </div>
-                  <span className="text-lg text-white">SaaS founders & startups</span>
+                  <span className="text-lg text-[#1E293B]">SaaS founders & startups</span>
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
-                    <CheckCircle className="text-white mr-2 h-5 w-5 transition-all duration-300 group-hover:text-white" />
+                    <CheckCircle className="text-[#00CFFF] mr-2 h-5 w-5 transition-all duration-300 group-hover:text-[#00CFFF]" />
                     {/* Hover tooltip */}
-                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-white/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#F1F5F9] border border-[#00CFFF]/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                       Grow your client base?
                     </span>
                   </div>
-                  <span className="text-lg text-white">Fractional execs & coaches</span>
+                  <span className="text-lg text-[#1E293B]">Fractional execs & coaches</span>
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
-                    <CheckCircle className="text-white mr-2 h-5 w-5 transition-all duration-300 group-hover:text-white" />
+                    <CheckCircle className="text-[#00CFFF] mr-2 h-5 w-5 transition-all duration-300 group-hover:text-[#00CFFF]" />
                     {/* Hover tooltip */}
-                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-white/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#F1F5F9] border border-[#00CFFF]/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                       Need top-of-funnel support?
                     </span>
                   </div>
-                  <span className="text-lg text-white">Sales teams needing top-of-funnel support</span>
+                  <span className="text-lg text-[#1E293B]">Sales teams needing top-of-funnel support</span>
                 </li>
               </ul>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-xl bg-[#1E293B] p-1 relative group">
+            <div className="rounded-xl overflow-hidden shadow-xl bg-[#F8FAFC] p-1 relative group">
               <div className="rounded-lg overflow-hidden">
                 <AspectRatio ratio={16 / 9}>
                   <iframe className="w-full h-full" src="https://www.youtube.com/embed/SfD6BD-NaO0" title="Testimonial Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
@@ -256,7 +256,7 @@ const Index = () => {
               </div>
               
               {/* Animated border glow on hover */}
-              <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 cyber-border"></div>
+              <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-[#00CFFF]/30 via-[#7EEAFF]/30 to-[#00CFFF]/30 animate-flow"></div>
             </div>
           </div>
         </div>
