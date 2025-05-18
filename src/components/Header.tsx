@@ -2,9 +2,11 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -16,7 +18,11 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img alt="LeveragedGrowth.co" className="h-40" src="/lovable-uploads/0aebd4e9-9841-4ad4-8f83-9fe3ab1d41ce.png" />
+            <img 
+              alt="LeveragedGrowth.co" 
+              className={isMobile ? "h-20" : "h-40"} 
+              src="/lovable-uploads/0aebd4e9-9841-4ad4-8f83-9fe3ab1d41ce.png" 
+            />
           </a>
           
           {/* Navigation - Desktop */}

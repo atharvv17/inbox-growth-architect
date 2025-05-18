@@ -3,6 +3,7 @@
 
 import React, { useEffect, useState, useRef } from "react"
 import { motion } from "framer-motion"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 interface Logo {
   name: string
@@ -21,6 +22,7 @@ export function LogoCarousel({
 }: LogoCarouselProps) {
   const [width, setWidth] = useState(0);
   const carouselRef = useRef<HTMLDivElement | null>(null);
+  const isMobile = useIsMobile();
   
   // Set up the carousel dimensions
   useEffect(() => {
@@ -30,14 +32,19 @@ export function LogoCarousel({
     }
   }, [logos]);
 
+  // Dynamic styles based on mobile or desktop
+  const logoSize = isMobile ? "h-16 w-16" : "h-28 w-28";
+  const logoSpacing = isMobile ? "space-x-4" : "space-x-8";
+  const containerPadding = isMobile ? "p-4" : "p-8";
+
   return (
     <div className="w-full max-w-6xl mx-auto relative overflow-hidden">
       {/* Updated to Light Gray (#F9FAFB) background */}
-      <div className="bg-[#F9FAFB] border border-gray-100 rounded-xl shadow-sm p-8 my-4">
+      <div className={`bg-[#F9FAFB] border border-gray-100 rounded-xl shadow-sm ${containerPadding} my-4`}>
         <motion.div className="overflow-hidden">
           <motion.div 
             ref={carouselRef}
-            className="flex space-x-8"
+            className={`flex ${logoSpacing}`}
             animate={{
               x: [-width, 0]
             }}
@@ -57,7 +64,7 @@ export function LogoCarousel({
                 className="flex-shrink-0"
               >
                 {typeof logo.img === 'string' ? (
-                  <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center overflow-hidden border-2 border-gray-200 hover:border-0 shadow-sm transition-all duration-300 group">
+                  <div className={`rounded-full bg-white ${logoSize} flex items-center justify-center overflow-hidden border-2 border-gray-200 hover:border-0 shadow-sm transition-all duration-300 group`}>
                     <img 
                       src={logo.img} 
                       alt={logo.name} 
@@ -65,7 +72,7 @@ export function LogoCarousel({
                     />
                   </div>
                 ) : (
-                  <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center border-2 border-gray-200 hover:border-0 shadow-sm transition-all duration-300 group">
+                  <div className={`rounded-full bg-white ${logoSize} flex items-center justify-center border-2 border-gray-200 hover:border-0 shadow-sm transition-all duration-300 group`}>
                     {React.createElement(logo.img, {
                       className: "w-full h-full text-gray-800 object-cover p-1 opacity-70 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                     })}
@@ -81,7 +88,7 @@ export function LogoCarousel({
                 className="flex-shrink-0"
               >
                 {typeof logo.img === 'string' ? (
-                  <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center overflow-hidden border-2 border-gray-200 hover:border-0 shadow-sm transition-all duration-300 group">
+                  <div className={`rounded-full bg-white ${logoSize} flex items-center justify-center overflow-hidden border-2 border-gray-200 hover:border-0 shadow-sm transition-all duration-300 group`}>
                     <img 
                       src={logo.img} 
                       alt={logo.name} 
@@ -89,7 +96,7 @@ export function LogoCarousel({
                     />
                   </div>
                 ) : (
-                  <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center border-2 border-gray-200 hover:border-0 shadow-sm transition-all duration-300 group">
+                  <div className={`rounded-full bg-white ${logoSize} flex items-center justify-center border-2 border-gray-200 hover:border-0 shadow-sm transition-all duration-300 group`}>
                     {React.createElement(logo.img, {
                       className: "w-full h-full text-gray-800 object-cover p-1 opacity-70 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                     })}
