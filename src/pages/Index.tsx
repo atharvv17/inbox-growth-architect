@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -265,24 +266,24 @@ const Index = () => {
         {/* Add wave transition to next section */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
-            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="fill-[#0A0A0A]"></path>
+            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="fill-[#FFFFFF]"></path>
           </svg>
         </div>
       </section>
       
-      {/* Our Offers Section - Black Background with Logo-Matching Colors */}
-      <section className="py-16 bg-black text-white relative" id="offers">
+      {/* Our Offers Section - Changed to white background with logo-matching colors */}
+      <section className="py-16 bg-white text-[#1E293B] relative" id="offers">
         {/* Add inverted curve at top */}
         <div className="absolute top-0 left-0 w-full overflow-hidden">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
-            <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-[#0A0A0A]"></path>
+            <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-[#FFFFFF]"></path>
           </svg>
         </div>
         
         <div className="container relative z-10">
           <div className="text-center mb-6">
-            <h2 className="text-3xl font-bold mb-2 text-white">Our Offers</h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">Our Offers</h2>
+            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
               Choose the system that works best for your business needs
             </p>
           </div>
@@ -295,7 +296,7 @@ const Index = () => {
         {/* Wave transition to next section with logo-matching blue color */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
-            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="fill-[#00CFFF]/10"></path>
+            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="fill-[#0A0A0A]"></path>
           </svg>
         </div>
       </section>
