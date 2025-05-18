@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -67,6 +68,27 @@ const clientLogos = [{
   id: 17,
   name: "Webflow",
   img: "/lovable-uploads/6b448d8a-b1f7-4443-80b8-1c11d7455563.png"
+},
+// New logos added from user uploads
+{
+  id: 18,
+  name: "Infosys",
+  img: "/lovable-uploads/6ed42d65-9b24-446f-b992-be0050026e71.png"
+},
+{
+  id: 19,
+  name: "Gorilla",
+  img: "/lovable-uploads/2581ba47-e3a5-4f74-9981-6637bf7fae07.png"
+},
+{
+  id: 20,
+  name: "LeadSquared",
+  img: "/lovable-uploads/8f2ed93a-50b9-49bc-9b8d-a6229642ced6.png"
+},
+{
+  id: 21,
+  name: "Simplus",
+  img: "/lovable-uploads/1901b8d9-015c-4dbb-8808-e61e92c7dda1.png"
 },
 // Duplicate logos to make the carousel look fuller
 {

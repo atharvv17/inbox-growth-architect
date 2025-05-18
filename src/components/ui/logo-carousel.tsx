@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, {
@@ -212,7 +213,7 @@ export function LogoCarousel({
 
   return (
     <div className="w-full max-w-6xl mx-auto relative">
-      <div className="flex justify-center space-x-16 py-12">
+      <div className="flex justify-center space-x-16 py-12 animate-fade-in">
         {logoSets.map((logos, index) => (
           <LogoColumn
             key={index}
