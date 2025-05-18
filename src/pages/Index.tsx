@@ -169,7 +169,7 @@ const Index = () => {
       </section>
       
       {/* Who We Serve Section with smoother transition to Our Process section */}
-      <section className="py-12 pb-16 -mt-6 bg-white text-[#1E293B] relative">
+      <section className="py-12 pb-20 -mt-6 bg-white text-[#1E293B] relative">
         <div className="container relative z-10">
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
@@ -237,9 +237,9 @@ const Index = () => {
           </div>
         </div>
         
-        {/* NEW SMOOTH, ORGANIC WAVE TRANSITION to the process section */}
+        {/* NEW SMOOTH, ORGANIC WAVE TRANSITION to the process section - shifted down */}
         <div className="absolute -bottom-[2px] left-0 w-full overflow-hidden">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[100px]">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[120px]">
             <path 
               d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
               className="fill-[#000000]"
