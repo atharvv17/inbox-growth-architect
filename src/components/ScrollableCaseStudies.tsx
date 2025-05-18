@@ -1,3 +1,4 @@
+
 import React, { useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -206,8 +207,8 @@ const ScrollableCaseStudies: React.FC = () => {
         ))}
       </div>
       
-      {/* Add scrollbar hiding styles */}
-      <style jsx global>
+      {/* Fix the style tag by removing jsx and global attributes */}
+      <style>
         {`
           .scrollbar-hide::-webkit-scrollbar {
             display: none;
