@@ -12,6 +12,7 @@ import TestimonialsColumn from "@/components/TestimonialsColumn";
 import { FlowingProcessTimeline } from "@/components/FlowingProcessTimeline";
 import Testimonials from "@/components/Testimonials";
 import VideoTestimonials from "@/components/VideoTestimonials"; 
+import { ScrollingCaseStudyCards } from "@/components/ScrollingCaseStudyCards";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
@@ -60,7 +61,7 @@ const Index = () => {
     answer: "We focus on quality over quantity and don't promise specific lead numbers. Instead, we guarantee our methodology, expertise, and continuous optimization. Our goal is lasting pipeline growth, not just vanity metrics."
   }, {
     question: "What makes your approach different from other agencies?",
-    answer: "We use the right combination of automation and human expertise to drive efficient, scalable, and high-converting outreach. Automation helps us streamline systems, track performance, and ensure consistency at scale — but it's the human insight that makes the difference.\n\nOur team of experts personally handles strategy, message crafting, and execution — ensuring that every lead feels heard, every message feels real, and every campaign is aligned with your brand's tone and goals."
+    answer: "We use the right combination of automation and human expertise to drive efficient, scalable, and high-converting outreach. Automation helps us streamline systems, track performance, and ensure consistency at scale — but it's the human insight that makes the difference.\n\nOur team of experts personally handles strategy, message crafting, and execution �� ensuring that every lead feels heard, every message feels real, and every campaign is aligned with your brand's tone and goals."
   }, {
     question: "How do you ensure email deliverability?",
     answer: "We implement thorough domain setup, strategic inbox warming, reputation monitoring, and personalized sending patterns. Our approach prioritizes long-term domain health over quick wins that might damage your sending reputation."
@@ -299,9 +300,10 @@ const Index = () => {
 
       {/* Add our new Video Testimonials section here, after the "Our Offers" section */}
       <VideoTestimonials />
-
-      {/* Why Our Clients Choose Us - Light Gray Background */}
       
+      {/* Add the new Scrolling Case Study Cards section here */}
+      <ScrollingCaseStudyCards />
+
       {/* New Testimonials Section - Using the new component */}
       <Testimonials />
 
