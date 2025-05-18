@@ -66,9 +66,9 @@ const thirdColumn = testimonials.slice(6, 9);
 
 const Testimonials = () => {
   return (
-    <section className="bg-[#F8FAFC] py-16 relative overflow-hidden">
-      {/* Add subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#333_1px,transparent_1px)] bg-[length:20px_20px]"></div>
+    <section className="bg-[#0A0A0A] py-16 relative overflow-hidden">
+      {/* Updated dark background pattern */}
+      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#00CFFF_1px,transparent_1px)] bg-[length:20px_20px]"></div>
       
       <div className="container z-10 mx-auto">
         <motion.div
@@ -82,10 +82,10 @@ const Testimonials = () => {
             <div className="border border-[#00CFFF]/30 py-1 px-4 rounded-lg text-[#00CFFF] font-medium">Testimonials</div>
           </div>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tighter mt-5 text-[#1E293B] text-center">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tighter mt-5 text-white text-center">
             What our users say
           </h2>
-          <p className="text-center mt-3 text-[#4B5563]">
+          <p className="text-center mt-3 text-gray-400">
             See what our customers have to say about us.
           </p>
         </motion.div>
@@ -100,7 +100,7 @@ const Testimonials = () => {
       {/* Add diagonal transition to next section */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
-          <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-[#E5E7EB]"></path>
+          <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-[#000000]"></path>
         </svg>
       </div>
     </section>

@@ -17,7 +17,7 @@ interface TestimonialsColumnProps {
 }
 
 export const TestimonialsColumn: React.FC<TestimonialsColumnProps> = (props) => {
-  const { darkMode = false } = props;
+  const { darkMode = true } = props;
   
   return (
     <div className={props.className}>
@@ -40,7 +40,7 @@ export const TestimonialsColumn: React.FC<TestimonialsColumnProps> = (props) => 
                 <div 
                   className={`p-7 rounded-2xl backdrop-blur-md border shadow-lg max-w-xs w-full transition-all duration-300 ${
                     darkMode 
-                      ? "bg-muted/20 border-border/30 hover:border-primary/20 hover:bg-muted/30" 
+                      ? "bg-muted/20 border-border/30 hover:border-[#00CFFF]/20 hover:bg-muted/30" 
                       : "bg-white/90 border-primary/10 hover:border-primary/30 hover:bg-white"
                   }`}
                   key={i}
@@ -56,16 +56,16 @@ export const TestimonialsColumn: React.FC<TestimonialsColumnProps> = (props) => 
                       height={44}
                       src={image}
                       alt={name}
-                      className="h-11 w-11 rounded-full object-cover border border-border/50"
+                      className="h-11 w-11 rounded-full object-cover border border-[#00CFFF]/30"
                     />
                     <div className="flex flex-col">
                       <div className={`font-medium tracking-tight leading-5 text-md ${
-                        darkMode ? "text-foreground" : "text-gray-800"
+                        darkMode ? "text-white" : "text-gray-800"
                       }`}>
                         {name}
                       </div>
                       <div className={`leading-5 text-sm tracking-tight ${
-                        darkMode ? "text-muted-foreground" : "text-gray-500"
+                        darkMode ? "text-[#00CFFF]" : "text-gray-500"
                       }`}>
                         {role}
                       </div>
