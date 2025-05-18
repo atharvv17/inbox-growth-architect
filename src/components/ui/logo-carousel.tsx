@@ -35,12 +35,12 @@ export function LogoCarousel({
   // Dynamic styles based on mobile or desktop
   const logoSize = isMobile ? "h-16 w-16" : "h-28 w-28";
   const logoSpacing = isMobile ? "space-x-4" : "space-x-8";
-  const containerPadding = isMobile ? "p-4" : "p-8";
+  const containerPadding = isMobile ? "p-4" : "p-6"; // Reduced from p-8 to p-6 for desktop
 
   return (
     <div className="w-full max-w-6xl mx-auto relative overflow-hidden">
-      {/* Updated to Light Gray (#F9FAFB) background */}
-      <div className={`bg-[#F9FAFB] border border-gray-100 rounded-xl shadow-sm ${containerPadding} my-4`}>
+      {/* Removed my-4 margins and reduced padding */}
+      <div className={`bg-[#F9FAFB] border border-gray-100 rounded-xl shadow-sm ${containerPadding}`}>
         <motion.div className="overflow-hidden">
           <motion.div 
             ref={carouselRef}

@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -67,17 +66,17 @@ const ScrollableCaseStudies: React.FC = () => {
       });
     }
   };
-  return <section className="bg-white relative overflow-hidden pt-0 pb-2">
-      <div className="container mx-auto px-4 mb-6">
+  return <section className="bg-white relative overflow-hidden pt-0 pb-2 -mt-6">
+      <div className="container mx-auto px-4 mb-4">
         <div className="text-center max-w-3xl mx-auto py-0 my-0">
-          <h2 className="text-3xl font-bold mb-3 text-[#1E293B]">Real Results, Real Clients</h2>
-          <p className="text-lg text-[#4B5563] mb-8">
+          <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">Real Results, Real Clients</h2>
+          <p className="text-lg text-[#4B5563] mb-6">
             See how our outbound system transforms businesses just like yours
           </p>
         </div>
         
         {/* Navigation Controls for Desktop */}
-        <div className="hidden md:flex justify-end gap-2 mb-4">
+        <div className="hidden md:flex justify-end gap-2 mb-3">
           <button onClick={scrollToPrevious} className="p-3 rounded-full bg-white border border-[#E5E7EB] shadow-sm hover:shadow-md transition-all" aria-label="Previous case study">
             <ArrowLeft className="w-5 h-5 text-[#00CFFF]" />
           </button>
@@ -88,7 +87,7 @@ const ScrollableCaseStudies: React.FC = () => {
       </div>
       
       {/* Scrollable Container */}
-      <div ref={scrollContainerRef} className="flex overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide" style={{
+      <div ref={scrollContainerRef} className="flex overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide" style={{
       scrollbarWidth: 'none',
       // Firefox
       msOverflowStyle: 'none',
