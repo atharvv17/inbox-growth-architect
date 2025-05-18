@@ -61,15 +61,15 @@ const AboutUs = () => {
             
             {/* Right column with text */}
             <div className="space-y-6 text-left">
-              <p className="text-xl font-medium leading-relaxed text-[#1E293B]">
+              <p className="text-xl font-medium leading-relaxed text-black">
                 LeveragedGrowth is a done-for-you outbound sales agency that builds predictable pipelines for B2B companies. We specialize in creating cold outreach systems that deliver qualified leads straight to your calendar — without you lifting a finger.
               </p>
               
-              <p className="text-xl leading-relaxed text-[#374151]">
+              <p className="text-xl leading-relaxed text-black">
                 From lead sourcing and custom messaging to inbox setup and daily campaign management, we handle the entire top-of-funnel so you can focus on closing deals.
               </p>
               
-              <p className="text-xl leading-relaxed text-[#374151]">
+              <p className="text-xl leading-relaxed text-black">
                 Whether you're a SaaS founder, agency owner, or B2B consultant, our mission is simple: to turn your outbound into a reliable growth engine — installed and running in just 7 days.
               </p>
               
