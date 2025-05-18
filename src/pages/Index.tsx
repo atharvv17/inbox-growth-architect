@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -175,7 +176,7 @@ const Index = () => {
                       Need predictable lead flow?
                     </span>
                   </div>
-                  <span className="text-lg">B2B consultants & agency owners</span>
+                  <span className="text-lg text-white">B2B consultants & agency owners</span>
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
@@ -185,7 +186,7 @@ const Index = () => {
                       Ready to scale?
                     </span>
                   </div>
-                  <span className="text-lg">SaaS founders & startups</span>
+                  <span className="text-lg text-white">SaaS founders & startups</span>
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
@@ -195,7 +196,7 @@ const Index = () => {
                       Grow your client base?
                     </span>
                   </div>
-                  <span className="text-lg">Fractional execs & coaches</span>
+                  <span className="text-lg text-white">Fractional execs & coaches</span>
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
@@ -205,7 +206,7 @@ const Index = () => {
                       Need top-of-funnel support?
                     </span>
                   </div>
-                  <span className="text-lg">Sales teams needing top-of-funnel support</span>
+                  <span className="text-lg text-white">Sales teams needing top-of-funnel support</span>
                 </li>
               </ul>
             </div>
