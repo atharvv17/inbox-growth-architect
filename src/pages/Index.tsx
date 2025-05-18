@@ -184,7 +184,6 @@ const Index = () => {
                 We work with:
               </p>
               
-              {/* ... keep existing code (list items with CheckCircle icons) */}
               <ul className="space-y-2">
                 <li className="flex items-center group">
                   <div className="relative">
@@ -242,7 +241,6 @@ const Index = () => {
           </div>
         </div>
         
-        {/* ... keep existing code (wave transition to the process section) */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[120px] py-0">
             <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" className="fill-[#000000]"></path>
@@ -272,9 +270,9 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Our Offers Section - Deep Navy/Graphite Background */}
-      <section className="py-16 bg-[#0F172A] text-white relative" id="offers">
-        {/* Add inverted curve at top connecting to the Who We Serve section */}
+      {/* Our Offers Section - Black Background with Logo-Matching Colors */}
+      <section className="py-16 bg-black text-white relative" id="offers">
+        {/* Add inverted curve at top */}
         <div className="absolute top-0 left-0 w-full overflow-hidden">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
             <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-[#0A0A0A]"></path>
@@ -289,14 +287,16 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-5">
-            <ServiceCard title="Sales Inbox Accelerator" description="Cold Email Infrastructure & Done-For-You Campaign Execution" icon={<Mail />} features={["End-to-End Cold Email Setup: Custom domains, inbox warmup, DNS records, and real-time deliverability monitoring", "Custom Copywriting & Lead Research: 1-on-1 work with our team to craft compelling email sequences and handpick high-quality leads", "Reply Management & Campaign Optimization: Active response management, performance tracking, and weekly optimization sprints", "Reporting & Compliance: Weekly dashboards, reply breakdowns, and full GDPR/Can-Spam compliance"]} outcome="Your calendar filled with qualified B2B sales calls — built on a compliant cold email machine that works on autopilot" buttonText="Learn More" />
-            <ServiceCard title="LinkedIn Selling System" description="Manual Prospecting with Hyper-Personalized Messaging — Zero Automation" icon={<MessageSquare />} features={["Profile Optimization for Authority Positioning: Reworked LinkedIn profile with conversion-focused structure", "Handcrafted Messaging (No Bots): 10 fully personalized messages daily tailored to each prospect's needs", "Zero Automation, Zero Risk: Manual actions only to keep your reputation safe and engagement authentic", "Follow-ups & Lead Handoffs: Strategic conversation management and warm lead transfers directly to you"]} outcome="A daily stream of inbound conversations from decision-makers who already know what you do and want to talk" buttonText="Learn More" featured={true} accentColor="#9b87f5" />
+            <ServiceCard title="Sales Inbox Accelerator" description="Cold Email Infrastructure & Done-For-You Campaign Execution" icon={<Mail />} features={["End-to-End Cold Email Setup: Custom domains, inbox warmup, DNS records, and real-time deliverability monitoring", "Custom Copywriting & Lead Research: 1-on-1 work with our team to craft compelling email sequences and handpick high-quality leads", "Reply Management & Campaign Optimization: Active response management, performance tracking, and weekly optimization sprints", "Reporting & Compliance: Weekly dashboards, reply breakdowns, and full GDPR/Can-Spam compliance"]} outcome="Your calendar filled with qualified B2B sales calls — built on a compliant cold email machine that works on autopilot" buttonText="Learn More" accentColor="#00CFFF" />
+            <ServiceCard title="LinkedIn Selling System" description="Manual Prospecting with Hyper-Personalized Messaging — Zero Automation" icon={<MessageSquare />} features={["Profile Optimization for Authority Positioning: Reworked LinkedIn profile with conversion-focused structure", "Handcrafted Messaging (No Bots): 10 fully personalized messages daily tailored to each prospect's needs", "Zero Automation, Zero Risk: Manual actions only to keep your reputation safe and engagement authentic", "Follow-ups & Lead Handoffs: Strategic conversation management and warm lead transfers directly to you"]} outcome="A daily stream of inbound conversations from decision-makers who already know what you do and want to talk" buttonText="Learn More" featured={true} accentColor="#7EEAFF" />
           </div>
         </div>
         
-        {/* Wave transition to next section */}
+        {/* Wave transition to next section with logo-matching blue color */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-          
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="fill-[#00CFFF]/10"></path>
+          </svg>
         </div>
       </section>
 

@@ -38,7 +38,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   };
   
   return (
-    <div className="relative overflow-hidden rounded-xl border border-border/40 p-6 bg-card/80 backdrop-blur-md shadow-lg">
+    <div className="relative overflow-hidden rounded-xl border border-[#00CFFF]/20 p-6 bg-[#111111]/80 backdrop-blur-md shadow-lg hover:shadow-[#00CFFF]/10 transition-all duration-300">
       {featured && (
         <div className="absolute -top-4 -right-20 rotate-45">
           <div className="w-40 py-1 text-center text-xs font-medium" style={accentColorStyle}>
@@ -54,27 +54,26 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         })}
       </div>
       
-      <h3 className="text-xl font-bold text-foreground mb-2">{title}</h3>
-      <p className="text-muted-foreground mb-6">{description}</p>
+      <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+      <p className="text-gray-300 mb-6">{description}</p>
       
       <div className="space-y-3 mb-6">
         {features.map((feature, index) => (
           <div key={index} className="flex items-start">
-            <Check className="mr-2 h-5 w-5 flex-shrink-0 text-primary" style={featured ? accentTextStyle : undefined} />
-            <span className="text-foreground/80 text-sm">{feature}</span>
+            <Check className="mr-2 h-5 w-5 flex-shrink-0 text-[#00CFFF]" style={featured ? accentTextStyle : undefined} />
+            <span className="text-gray-200 text-sm">{feature}</span>
           </div>
         ))}
       </div>
       
-      <div className="mt-6 mb-6 rounded-lg bg-muted/50 p-4 text-sm text-muted-foreground">
-        <strong className="block mb-1 text-foreground">Outcome:</strong>
+      <div className="mt-6 mb-6 rounded-lg bg-[#222222] p-4 text-sm text-gray-300">
+        <strong className="block mb-1 text-white">Outcome:</strong>
         {outcome}
       </div>
       
       <Button 
         className="w-full transition-all hover:scale-105"
-        style={featured ? { backgroundColor: accentColor, color: "#000" } : undefined}
-        variant={featured ? undefined : "default"}
+        style={featured ? { backgroundColor: accentColor, color: "#000" } : { backgroundColor: "#00CFFF", color: "#000" }}
       >
         {buttonText}
       </Button>
