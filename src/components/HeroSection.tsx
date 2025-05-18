@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -256,9 +255,9 @@ const HeroSection: React.FC = () => {
               <p className="text-gray-400 mt-3">We've delivered results for businesses of all sizes</p>
             </div>
 
-            {/* Client Logo Carousel - replacing the static grid */}
+            {/* Client Logo Carousel - removing the showArrows prop */}
             <div className="mb-8">
-              <LogoCarousel logos={clientLogos} autoplaySpeed={2000} showArrows={true} />
+              <LogoCarousel logos={clientLogos} autoplaySpeed={2000} />
             </div>
 
             {/* Show more clients carousel */}
