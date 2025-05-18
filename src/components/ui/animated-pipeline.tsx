@@ -162,7 +162,8 @@ export const AnimatedPipeline = () => {
         </div>
       </div>
       
-      <style jsx>{`
+      <style>
+        {`
         .pipeline-step.active {
           transform: scale(1);
           opacity: 1;
@@ -188,7 +189,8 @@ export const AnimatedPipeline = () => {
             transform: scaleY(1);
           }
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };
