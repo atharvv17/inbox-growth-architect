@@ -1,4 +1,3 @@
-
 import React from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,8 +18,8 @@ const testimonialVideos: VideoTestimonial[] = [
     title: "6 new deals in the first month of working with us",
     author: "Kieran",
     role: "Instagram Agency Owner",
-    videoUrl: "https://www.youtube.com/embed/I8n9f9D157c",
-    thumbnail: "https://img.youtube.com/vi/I8n9f9D157c/maxresdefault.jpg"
+    videoUrl: "https://www.youtube.com/embed/0k0LpxzR1w8",
+    thumbnail: "https://img.youtube.com/vi/0k0LpxzR1w8/maxresdefault.jpg"
   },
   {
     id: 2,
