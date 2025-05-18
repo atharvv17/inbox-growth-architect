@@ -255,9 +255,7 @@ const Index = () => {
         
         {/* Add diagonal cut to next section */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
-            <path d="M1200 0L0 0 892.25 114.72 1200 0z" className="fill-[#0F172A]"></path>
-          </svg>
+          
         </div>
       </section>
 
