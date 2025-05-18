@@ -154,7 +154,7 @@ const Index = () => {
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-[#0A0A0A]"></path>
           </svg>
         </div>
-        <div className="container text-center mb-6 relative z-10 pt-[60px] md:pt-[40px] pb-[40px] py-[55px]">
+        <div className="container text-center mb-6 relative z-10 pt-[60px] md:pt-[40px] pb-[40px] my-0 py-[37px]">
           <h2 className="text-2xl md:text-3xl font-bold text-[#222222] mb-2">
             Trusted by Industry Leaders
           </h2>
