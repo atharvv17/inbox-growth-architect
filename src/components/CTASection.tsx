@@ -16,8 +16,8 @@ const CTASection: React.FC<CTASectionProps> = ({ title, subtitle, buttonText }) 
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-3 text-white">{title}</h2>
           <p className="text-lg text-gray-300 mb-6">{subtitle}</p>
-          {/* Updated button to Electric Blue or Neon Green with hover animation */}
-          <Button className="bg-[#67E8F9] hover:bg-gradient-to-r hover:from-[#67E8F9] hover:to-[#5EEAD4] text-black font-bold text-base px-6 py-5 h-auto transition-all duration-300 hover:shadow-lg hover:shadow-[#67E8F9]/30 hover:scale-105" size="lg">
+          {/* Updated button to Purple */}
+          <Button className="bg-[#9b87f5] hover:bg-[#7E69AB] text-white font-bold text-base px-6 py-5 h-auto transition-all duration-300 hover:shadow-lg hover:shadow-[#9b87f5]/30 hover:scale-105" size="lg">
             <Calendar className="mr-2 h-5 w-5" />
             {buttonText}
           </Button>

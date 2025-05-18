@@ -45,7 +45,7 @@ export const TestimonialsColumn: React.FC<TestimonialsColumnProps> = (props) => 
                       height={44}
                       src={image}
                       alt={name}
-                      className="h-11 w-11 rounded-full object-cover border border-[#67E8F9]/30"
+                      className="h-11 w-11 rounded-full object-cover border border-white/30"
                     />
                     <div className="flex flex-col">
                       <div className="font-medium tracking-tight leading-5 text-white text-md">{name}</div>

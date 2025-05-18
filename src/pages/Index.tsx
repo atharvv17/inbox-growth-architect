@@ -169,9 +169,9 @@ const Index = () => {
               <ul className="space-y-2">
                 <li className="flex items-center group">
                   <div className="relative">
-                    <CheckCircle className="text-[#67E8F9] mr-2 h-5 w-5 transition-all duration-300 group-hover:text-[#67E8F9]" />
+                    <CheckCircle className="text-white mr-2 h-5 w-5 transition-all duration-300 group-hover:text-white" />
                     {/* Hover tooltip */}
-                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-[#67E8F9]/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-white/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                       Need predictable lead flow?
                     </span>
                   </div>
@@ -179,9 +179,9 @@ const Index = () => {
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
-                    <CheckCircle className="text-[#67E8F9] mr-2 h-5 w-5 transition-all duration-300 group-hover:text-[#67E8F9]" />
+                    <CheckCircle className="text-white mr-2 h-5 w-5 transition-all duration-300 group-hover:text-white" />
                     {/* Hover tooltip */}
-                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-[#67E8F9]/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-white/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                       Ready to scale?
                     </span>
                   </div>
@@ -189,9 +189,9 @@ const Index = () => {
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
-                    <CheckCircle className="text-[#67E8F9] mr-2 h-5 w-5 transition-all duration-300 group-hover:text-[#67E8F9]" />
+                    <CheckCircle className="text-white mr-2 h-5 w-5 transition-all duration-300 group-hover:text-white" />
                     {/* Hover tooltip */}
-                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-[#67E8F9]/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-white/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                       Grow your client base?
                     </span>
                   </div>
@@ -199,9 +199,9 @@ const Index = () => {
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
-                    <CheckCircle className="text-[#67E8F9] mr-2 h-5 w-5 transition-all duration-300 group-hover:text-[#67E8F9]" />
+                    <CheckCircle className="text-white mr-2 h-5 w-5 transition-all duration-300 group-hover:text-white" />
                     {/* Hover tooltip */}
-                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-[#67E8F9]/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1E293B] border border-white/20 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                       Need top-of-funnel support?
                     </span>
                   </div>
@@ -274,7 +274,7 @@ const Index = () => {
               outcome="A daily stream of inbound conversations from decision-makers who already know what you do and want to talk" 
               buttonText="Learn More" 
               featured={true}
-              accentColor="#5EEAD4"
+              accentColor="#9b87f5"
             />
           </div>
         </div>
@@ -290,12 +290,12 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <ClientBenefitCard icon={<Rocket className="h-7 w-7 text-[#3B82F6]" />} title="Plug-and-Play Revenue Engine" description="Seamlessly integrate our system and watch your revenue scale effortlessly." />
-            <ClientBenefitCard icon={<Zap className="h-7 w-7 text-[#3B82F6]" />} title="Fast Setup: 7 Days or Less" description="Get fully operational in under a week—no delays, no hassles." />
-            <ClientBenefitCard icon={<Briefcase className="h-7 w-7 text-[#3B82F6]" />} title="AI-Powered Lead Scoring" description="Prioritize your best prospects with intelligent data-driven lead scoring." />
-            <ClientBenefitCard icon={<User className="h-7 w-7 text-[#3B82F6]" />} title="Dedicated Campaign Manager" description="Your personal expert, focused on your success and results." />
-            <ClientBenefitCard icon={<Calendar className="h-7 w-7 text-[#3B82F6]" />} title="Optional Appointment Setters" description="Save time and close more deals with ready-to-go appointment setters." />
-            <ClientBenefitCard icon={<ChartBar className="h-7 w-7 text-[#3B82F6]" />} title="Performance Tracking Dashboard" description="Real-time analytics to track ROI and optimize campaign performance." />
+            <ClientBenefitCard icon={<Rocket className="h-7 w-7 text-[#9b87f5]" />} title="Plug-and-Play Revenue Engine" description="Seamlessly integrate our system and watch your revenue scale effortlessly." />
+            <ClientBenefitCard icon={<Zap className="h-7 w-7 text-[#9b87f5]" />} title="Fast Setup: 7 Days or Less" description="Get fully operational in under a week—no delays, no hassles." />
+            <ClientBenefitCard icon={<Briefcase className="h-7 w-7 text-[#9b87f5]" />} title="AI-Powered Lead Scoring" description="Prioritize your best prospects with intelligent data-driven lead scoring." />
+            <ClientBenefitCard icon={<User className="h-7 w-7 text-[#9b87f5]" />} title="Dedicated Campaign Manager" description="Your personal expert, focused on your success and results." />
+            <ClientBenefitCard icon={<Calendar className="h-7 w-7 text-[#9b87f5]" />} title="Optional Appointment Setters" description="Save time and close more deals with ready-to-go appointment setters." />
+            <ClientBenefitCard icon={<ChartBar className="h-7 w-7 text-[#9b87f5]" />} title="Performance Tracking Dashboard" description="Real-time analytics to track ROI and optimize campaign performance." />
           </div>
         </div>
       </section>
@@ -303,11 +303,11 @@ const Index = () => {
       {/* Testimonials Section - Updated with Dark Gradient */}
       <section className="py-6 md:py-10 bg-gradient-to-b from-[#0A101F] to-[#111E3F] overflow-hidden relative">
         {/* Add subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3B82F6_1px,transparent_1px)] bg-[length:20px_20px]"></div>
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#9b87f5_1px,transparent_1px)] bg-[length:20px_20px]"></div>
         
         <div className="container relative z-10">
           <div className="text-center mb-4">
-            <p className="text-[#67E8F9] text-sm uppercase tracking-wider mb-1 font-medium">Client Stories</p>
+            <p className="text-white text-sm uppercase tracking-wider mb-1 font-medium">Client Stories</p>
             <h2 className="text-3xl font-bold mb-2 text-white">What Our Clients Say</h2>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Real results from businesses just like yours
@@ -353,4 +353,5 @@ const Index = () => {
       <Footer />
     </div>;
 };
+
 export default Index;
