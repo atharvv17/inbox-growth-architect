@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { AnimatedProcessStep } from './AnimatedProcessStep';
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 interface ProcessStep {
   number: number;
@@ -63,6 +64,18 @@ export const AnimatedProcessTimeline: React.FC<AnimatedProcessTimelineProps> = (
     setActiveStep(stepNumber);
   };
   
+  // Animation variants for the step containers
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: (i: number) => ({
+      opacity: 1,
+      transition: { 
+        delay: i * 0.3,
+        duration: 0.5
+      }
+    })
+  };
+  
   return (
     <div ref={timelineRef} className="relative max-w-5xl mx-auto mt-10">
       {/* Mobile layout (vertical) */}
@@ -70,14 +83,26 @@ export const AnimatedProcessTimeline: React.FC<AnimatedProcessTimelineProps> = (
         {/* Vertical connector line */}
         <div className="absolute left-4 top-4 bottom-4 w-0.5 bg-midnight-primary/30 z-0"></div>
         
-        {steps.map((step) => (
-          <div key={step.number} className="relative z-10 pl-12">
+        {steps.map((step, index) => (
+          <motion.div 
+            key={step.number} 
+            className="relative z-10 pl-12"
+            initial="hidden"
+            animate="visible"
+            custom={index}
+            variants={containerVariants}
+          >
             <div className="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center">
-              <div className={cn(
-                "w-2 h-2 rounded-full transition-all duration-500",
-                activeStep === step.number ? "bg-logo-blue" : 
-                completedSteps.includes(step.number) ? "bg-logo-blue/70" : "bg-midnight-primary/50"
-              )}></div>
+              <motion.div 
+                className={cn(
+                  "w-2 h-2 rounded-full transition-all duration-500",
+                  activeStep === step.number ? "bg-logo-blue" : 
+                  completedSteps.includes(step.number) ? "bg-logo-blue/70" : "bg-midnight-primary/50"
+                )}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: index * 0.3 + 0.2, duration: 0.5, type: "spring" }}
+              ></motion.div>
             </div>
             
             <AnimatedProcessStep
@@ -89,25 +114,42 @@ export const AnimatedProcessTimeline: React.FC<AnimatedProcessTimelineProps> = (
               isCompleted={completedSteps.includes(step.number)}
               onClick={() => handleStepClick(step.number)}
             />
-          </div>
+          </motion.div>
         ))}
       </div>
       
       {/* Desktop layout (horizontal) */}
       <div className="hidden md:grid grid-cols-5 gap-4 relative">
         {/* Horizontal connector line */}
-        <div className="absolute left-0 right-0 top-1/2 h-0.5 bg-midnight-primary/30 z-0"></div>
+        <motion.div 
+          className="absolute left-0 right-0 top-1/2 h-0.5 bg-midnight-primary/30 z-0"
+          initial={{ scaleX: 0, originX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        ></motion.div>
         
-        {steps.map((step) => (
-          <div key={step.number} className="relative z-10 pt-10">
+        {steps.map((step, index) => (
+          <motion.div 
+            key={step.number} 
+            className="relative z-10 pt-10"
+            initial="hidden"
+            animate="visible"
+            custom={index}
+            variants={containerVariants}
+          >
             {/* Step number circle */}
-            <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
+            <motion.div 
+              className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: index * 0.3, duration: 0.5, type: "spring" }}
+            >
               <div className={cn(
                 "w-4 h-4 rounded-full transition-all duration-500",
                 activeStep === step.number ? "bg-logo-blue shadow-glow scale-150" : 
                 completedSteps.includes(step.number) ? "bg-logo-blue/70" : "bg-midnight-primary/50"
               )}></div>
-            </div>
+            </motion.div>
             
             <AnimatedProcessStep
               stepNumber={step.number}
@@ -121,11 +163,16 @@ export const AnimatedProcessTimeline: React.FC<AnimatedProcessTimelineProps> = (
             
             {/* Connector arrow between steps */}
             {step.number < steps.length && (
-              <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 z-20 opacity-30">
+              <motion.div 
+                className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 z-20 opacity-30"
+                initial={{ opacity: 0, x: "-50%" }}
+                animate={{ opacity: 0.3, x: "50%" }}
+                transition={{ delay: index * 0.3 + 0.5, duration: 0.5 }}
+              >
                 <ChevronRight className="h-6 w-6 text-logo-blue" />
-              </div>
+              </motion.div>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
