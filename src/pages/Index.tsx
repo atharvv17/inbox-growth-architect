@@ -11,9 +11,11 @@ import FAQSection from "@/components/FAQSection";
 import TestimonialsColumn from "@/components/TestimonialsColumn";
 import { FlowingProcessTimeline } from "@/components/FlowingProcessTimeline";
 import Testimonials from "@/components/Testimonials";
+import AboutUs from "@/components/AboutUs";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
+
 const Index = () => {
   // Process steps data
   const processSteps = [{
@@ -170,6 +172,9 @@ const Index = () => {
         {/* Reduced padding at the bottom of this section for better spacing */}
         <div className="py-[0px]"></div>
       </section>
+      
+      {/* About Us Section - Added before Who We Serve */}
+      <AboutUs />
       
       {/* Who We Serve Section with reduced spacing between sections */}
       <section className="pb-20 -mt-10 bg-white text-[#1E293B] relative py-0 rounded-md">
