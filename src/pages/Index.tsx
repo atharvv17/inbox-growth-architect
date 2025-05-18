@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -302,8 +301,11 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section - Updated with Dark Gradient */}
-      <section className="py-6 md:py-10 bg-gradient-to-b from-black to-[#0F172A] overflow-hidden">
-        <div className="container">
+      <section className="py-6 md:py-10 bg-gradient-to-b from-[#0A101F] to-[#111E3F] overflow-hidden relative">
+        {/* Add subtle pattern overlay */}
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3B82F6_1px,transparent_1px)] bg-[length:20px_20px]"></div>
+        
+        <div className="container relative z-10">
           <div className="text-center mb-4">
             <p className="text-[#67E8F9] text-sm uppercase tracking-wider mb-1 font-medium">Client Stories</p>
             <h2 className="text-3xl font-bold mb-2 text-white">What Our Clients Say</h2>
@@ -313,8 +315,9 @@ const Index = () => {
           </div>
           
           <div className="relative flex gap-4 justify-center mx-auto max-w-7xl overflow-hidden">
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0F172A] via-transparent to-[#0F172A] z-10"></div>
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#0F172A] via-transparent to-[#0F172A] z-10"></div>
+            {/* Gradient overlays for fading effect */}
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#111E3F] via-transparent to-[#111E3F] z-10"></div>
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#111E3F] via-transparent to-[#111E3F] z-10"></div>
             
             <TestimonialsColumn 
               className="min-w-[320px] max-h-[650px] overflow-hidden"
