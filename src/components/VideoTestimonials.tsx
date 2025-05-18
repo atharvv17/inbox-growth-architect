@@ -16,7 +16,7 @@ interface VideoTestimonial {
 const testimonialVideos: VideoTestimonial[] = [
   {
     id: 1,
-    title: "6 new deals in the first month of working with us",
+    title: "6 Clients. 1 Month. Zero Guesswork – Kieran's Instagram Agency Breakthrough",
     author: "Kieran",
     role: "Instagram Agency Owner",
     videoUrl: "https://www.youtube.com/embed/0k0LpxzR1w8",
@@ -24,7 +24,7 @@ const testimonialVideos: VideoTestimonial[] = [
   },
   {
     id: 2,
-    title: "From struggling to 15+ qualified calls monthly",
+    title: "How a SaaS Founder Went from Crickets to 15+ Qualified Leads a Month",
     author: "Bailey",
     role: "SaaS Founder",
     videoUrl: "https://www.youtube.com/embed/gab_qaJXTiY",
@@ -32,7 +32,7 @@ const testimonialVideos: VideoTestimonial[] = [
   },
   {
     id: 3,
-    title: "Got her first client in a week",
+    title: "Signed Her First Client in 7 Days – After Months of No Traction",
     author: "Jerry",
     role: "Online Coach",
     videoUrl: "https://www.youtube.com/embed/mVDfhlAABHM",
