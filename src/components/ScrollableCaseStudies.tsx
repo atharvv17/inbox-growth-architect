@@ -32,7 +32,7 @@ const caseStudies: CaseStudy[] = [
       "Implemented Clay + Instantly + Smartlead automation",
       "Set up lead scoring and inbox warm-up protocols"
     ],
-    videoSrc: "https://www.youtube.com/embed/SfD6BD-NaO0",
+    videoSrc: "https://www.youtube.com/embed/9t_SkFg-4As",
     results: {
       leads: "47 qualified leads",
       calls: "14 booked calls",
