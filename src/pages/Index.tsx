@@ -210,7 +210,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <ClientBenefitCard icon={<Rocket className="h-7 w-7 text-logo-blue" />} title="Plug-and-Play Revenue Engine" description="Seamlessly integrate our system and watch your revenue scale effortlessly." />
             <ClientBenefitCard icon={<Zap className="h-7 w-7 text-logo-blue" />} title="Fast Setup: 7 Days or Less" description="Get fully operational in under a week—no delays, no hassles." />
-            <ClientBenefitCard icon={<Tag className="h-7 w-7 text-logo-blue" />} title="White-Labeled CRM" description="Maintain your brand identity with a fully white-labeled solution." />
+            <ClientBenefitCard icon={<Briefcase className="h-7 w-7 text-logo-blue" />} title="AI-Powered Lead Scoring" description="Prioritize your best prospects with intelligent data-driven lead scoring." />
             <ClientBenefitCard icon={<User className="h-7 w-7 text-logo-blue" />} title="Dedicated Campaign Manager" description="Your personal expert, focused on your success and results." />
             <ClientBenefitCard icon={<Calendar className="h-7 w-7 text-logo-blue" />} title="Optional Appointment Setters" description="Save time and close more deals with ready-to-go appointment setters." />
             <ClientBenefitCard icon={<ChartBar className="h-7 w-7 text-logo-blue" />} title="Performance Tracking Dashboard" description="Real-time analytics to track ROI and optimize campaign performance." />
@@ -220,10 +220,8 @@ const Index = () => {
 
       {/* What Makes Us Different */}
       
-
       {/* Case Studies */}
       
-
       {/* New Testimonials Section */}
       <section className="py-6 md:py-10 bg-midnight-surface overflow-hidden">
         <div className="container">
