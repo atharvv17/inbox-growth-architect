@@ -11,12 +11,11 @@ import FAQSection from "@/components/FAQSection";
 import TestimonialsColumn from "@/components/TestimonialsColumn";
 import { FlowingProcessTimeline } from "@/components/FlowingProcessTimeline";
 import Testimonials from "@/components/Testimonials";
-import VideoTestimonials from "@/components/VideoTestimonials"; 
+import VideoTestimonials from "@/components/VideoTestimonials";
 import ScrollableCaseStudies from "@/components/ScrollableCaseStudies";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
-
 const Index = () => {
   // Process steps data
   const processSteps = [{
@@ -155,7 +154,7 @@ const Index = () => {
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-[#0A0A0A]"></path>
           </svg>
         </div>
-        <div className="container text-center mb-6 relative z-10 pt-[60px] md:pt-[40px] pb-[40px]">
+        <div className="container text-center mb-6 relative z-10 pt-[60px] md:pt-[40px] pb-[40px] py-0">
           <h2 className="text-2xl md:text-3xl font-bold text-[#222222] mb-2">
             Trusted by Industry Leaders
           </h2>
@@ -318,5 +317,4 @@ const Index = () => {
       <Footer />
     </div>;
 };
-
 export default Index;
