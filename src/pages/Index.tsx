@@ -2,8 +2,6 @@ import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
-import ProcessTimeline from "@/components/ProcessTimeline";
-import { AnimatedProcessTimeline } from "@/components/AnimatedProcessTimeline";
 import TestimonialCard from "@/components/TestimonialCard";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import CTASection from "@/components/CTASection";
@@ -11,36 +9,43 @@ import Footer from "@/components/Footer";
 import ClientBenefitCard from "@/components/ClientBenefitCard";
 import FAQSection from "@/components/FAQSection";
 import TestimonialsColumn from "@/components/TestimonialsColumn";
+import { FlowingProcessTimeline } from "@/components/FlowingProcessTimeline";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
+
 const Index = () => {
   // Process steps data
   const processSteps = [{
     number: 1,
     title: "Deep Discovery & ICP Clarity",
     description: "Understand audience, pain points, and differentiation",
-    detailedDescription: "We dive into your business, ideal customer profile, and market positioning — uncovering what makes your offer resonate and what your buyers truly care about."
+    detailedDescription: "We dive into your business, ideal customer profile, and market positioning — uncovering what makes your offer resonate and what your buyers truly care about.",
+    icon: "Search"
   }, {
     number: 2,
     title: "System Setup & Warmup",
     description: "Tech setup, profile edits, inbox prep",
-    detailedDescription: "We configure custom domains, optimize LinkedIn profiles, and prep inboxes for maximum deliverability and credibility — setting the stage for consistent outreach."
+    detailedDescription: "We configure custom domains, optimize LinkedIn profiles, and prep inboxes for maximum deliverability and credibility — setting the stage for consistent outreach.",
+    icon: "Settings"
   }, {
     number: 3,
     title: "Copywriting & Data Sourcing",
     description: "Human-sourced data + crafted messaging",
-    detailedDescription: "Our team writes handcrafted messaging tailored to your voice, offer, and audience. Every lead is manually sourced to ensure quality, intent, and relevance."
+    detailedDescription: "Our team writes handcrafted messaging tailored to your voice, offer, and audience. Every lead is manually sourced to ensure quality, intent, and relevance.",
+    icon: "MessageSquare"
   }, {
     number: 4,
     title: "Launch & Daily Execution",
     description: "Campaign goes live, replies monitored",
-    detailedDescription: "Your outbound system goes live — we send, track, and manage replies daily. You stay focused on calls, while we keep the engine running."
+    detailedDescription: "Your outbound system goes live — we send, track, and manage replies daily. You stay focused on calls, while we keep the engine running.",
+    icon: "Rocket"
   }, {
     number: 5,
     title: "Optimize & Scale",
     description: "Continuous testing, lead quality refinement",
     detailedDescription: "We analyze performance, A/B test sequences, and continuously refine targeting and messaging — so your lead quality gets sharper over time.",
+    icon: "ChartBar",
     isLast: true
   }];
 
@@ -160,17 +165,35 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Our Process - Updated with vibrant background */}
+      {/* Our Process - Updated with flowing timeline design */}
       <section className="py-16 bg-gradient-to-br from-[#F8FAFC] via-[#EFF6FF] to-[#F1F5F9] relative" id="process">
         <div className="container relative z-10">
-          <div className="text-center mb-6">
+          <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">Our Process</h2>
             <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
               How we take you from uncertainty to predictable pipeline
             </p>
           </div>
-          {/* Replace the old ProcessTimeline with our new AnimatedProcessTimeline */}
-          <AnimatedProcessTimeline steps={processSteps} />
+          
+          {/* Replace the old ProcessTimeline with our new FlowingProcessTimeline */}
+          <FlowingProcessTimeline steps={processSteps} />
+          
+          {/* Final step highlight box */}
+          <div className="mt-12 max-w-2xl mx-auto transform translate-y-0 hover:translate-y-[-5px] transition-all duration-300">
+            <div className="bg-gradient-to-r from-[#3B82F6]/10 to-[#60A5FA]/10 p-6 rounded-xl border border-blue-200 shadow-lg relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full translate-x-12 -translate-y-8 blur-2xl"></div>
+              <h3 className="text-xl font-bold text-[#1E293B] mb-3 flex items-center">
+                <span className="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 shadow-md">
+                  <ChartBar className="w-4 h-4" />
+                </span>
+                The Result
+              </h3>
+              <p className="text-[#4B5563] relative z-10">
+                Your outbound system evolves from basic campaigns to a fine-tuned lead generation machine — delivering higher quality prospects who are ready to buy, with less wasted time and fewer dead-end conversations.
+              </p>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+            </div>
+          </div>
         </div>
         
         {/* Add diagonal cut to next section */}
