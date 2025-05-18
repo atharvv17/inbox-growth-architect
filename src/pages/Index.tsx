@@ -169,7 +169,7 @@ const Index = () => {
       </section>
       
       {/* Who We Serve Section with smoother transition to Our Process section */}
-      <section className="py-12 pb-24 bg-white text-[#1E293B] relative">
+      <section className="py-12 pb-20 bg-white text-[#1E293B] relative">
         <div className="container relative z-10">
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
