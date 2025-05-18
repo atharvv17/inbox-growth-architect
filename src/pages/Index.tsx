@@ -14,7 +14,6 @@ import TestimonialsColumn from "@/components/TestimonialsColumn";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
-
 const Index = () => {
   // Process steps data
   const processSteps = [{
@@ -44,7 +43,7 @@ const Index = () => {
     detailedDescription: "We analyze performance, A/B test sequences, and continuously refine targeting and messaging — so your lead quality gets sharper over time.",
     isLast: true
   }];
-  
+
   // FAQ content
   const faqs = [{
     question: "How long does it take to see results?",
@@ -62,81 +61,81 @@ const Index = () => {
     question: "Will this work for my specific industry?",
     answer: "We've successfully generated leads across diverse B2B sectors, from SaaS to professional services. During our discovery process, we'll determine if your offer and audience are a good fit for our methods."
   }];
-  
+
   // New testimonials data
-  const testimonialColumns = [
-    [
-      {
-        text: "Working with this team has completely transformed our sales process. We're now closing deals faster than ever before.",
-        image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop",
-        name: "Sarah Johnson",
-        role: "VP of Sales, TechCorp"
-      },
-      {
-        text: "The custom CRM setup alone was worth the investment. Our team loves how intuitive everything is.",
-        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop",
-        name: "Michael Chen",
-        role: "Founder, GrowthGenius"
-      },
-      {
-        text: "I was skeptical at first, but the results speak for themselves. Our pipeline is more predictable than ever.",
-        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&h=300&fit=crop",
-        name: "Alex Rivera",
-        role: "Sales Director, ScaleUp Inc."
-      }
-    ],
-    [
-      {
-        text: "The onboarding process was seamless and we started seeing results within the first two weeks.",
-        image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=300&h=300&fit=crop",
-        name: "Emily Taylor",
-        role: "Marketing Manager, DataFlow"
-      },
-      {
-        text: "Having a dedicated campaign manager has made all the difference. They're like an extension of our team.",
-        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop",
-        name: "David Wong",
-        role: "CEO, ConsultPro"
-      },
-      {
-        text: "The ROI on this service has been incredible. We've already recouped our investment multiple times over.",
-        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop",
-        name: "Jessica Martinez",
-        role: "Operations Director, AgileWorks"
-      }
-    ],
-    [
-      {
-        text: "I wish we had found this service years ago. It would have saved us so much time and money.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
-        name: "Robert Kim",
-        role: "Founder, InnovateNow"
-      },
-      {
-        text: "The quality of leads has been consistently high, which is rare to find with other services we've tried.",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop",
-        name: "Linda Carter",
-        role: "Head of Growth, SaaS Solutions"
-      },
-      {
-        text: "We've increased our close rate by over 30% since implementing this system. Absolutely game-changing.",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop",
-        name: "Thomas Wilson",
-        role: "Sales Lead, Enterprise Tech"
-      }
-    ]
-  ];
+  const testimonialColumns = [[{
+    text: "Working with this team has completely transformed our sales process. We're now closing deals faster than ever before.",
+    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop",
+    name: "Sarah Johnson",
+    role: "VP of Sales, TechCorp"
+  }, {
+    text: "The custom CRM setup alone was worth the investment. Our team loves how intuitive everything is.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop",
+    name: "Michael Chen",
+    role: "Founder, GrowthGenius"
+  }, {
+    text: "I was skeptical at first, but the results speak for themselves. Our pipeline is more predictable than ever.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&h=300&fit=crop",
+    name: "Alex Rivera",
+    role: "Sales Director, ScaleUp Inc."
+  }], [{
+    text: "The onboarding process was seamless and we started seeing results within the first two weeks.",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=300&h=300&fit=crop",
+    name: "Emily Taylor",
+    role: "Marketing Manager, DataFlow"
+  }, {
+    text: "Having a dedicated campaign manager has made all the difference. They're like an extension of our team.",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop",
+    name: "David Wong",
+    role: "CEO, ConsultPro"
+  }, {
+    text: "The ROI on this service has been incredible. We've already recouped our investment multiple times over.",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop",
+    name: "Jessica Martinez",
+    role: "Operations Director, AgileWorks"
+  }], [{
+    text: "I wish we had found this service years ago. It would have saved us so much time and money.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
+    name: "Robert Kim",
+    role: "Founder, InnovateNow"
+  }, {
+    text: "The quality of leads has been consistently high, which is rare to find with other services we've tried.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop",
+    name: "Linda Carter",
+    role: "Head of Growth, SaaS Solutions"
+  }, {
+    text: "We've increased our close rate by over 30% since implementing this system. Absolutely game-changing.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop",
+    name: "Thomas Wilson",
+    role: "Sales Lead, Enterprise Tech"
+  }]];
 
   // Example logos data
-  const logos = [
-    { name: "Company 1", id: 1, img: "/lovable-uploads/a0c813cd-8deb-48e2-8b0f-3e39a130ff2c.png" },
-    { name: "Company 2", id: 2, img: "/lovable-uploads/88da1b12-db70-4d0b-bbac-ab2d90d04565.png" },
-    { name: "Company 3", id: 3, img: "/lovable-uploads/d317e6ab-923a-4dc9-a864-9f0851e151ee.png" },
-    { name: "Company 4", id: 4, img: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png" },
-    { name: "Company 5", id: 5, img: "/lovable-uploads/d68b7475-2375-4299-b26a-d5ee7a16216c.png" },
-    { name: "Company 6", id: 6, img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png" },
-  ];
-
+  const logos = [{
+    name: "Company 1",
+    id: 1,
+    img: "/lovable-uploads/a0c813cd-8deb-48e2-8b0f-3e39a130ff2c.png"
+  }, {
+    name: "Company 2",
+    id: 2,
+    img: "/lovable-uploads/88da1b12-db70-4d0b-bbac-ab2d90d04565.png"
+  }, {
+    name: "Company 3",
+    id: 3,
+    img: "/lovable-uploads/d317e6ab-923a-4dc9-a864-9f0851e151ee.png"
+  }, {
+    name: "Company 4",
+    id: 4,
+    img: "/lovable-uploads/d4fda32f-dd19-4673-ac3b-ee03a77ea04d.png"
+  }, {
+    name: "Company 5",
+    id: 5,
+    img: "/lovable-uploads/d68b7475-2375-4299-b26a-d5ee7a16216c.png"
+  }, {
+    name: "Company 6",
+    id: 6,
+    img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png"
+  }];
   return <div className="min-h-screen bg-[#FAFAFA] text-[#374151] overflow-hidden">
       <Header />
       <HeroSection />
@@ -272,71 +271,19 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-5">
-            <ServiceCard 
-              title="Sales Inbox Accelerator" 
-              description="Cold Email Infrastructure & Done-For-You Campaign Execution" 
-              icon={<Mail />} 
-              features={[
-                "End-to-End Cold Email Setup: Custom domains, inbox warmup, DNS records, and real-time deliverability monitoring", 
-                "Custom Copywriting & Lead Research: 1-on-1 work with our team to craft compelling email sequences and handpick high-quality leads", 
-                "Reply Management & Campaign Optimization: Active response management, performance tracking, and weekly optimization sprints", 
-                "Reporting & Compliance: Weekly dashboards, reply breakdowns, and full GDPR/Can-Spam compliance"
-              ]} 
-              outcome="Your calendar filled with qualified B2B sales calls — built on a compliant cold email machine that works on autopilot" 
-              buttonText="Learn More" 
-            />
-            <ServiceCard 
-              title="LinkedIn Selling System" 
-              description="Manual Prospecting with Hyper-Personalized Messaging — Zero Automation" 
-              icon={<MessageSquare />} 
-              features={[
-                "Profile Optimization for Authority Positioning: Reworked LinkedIn profile with conversion-focused structure", 
-                "Handcrafted Messaging (No Bots): 10 fully personalized messages daily tailored to each prospect's needs", 
-                "Zero Automation, Zero Risk: Manual actions only to keep your reputation safe and engagement authentic", 
-                "Follow-ups & Lead Handoffs: Strategic conversation management and warm lead transfers directly to you"
-              ]} 
-              outcome="A daily stream of inbound conversations from decision-makers who already know what you do and want to talk" 
-              buttonText="Learn More" 
-              featured={true}
-              accentColor="#9b87f5"
-            />
+            <ServiceCard title="Sales Inbox Accelerator" description="Cold Email Infrastructure & Done-For-You Campaign Execution" icon={<Mail />} features={["End-to-End Cold Email Setup: Custom domains, inbox warmup, DNS records, and real-time deliverability monitoring", "Custom Copywriting & Lead Research: 1-on-1 work with our team to craft compelling email sequences and handpick high-quality leads", "Reply Management & Campaign Optimization: Active response management, performance tracking, and weekly optimization sprints", "Reporting & Compliance: Weekly dashboards, reply breakdowns, and full GDPR/Can-Spam compliance"]} outcome="Your calendar filled with qualified B2B sales calls — built on a compliant cold email machine that works on autopilot" buttonText="Learn More" />
+            <ServiceCard title="LinkedIn Selling System" description="Manual Prospecting with Hyper-Personalized Messaging — Zero Automation" icon={<MessageSquare />} features={["Profile Optimization for Authority Positioning: Reworked LinkedIn profile with conversion-focused structure", "Handcrafted Messaging (No Bots): 10 fully personalized messages daily tailored to each prospect's needs", "Zero Automation, Zero Risk: Manual actions only to keep your reputation safe and engagement authentic", "Follow-ups & Lead Handoffs: Strategic conversation management and warm lead transfers directly to you"]} outcome="A daily stream of inbound conversations from decision-makers who already know what you do and want to talk" buttonText="Learn More" featured={true} accentColor="#9b87f5" />
           </div>
         </div>
         
         {/* Wave transition to next section */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
-            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" className="fill-[#F3F4F6]"></path>
-          </svg>
+          
         </div>
       </section>
 
       {/* Why Our Clients Choose Us - Light Gray Background */}
-      <section className="py-16 bg-gradient-to-b from-[#F3F4F6] to-[#F9FAFB] relative" id="benefits">
-        <div className="container relative z-10">
-          <div className="text-center mb-6">
-            <h2 className="text-3xl font-bold mb-2 text-black">Why Our Clients Choose Us</h2>
-            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
-              Everything you need to start growing your business immediately
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <ClientBenefitCard icon={<Rocket className="h-7 w-7 text-[#9b87f5]" />} title="Plug-and-Play Revenue Engine" description="Seamlessly integrate our system and watch your revenue scale effortlessly." />
-            <ClientBenefitCard icon={<Zap className="h-7 w-7 text-[#9b87f5]" />} title="Fast Setup: 7 Days or Less" description="Get fully operational in under a week—no delays, no hassles." />
-            <ClientBenefitCard icon={<Briefcase className="h-7 w-7 text-[#9b87f5]" />} title="AI-Powered Lead Scoring" description="Prioritize your best prospects with intelligent data-driven lead scoring." />
-            <ClientBenefitCard icon={<User className="h-7 w-7 text-[#9b87f5]" />} title="Dedicated Campaign Manager" description="Your personal expert, focused on your success and results." />
-            <ClientBenefitCard icon={<Calendar className="h-7 w-7 text-[#9b87f5]" />} title="Optional Appointment Setters" description="Save time and close more deals with ready-to-go appointment setters." />
-            <ClientBenefitCard icon={<ChartBar className="h-7 w-7 text-[#9b87f5]" />} title="Performance Tracking Dashboard" description="Real-time analytics to track ROI and optimize campaign performance." />
-          </div>
-        </div>
-        
-        {/* Curved transition to testimonials */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
-            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="fill-background"></path>
-          </svg>
-        </div>
-      </section>
+      
 
       {/* Testimonials Section - Lighter style with pattern overlay */}
       <section className="py-16 bg-gradient-to-b from-[#F8FAFC] to-[#F1F5F9] overflow-hidden relative">
@@ -357,26 +304,11 @@ const Index = () => {
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#F1F5F9] via-transparent to-[#F8FAFC] z-10"></div>
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#F1F5F9] via-transparent to-[#F8FAFC] z-10"></div>
             
-            <TestimonialsColumn 
-              className="min-w-[320px] max-h-[650px] overflow-hidden"
-              testimonials={testimonialColumns[0]}
-              duration={20}
-              darkMode={false}
-            />
+            <TestimonialsColumn className="min-w-[320px] max-h-[650px] overflow-hidden" testimonials={testimonialColumns[0]} duration={20} darkMode={false} />
             
-            <TestimonialsColumn
-              className="min-w-[320px] max-h-[650px] overflow-hidden mt-28"
-              testimonials={testimonialColumns[1]} 
-              duration={25}
-              darkMode={false}
-            />
+            <TestimonialsColumn className="min-w-[320px] max-h-[650px] overflow-hidden mt-28" testimonials={testimonialColumns[1]} duration={25} darkMode={false} />
             
-            <TestimonialsColumn
-              className="min-w-[320px] max-h-[650px] overflow-hidden"
-              testimonials={testimonialColumns[2]}
-              duration={18}
-              darkMode={false}
-            />
+            <TestimonialsColumn className="min-w-[320px] max-h-[650px] overflow-hidden" testimonials={testimonialColumns[2]} duration={18} darkMode={false} />
           </div>
         </div>
         
@@ -392,14 +324,9 @@ const Index = () => {
       <FAQSection faqs={faqs} />
 
       {/* Final CTA - Updated in the CTASection.tsx component */}
-      <CTASection 
-        title="Let's Build Your Outbound Machine" 
-        subtitle="Your sales calendar shouldn't be empty — let's fix that." 
-        buttonText="Book Your Strategy Call Now" 
-      />
+      <CTASection title="Let's Build Your Outbound Machine" subtitle="Your sales calendar shouldn't be empty — let's fix that." buttonText="Book Your Strategy Call Now" />
 
       <Footer />
     </div>;
 };
-
 export default Index;
