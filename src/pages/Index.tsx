@@ -238,14 +238,14 @@ const Index = () => {
         
         {/* NEW SMOOTH, ORGANIC WAVE TRANSITION to the process section - shifted further down */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[120px] py-[9px]">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[120px]">
             <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" className="fill-[#000000]"></path>
           </svg>
         </div>
       </section>
       
       {/* Our Process - With dark background matching logo and NO top wave (since we added it to previous section) */}
-      <section className="pt-16 pb-16 bg-[#000000] text-white relative" id="process">
+      <section className="pt-16 pb-16 bg-[#000000] text-white relative -mt-1" id="process">
         <div className="container relative z-10">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-2 text-white">Our Process</h2>
