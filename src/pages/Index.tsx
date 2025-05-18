@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -51,7 +50,7 @@ const Index = () => {
     answer: "We focus on quality over quantity and don't promise specific lead numbers. Instead, we guarantee our methodology, expertise, and continuous optimization. Our goal is lasting pipeline growth, not just vanity metrics."
   }, {
     question: "What makes your approach different from other agencies?",
-    answer: "Unlike most agencies, we handle everything end-to-end: strategy, tech setup, message crafting, lead sourcing, and daily execution. We also emphasize human-driven outreach (no bots) and ethical, compliance-focused methods."
+    answer: "We use the right combination of automation and human expertise to drive efficient, scalable, and high-converting outreach. Automation helps us streamline systems, track performance, and ensure consistency at scale — but it's the human insight that makes the difference.\n\nOur team of experts personally handles strategy, message crafting, and execution — ensuring that every lead feels heard, every message feels real, and every campaign is aligned with your brand's tone and goals."
   }, {
     question: "How do you ensure email deliverability?",
     answer: "We implement thorough domain setup, strategic inbox warming, reputation monitoring, and personalized sending patterns. Our approach prioritizes long-term domain health over quick wins that might damage your sending reputation."
