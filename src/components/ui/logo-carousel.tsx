@@ -116,7 +116,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
 
     return (
       <motion.div
-        className="relative h-24 w-32 overflow-visible md:h-40 md:w-60"
+        className="relative h-16 w-24 overflow-visible md:h-24 md:w-40"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -155,7 +155,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
             }}
           >
             {typeof currentLogo.img === 'string' ? (
-              <div className="rounded-lg bg-white h-32 w-32 md:h-40 md:w-40 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
+              <div className="rounded-lg bg-white h-20 w-20 md:h-24 md:w-24 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
                 <div className="w-full h-full overflow-hidden flex items-center justify-center p-2">
                   <img 
                     src={currentLogo.img} 
@@ -166,7 +166,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
                 </div>
               </div>
             ) : (
-              <div className="rounded-lg bg-white h-32 w-32 md:h-40 md:w-40 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
+              <div className="rounded-lg bg-white h-20 w-20 md:h-24 md:w-24 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
                 <div className="w-full h-full overflow-hidden flex items-center justify-center">
                   {React.createElement(currentLogo.img, {
                     className: "h-full w-full text-gray-800 object-contain p-4"
@@ -213,15 +213,17 @@ export function LogoCarousel({
 
   return (
     <div className="w-full max-w-6xl mx-auto relative">
-      <div className="flex justify-center space-x-16 py-12 animate-fade-in">
-        {logoSets.map((logos, index) => (
-          <LogoColumn
-            key={index}
-            logos={logos}
-            index={index}
-            currentTime={currentTime}
-          />
-        ))}
+      <div className="bg-muted/20 backdrop-blur-xl border border-primary/10 rounded-xl shadow-lg p-6 my-4">
+        <div className="flex justify-center space-x-10 py-6 animate-fade-in">
+          {logoSets.map((logos, index) => (
+            <LogoColumn
+              key={index}
+              logos={logos}
+              index={index}
+              currentTime={currentTime}
+            />
+          ))}
+        </div>
       </div>
     </div>
   )
