@@ -73,18 +73,15 @@ const clientLogos = [{
   id: 18,
   name: "Infosys",
   img: "/lovable-uploads/6ed42d65-9b24-446f-b992-be0050026e71.png"
-},
-{
+}, {
   id: 19,
   name: "Gorilla",
   img: "/lovable-uploads/2581ba47-e3a5-4f74-9981-6637bf7fae07.png"
-},
-{
+}, {
   id: 20,
   name: "LeadSquared",
   img: "/lovable-uploads/8f2ed93a-50b9-49bc-9b8d-a6229642ced6.png"
-},
-{
+}, {
   id: 21,
   name: "Simplus",
   img: "/lovable-uploads/1901b8d9-015c-4dbb-8808-e61e92c7dda1.png"
@@ -204,16 +201,13 @@ const HeroSection: React.FC = () => {
             </div>
             
             <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-white leading-tight md:text-6xl">
-              We Build <AnimatedText 
-                text="Predictable" 
-                delay={500} 
-                speed={70} 
-                highlightWords={["Predictable"]} 
-                className="font-bold" 
-              /> Sales<br />Pipelines for B2B Companies
+              We Build <AnimatedText text="Predictable" delay={500} speed={70} highlightWords={["Predictable"]} className="font-bold" /> Sales<br />Pipelines for B2B Companies
             </h1>
             
-            <p className="text-lg text-gray-300 mb-6 md:text-xl animate-fade-in opacity-0" style={{ animationDelay: "1s", animationFillMode: "forwards" }}>
+            <p className="text-lg text-gray-300 mb-6 md:text-xl animate-fade-in opacity-0" style={{
+            animationDelay: "1s",
+            animationFillMode: "forwards"
+          }}>
               Done-for-you outreach, CRM systems & appointment booking — installed in 7 days
             </p>
             
@@ -222,7 +216,10 @@ const HeroSection: React.FC = () => {
               <PipelineAnimation />
             </div>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 animate-fade-in opacity-0" style={{ animationDelay: "1.5s", animationFillMode: "forwards" }}>
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 animate-fade-in opacity-0" style={{
+            animationDelay: "1.5s",
+            animationFillMode: "forwards"
+          }}>
               <Button className="bg-logo-blue hover:bg-logo-darkBlue text-black font-semibold group flex items-center px-6 py-5 rounded shadow-lg shadow-logo-blue/20 transition-all duration-300 hover:shadow-logo-blue/40 pulse-glow" size="lg">
                 <Calendar className="mr-2 h-5 w-5" />
                 <span>Book a Free Growth Audit</span>
@@ -245,33 +242,7 @@ const HeroSection: React.FC = () => {
       </section>
 
       {/* Portfolio Clients Section */}
-      <section className="py-10 bg-midnight-background border-t border-logo-blue/10">
-        <div className="container mx-auto">
-          <div className="max-w-5xl mx-auto">
-            {/* Section Header */}
-            <div className="text-center mb-6">
-              <p className="text-logo-blue text-sm uppercase tracking-wider mb-1 font-medium">Portfolio</p>
-              <GradientHeading size="xl">Trusted by Industry Leaders</GradientHeading>
-              <p className="text-gray-400 mt-3">We've delivered results for businesses of all sizes</p>
-            </div>
-
-            {/* Client Logo Carousel - removing the showArrows prop */}
-            <div className="mb-8">
-              <LogoCarousel logos={clientLogos} autoplaySpeed={2000} />
-            </div>
-
-            {/* Show more clients carousel */}
-            <div className="mt-10 text-center">
-              <Carousel opts={{
-              align: "start",
-              loop: true
-            }} className="w-full">
-                
-              </Carousel>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </>;
 };
 export default HeroSection;
