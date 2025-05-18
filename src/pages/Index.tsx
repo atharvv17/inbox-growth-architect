@@ -137,13 +137,18 @@ const Index = () => {
     { name: "Company 6", id: 6, img: "/lovable-uploads/eda3e539-9fe2-4781-94af-d3237b342eac.png" },
   ];
 
-  return <div className="min-h-screen bg-[#F9FAFB] text-[#374151]">
+  return <div className="min-h-screen bg-[#FAFAFA] text-[#374151] overflow-hidden">
       <Header />
       <HeroSection />
       
-      {/* Trusted by Industry Leaders */}
-      <section className="py-8 bg-[#F9FAFB]">
-        <div className="container text-center mb-6">
+      {/* Trusted by Industry Leaders with wave transition */}
+      <section className="py-12 bg-gradient-to-b from-[#F8FAFC] to-[#F1F5F9] relative">
+        <div className="absolute top-0 left-0 w-full overflow-hidden">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-[#0A0A0A]"></path>
+          </svg>
+        </div>
+        <div className="container text-center mb-6 relative z-10">
           <h2 className="text-3xl font-bold text-[#374151] mb-2">
             Trusted by Industry Leaders
           </h2>
@@ -154,9 +159,14 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Who We Serve Section - Updated with Dark Slate background */}
-      <section className="py-8 md:py-12 bg-[#111827] text-[#F3F4F6]">
-        <div className="container">
+      {/* Who We Serve Section - with diagonal cut */}
+      <section className="py-12 bg-[#111827] text-[#F3F4F6] relative">
+        <div className="absolute top-0 left-0 w-full overflow-hidden">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+            <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-[#F1F5F9]"></path>
+          </svg>
+        </div>
+        <div className="container relative z-10">
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
@@ -222,11 +232,18 @@ const Index = () => {
             </div>
           </div>
         </div>
+        
+        {/* Bottom curved transition to next section */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="fill-[#F8FAFC]"></path>
+          </svg>
+        </div>
       </section>
 
-      {/* Our Process - Updated with Off-White/Beige Background */}
-      <section className="py-8 md:py-12 bg-[#F8FAFC] text-[#1E293B]" id="process">
-        <div className="container">
+      {/* Our Process - Updated with vibrant background */}
+      <section className="py-16 bg-gradient-to-br from-[#F8FAFC] via-[#EFF6FF] to-[#F1F5F9] relative" id="process">
+        <div className="container relative z-10">
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">Our Process</h2>
             <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
@@ -236,11 +253,18 @@ const Index = () => {
           {/* Replace the old ProcessTimeline with our new AnimatedProcessTimeline */}
           <AnimatedProcessTimeline steps={processSteps} />
         </div>
+        
+        {/* Add diagonal cut to next section */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+            <path d="M1200 0L0 0 892.25 114.72 1200 0z" className="fill-[#0F172A]"></path>
+          </svg>
+        </div>
       </section>
 
-      {/* Our Offers Section - Updated with Deep Navy/Graphite Background */}
-      <section className="py-8 md:py-12 bg-[#0F172A] text-white" id="offers">
-        <div className="container">
+      {/* Our Offers Section - Deep Navy/Graphite Background */}
+      <section className="py-16 bg-[#0F172A] text-white relative" id="offers">
+        <div className="container relative z-10">
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold mb-2 text-white">Our Offers</h2>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
@@ -278,11 +302,18 @@ const Index = () => {
             />
           </div>
         </div>
+        
+        {/* Wave transition to next section */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" className="fill-[#F3F4F6]"></path>
+          </svg>
+        </div>
       </section>
 
-      {/* Why Our Clients Choose Us - Updated with White/Light Gray Background */}
-      <section className="py-8 md:py-12 bg-[#F3F4F6]" id="benefits">
-        <div className="container">
+      {/* Why Our Clients Choose Us - Light Gray Background */}
+      <section className="py-16 bg-gradient-to-b from-[#F3F4F6] to-[#F9FAFB] relative" id="benefits">
+        <div className="container relative z-10">
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold mb-2 text-black">Why Our Clients Choose Us</h2>
             <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
@@ -298,48 +329,62 @@ const Index = () => {
             <ClientBenefitCard icon={<ChartBar className="h-7 w-7 text-[#9b87f5]" />} title="Performance Tracking Dashboard" description="Real-time analytics to track ROI and optimize campaign performance." />
           </div>
         </div>
+        
+        {/* Curved transition to testimonials */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="fill-background"></path>
+          </svg>
+        </div>
       </section>
 
-      {/* Testimonials Section - Updated with consistent design */}
-      <section className="py-6 md:py-10 bg-background overflow-hidden relative">
+      {/* Testimonials Section - Lighter style with pattern overlay */}
+      <section className="py-16 bg-gradient-to-b from-[#F8FAFC] to-[#F1F5F9] overflow-hidden relative">
         {/* Add subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-[length:20px_20px]"></div>
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#333_1px,transparent_1px)] bg-[length:20px_20px]"></div>
         
         <div className="container relative z-10">
-          <div className="text-center mb-4">
+          <div className="text-center mb-8">
             <p className="text-primary text-sm uppercase tracking-wider mb-1 font-medium">Client Stories</p>
-            <h2 className="text-3xl font-bold mb-2 text-foreground">What Our Clients Say</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">What Our Clients Say</h2>
+            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
               Real results from businesses just like yours
             </p>
           </div>
           
           <div className="relative flex gap-4 justify-center mx-auto max-w-7xl overflow-hidden">
-            {/* Gradient overlays for fading effect - using CSS variables for consistency */}
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background via-transparent to-background z-10"></div>
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-background via-transparent to-background z-10"></div>
+            {/* Gradient overlays for fading effect */}
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#F1F5F9] via-transparent to-[#F8FAFC] z-10"></div>
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#F1F5F9] via-transparent to-[#F8FAFC] z-10"></div>
             
             <TestimonialsColumn 
               className="min-w-[320px] max-h-[650px] overflow-hidden"
               testimonials={testimonialColumns[0]}
               duration={20}
-              darkMode={true}
+              darkMode={false}
             />
             
             <TestimonialsColumn
               className="min-w-[320px] max-h-[650px] overflow-hidden mt-28"
               testimonials={testimonialColumns[1]} 
               duration={25}
-              darkMode={true}
+              darkMode={false}
             />
             
             <TestimonialsColumn
               className="min-w-[320px] max-h-[650px] overflow-hidden"
               testimonials={testimonialColumns[2]}
               duration={18}
-              darkMode={true}
+              darkMode={false}
             />
           </div>
+        </div>
+        
+        {/* Diagonal transition to FAQ section */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
+            <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-[#F9FAFB]"></path>
+          </svg>
         </div>
       </section>
 
