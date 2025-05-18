@@ -1,8 +1,9 @@
+
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -11,11 +12,13 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em hsl(var(--primary)));
 }
+
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em hsl(var(--primary)));
 }
 
 @keyframes logo-spin {
@@ -33,10 +36,88 @@
   }
 }
 
-.card {
-  padding: 2em;
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.read-the-docs {
-  color: #888;
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background: hsl(var(--primary) / 0.2);
+  color: hsl(var(--primary));
+}
+
+/* Focus styling */
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Text gradients */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+}
+
+/* Modern glassy effect */
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background-color: hsla(var(--background), 0.5);
+  border: 1px solid hsla(var(--primary), 0.1);
+}
+
+/* Cyberpunk grid background */
+.cyber-grid-bg {
+  background-image: 
+    linear-gradient(hsla(var(--muted) / 0.1) 1px, transparent 1px),
+    linear-gradient(to right, hsla(var(--muted) / 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Futuristic scan line effect */
+.scan-lines {
+  position: relative;
+}
+
+.scan-lines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    transparent 0px,
+    hsla(var(--foreground) / 0.03) 1px,
+    hsla(var(--foreground) / 0.03) 2px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Neon border */
+.neon-border {
+  position: relative;
+  border: 1px solid hsla(var(--primary), 0.5);
+  box-shadow: 0 0 5px hsla(var(--primary), 0.5);
 }
