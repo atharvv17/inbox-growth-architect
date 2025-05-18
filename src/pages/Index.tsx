@@ -13,7 +13,6 @@ import { FlowingProcessTimeline } from "@/components/FlowingProcessTimeline";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
-
 const Index = () => {
   // Process steps data
   const processSteps = [{
@@ -50,24 +49,22 @@ const Index = () => {
   }];
 
   // FAQ content
-  const faqs = [
-    {
-      question: "How long does it take to see results?",
-      answer: "Most clients start seeing qualified meetings within 2-3 weeks of campaign launch. The exact timeline depends on your industry, offer, and target audience, but our process is designed for rapid implementation and quick wins."
-    }, {
-      question: "Do you guarantee a certain number of leads?",
-      answer: "We focus on quality over quantity and don't promise specific lead numbers. Instead, we guarantee our methodology, expertise, and continuous optimization. Our goal is lasting pipeline growth, not just vanity metrics."
-    }, {
-      question: "What makes your approach different from other agencies?",
-      answer: "We use the right combination of automation and human expertise to drive efficient, scalable, and high-converting outreach. Automation helps us streamline systems, track performance, and ensure consistency at scale — but it's the human insight that makes the difference.\n\nOur team of experts personally handles strategy, message crafting, and execution — ensuring that every lead feels heard, every message feels real, and every campaign is aligned with your brand's tone and goals."
-    }, {
-      question: "How do you ensure email deliverability?",
-      answer: "We implement thorough domain setup, strategic inbox warming, reputation monitoring, and personalized sending patterns. Our approach prioritizes long-term domain health over quick wins that might damage your sending reputation."
-    }, {
-      question: "Will this work for my specific industry?",
-      answer: "We've successfully generated leads across diverse B2B sectors, from SaaS to professional services. During our discovery process, we'll determine if your offer and audience are a good fit for our methods."
-    }
-  ];
+  const faqs = [{
+    question: "How long does it take to see results?",
+    answer: "Most clients start seeing qualified meetings within 2-3 weeks of campaign launch. The exact timeline depends on your industry, offer, and target audience, but our process is designed for rapid implementation and quick wins."
+  }, {
+    question: "Do you guarantee a certain number of leads?",
+    answer: "We focus on quality over quantity and don't promise specific lead numbers. Instead, we guarantee our methodology, expertise, and continuous optimization. Our goal is lasting pipeline growth, not just vanity metrics."
+  }, {
+    question: "What makes your approach different from other agencies?",
+    answer: "We use the right combination of automation and human expertise to drive efficient, scalable, and high-converting outreach. Automation helps us streamline systems, track performance, and ensure consistency at scale — but it's the human insight that makes the difference.\n\nOur team of experts personally handles strategy, message crafting, and execution — ensuring that every lead feels heard, every message feels real, and every campaign is aligned with your brand's tone and goals."
+  }, {
+    question: "How do you ensure email deliverability?",
+    answer: "We implement thorough domain setup, strategic inbox warming, reputation monitoring, and personalized sending patterns. Our approach prioritizes long-term domain health over quick wins that might damage your sending reputation."
+  }, {
+    question: "Will this work for my specific industry?",
+    answer: "We've successfully generated leads across diverse B2B sectors, from SaaS to professional services. During our discovery process, we'll determine if your offer and audience are a good fit for our methods."
+  }];
 
   // New testimonials data
   const testimonialColumns = [[{
@@ -180,19 +177,7 @@ const Index = () => {
           
           {/* Final step highlight box */}
           <div className="mt-12 max-w-2xl mx-auto transform translate-y-0 hover:translate-y-[-5px] transition-all duration-300">
-            <div className="bg-gradient-to-r from-[#3B82F6]/10 to-[#60A5FA]/10 p-6 rounded-xl border border-blue-200 shadow-lg relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full translate-x-12 -translate-y-8 blur-2xl"></div>
-              <h3 className="text-xl font-bold text-[#1E293B] mb-3 flex items-center">
-                <span className="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 shadow-md">
-                  <ChartBar className="w-4 h-4" />
-                </span>
-                The Result
-              </h3>
-              <p className="text-[#4B5563] relative z-10">
-                Your outbound system evolves from basic campaigns to a fine-tuned lead generation machine — delivering higher quality prospects who are ready to buy, with less wasted time and fewer dead-end conversations.
-              </p>
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
-            </div>
+            
           </div>
         </div>
         
