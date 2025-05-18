@@ -68,7 +68,7 @@ export const PipelineAnimation = () => {
             bg-midnight-surface flex items-center gap-2 transition-all duration-500 transform 
             scale-90 opacity-50">
           <Mail className="h-5 w-5 text-logo-blue" />
-          <span>Lead Capture</span>
+          <span className="text-white font-medium">Lead Capture</span>
           
           {/* Glow effect */}
           <div className="absolute inset-0 -z-10 bg-logo-blue/5 blur-md opacity-0 transition-opacity duration-300 
@@ -85,7 +85,7 @@ export const PipelineAnimation = () => {
             bg-midnight-surface flex items-center gap-2 transition-all duration-500 transform 
             scale-90 opacity-50">
           <User className="h-5 w-5 text-logo-blue" />
-          <span>CRM Update</span>
+          <span className="text-white font-medium">CRM Update</span>
           
           {/* Glow effect */}
           <div className="absolute inset-0 -z-10 bg-logo-blue/5 blur-md opacity-0 transition-opacity duration-300 
@@ -102,7 +102,7 @@ export const PipelineAnimation = () => {
             bg-midnight-surface flex items-center gap-2 transition-all duration-500 transform 
             scale-90 opacity-50">
           <Calendar className="h-5 w-5 text-logo-blue" />
-          <span>Appointment</span>
+          <span className="text-white font-medium">Appointment</span>
           
           {/* Glow effect */}
           <div className="absolute inset-0 -z-10 bg-logo-blue/5 blur-md opacity-0 transition-opacity duration-300 
@@ -119,7 +119,7 @@ export const PipelineAnimation = () => {
             bg-midnight-surface flex items-center gap-2 transition-all duration-500 transform 
             scale-90 opacity-50">
           <MessageSquare className="h-5 w-5 text-logo-blue" />
-          <span>Sales Meeting</span>
+          <span className="text-white font-medium">Sales Meeting</span>
           
           {/* Glow effect */}
           <div className="absolute inset-0 -z-10 bg-logo-blue/5 blur-md opacity-0 transition-opacity duration-300 
@@ -136,7 +136,7 @@ export const PipelineAnimation = () => {
             bg-midnight-surface flex items-center gap-2 transition-all duration-500 transform 
             scale-90 opacity-50">
           <ChartBar className="h-5 w-5 text-logo-blue" />
-          <span>Closed Deal</span>
+          <span className="text-white font-medium">Closed Deal</span>
           
           {/* Glow effect */}
           <div className="absolute inset-0 -z-10 bg-logo-blue/5 blur-md opacity-0 transition-opacity duration-300 
