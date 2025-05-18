@@ -163,12 +163,12 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Our Process - Updated with flowing timeline design */}
-      <section className="py-16 bg-gradient-to-br from-[#F8FAFC] via-[#EFF6FF] to-[#F1F5F9] relative" id="process">
+      {/* Our Process - Updated with dark background matching logo */}
+      <section className="py-16 bg-[#000000] text-white relative" id="process">
         <div className="container relative z-10">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">Our Process</h2>
-            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-2 text-white">Our Process</h2>
+            <p className="text-lg text-[#A3A3A3] max-w-2xl mx-auto">
               How we take you from uncertainty to predictable pipeline
             </p>
           </div>
@@ -314,7 +314,7 @@ const Index = () => {
         {/* Diagonal transition to Testimonials section */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
-            <path d="M0 0L598.97 114.72 1200 0H0z" className="fill-[#F8FAFC]"></path>
+            <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-[#F9FAFB]"></path>
           </svg>
         </div>
       </section>
