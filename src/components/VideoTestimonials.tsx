@@ -1,3 +1,4 @@
+
 import React from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card, CardContent } from "@/components/ui/card";
@@ -31,11 +32,11 @@ const testimonialVideos: VideoTestimonial[] = [
   },
   {
     id: 3,
-    title: "Scaled SAAS to $10k/month",
-    author: "Bailey",
-    role: "SAAS Founder",
-    videoUrl: "https://www.youtube.com/embed/gab_qaJXTiY",
-    thumbnail: "https://img.youtube.com/vi/gab_qaJXTiY/maxresdefault.jpg"
+    title: "Got her first client in a week",
+    author: "Jerry",
+    role: "Online Coach",
+    videoUrl: "https://www.youtube.com/embed/mVDfhlAABHM",
+    thumbnail: "https://img.youtube.com/vi/mVDfhlAABHM/maxresdefault.jpg"
   }
 ];
 
