@@ -173,8 +173,13 @@ const HeroSection: React.FC = () => {
         
         <div className="container relative z-10">
           <div className="max-w-5xl mx-auto text-center mb-8 rounded-lg">
-            <div className="inline-block mb-4 px-3 py-1.5 border border-logo-blue/40 rounded-full bg-logo-blue/5 backdrop-blur-sm">
-              <span className="text-sm font-medium text-logo-blue">DFY Sales Agency</span>
+            <div className="inline-block mb-4 relative overflow-hidden group">
+              <span className="relative z-10 px-4 py-2 font-medium text-black bg-logo-blue rounded-full shadow-lg shadow-logo-blue/20 flex items-center justify-center">
+                <span className="mr-1">✦</span>
+                DFY Sales Agency
+                <span className="ml-1">✦</span>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-logo-blue/80 via-logo-blue to-logo-blue/80 blur-sm -z-10 group-hover:blur-md transition-all duration-300 scale-105"></div>
             </div>
             
             <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-white leading-tight md:text-6xl">
