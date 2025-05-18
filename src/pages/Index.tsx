@@ -301,21 +301,7 @@ const Index = () => {
       </section>
 
       {/* Why Our Clients Choose Us - Light Gray Background */}
-      <section className="py-16 bg-[#F8FAFC] text-[#1E293B] relative">
-        <div className="container">
-          <div className="text-center mb-6">
-            <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">Why Our Clients Choose Us</h2>
-            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
-              We deliver real results with a personal touch
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            <ClientBenefitCard title="Expertise & Strategy" description="Our team brings years of experience in B2B lead generation, crafting strategies tailored to your specific needs." icon={<Briefcase />} />
-            <ClientBenefitCard title="Personalized Approach" description="We don't believe in one-size-fits-all solutions. Every campaign is customized to resonate with your target audience." icon={<User />} />
-            <ClientBenefitCard title="Data-Driven Results" description="We track, analyze, and optimize every campaign to ensure maximum ROI and continuous improvement." icon={<ChartBar />} />
-          </div>
-        </div>
-      </section>
+      
 
       {/* New Testimonials Section - Using the new component */}
       <Testimonials />
