@@ -1,7 +1,7 @@
 
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import { motion } from "framer-motion"
 
 interface Logo {
@@ -19,49 +19,39 @@ export function LogoCarousel({
   logos,
   autoplaySpeed = 2000
 }: LogoCarouselProps) {
-  const [currentPosition, setCurrentPosition] = useState(0)
+  const [width, setWidth] = useState(0);
+  const carouselRef = useRef<HTMLDivElement | null>(null);
   
-  // Calculate the required animation distance based on logo count
-  const logoWidth = 160; // Width of each logo container including margin
-  const visibleLogos = 5; // Number of logos visible at once
-  const containerWidth = logos.length * logoWidth; 
-  
+  // Set up the carousel dimensions
   useEffect(() => {
-    // Animation speed control - even slower for better visibility
-    const speed = 0.1; // pixels per millisecond (reduced from 0.15)
-    
-    const startTime = Date.now();
-    
-    const animateScroll = () => {
-      const now = Date.now();
-      const elapsed = now - startTime;
-      const position = (elapsed * speed) % containerWidth;
-      
-      setCurrentPosition(position);
-      requestAnimationFrame(animateScroll);
+    if (carouselRef.current) {
+      // Calculate width of all logos minus the visible part
+      setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
     }
-    
-    const animationFrame = requestAnimationFrame(animateScroll);
-    
-    return () => {
-      cancelAnimationFrame(animationFrame);
-    }
-  }, [containerWidth]);
+  }, [logos]);
 
   return (
     <div className="w-full max-w-6xl mx-auto relative overflow-hidden">
       <div className="bg-muted/20 backdrop-blur-xl border border-primary/10 rounded-xl shadow-lg p-8 my-4">
-        <div className="relative">
+        <motion.div className="overflow-hidden">
           <motion.div 
-            className="flex space-x-8 px-4"
-            style={{
-              x: -currentPosition,
-              width: `${containerWidth + 200}px`, // Add extra space for smooth wrapping
+            ref={carouselRef}
+            className="flex space-x-8"
+            animate={{
+              x: [-width, 0]
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: logos.length * 5, // Adjust speed based on number of logos
+                ease: "linear",
+              }
             }}
           >
-            {/* First set of logos */}
+            {/* Just render each logo once */}
             {logos.map((logo, index) => (
-              <div 
+              <motion.div 
                 key={`logo-${index}`} 
                 className="flex-shrink-0"
               >
@@ -80,13 +70,13 @@ export function LogoCarousel({
                     })}
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
-            
-            {/* Duplicate the logos to create a seamless loop */}
-            {logos.map((logo, index) => (
-              <div 
-                key={`logo-dup-${index}`} 
+
+            {/* Clone of the first few logos to create seamless loop effect */}
+            {logos.slice(0, 5).map((logo, index) => (
+              <motion.div 
+                key={`logo-clone-${index}`} 
                 className="flex-shrink-0"
               >
                 {typeof logo.img === 'string' ? (
@@ -104,10 +94,10 @@ export function LogoCarousel({
                     })}
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
