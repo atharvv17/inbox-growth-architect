@@ -10,9 +10,11 @@ import ClientBenefitCard from "@/components/ClientBenefitCard";
 import FAQSection from "@/components/FAQSection";
 import TestimonialsColumn from "@/components/TestimonialsColumn";
 import { FlowingProcessTimeline } from "@/components/FlowingProcessTimeline";
+import Testimonials from "@/components/Testimonials";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
+
 const Index = () => {
   // Process steps data
   const processSteps = [{
@@ -300,40 +302,8 @@ const Index = () => {
       {/* Why Our Clients Choose Us - Light Gray Background */}
       
 
-      {/* Testimonials Section - Lighter style with pattern overlay */}
-      <section className="py-16 bg-gradient-to-b from-[#F8FAFC] to-[#F1F5F9] overflow-hidden relative">
-        {/* Add subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#333_1px,transparent_1px)] bg-[length:20px_20px]"></div>
-        
-        <div className="container relative z-10">
-          <div className="text-center mb-8">
-            <p className="text-primary text-sm uppercase tracking-wider mb-1 font-medium">Client Stories</p>
-            <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">What Our Clients Say</h2>
-            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
-              Real results from businesses just like yours
-            </p>
-          </div>
-          
-          <div className="relative flex gap-4 justify-center mx-auto max-w-7xl overflow-hidden">
-            {/* Gradient overlays for fading effect */}
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#F1F5F9] via-transparent to-[#F8FAFC] z-10"></div>
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#F1F5F9] via-transparent to-[#F8FAFC] z-10"></div>
-            
-            <TestimonialsColumn className="min-w-[320px] max-h-[650px] overflow-hidden" testimonials={testimonialColumns[0]} duration={20} darkMode={false} />
-            
-            <TestimonialsColumn className="min-w-[320px] max-h-[650px] overflow-hidden mt-28" testimonials={testimonialColumns[1]} duration={25} darkMode={false} />
-            
-            <TestimonialsColumn className="min-w-[320px] max-h-[650px] overflow-hidden" testimonials={testimonialColumns[2]} duration={18} darkMode={false} />
-          </div>
-        </div>
-        
-        {/* Diagonal transition to FAQ section */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
-            <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-[#F9FAFB]"></path>
-          </svg>
-        </div>
-      </section>
+      {/* New Testimonials Section - Using the new component */}
+      <Testimonials />
 
       {/* FAQ Section - Updated in the FAQSection.tsx component */}
       <FAQSection faqs={faqs} />
