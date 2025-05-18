@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -154,10 +153,10 @@ const Index = () => {
           </svg>
         </div>
         <div className="container text-center mb-6 relative z-10 py-[40px]">
-          <h2 className="text-3xl font-bold text-[#374151] mb-2">
+          <h2 className="text-3xl font-bold text-[#222222] mb-2">
             Trusted by Industry Leaders
           </h2>
-          <p className="text-lg text-[#6B7280] max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-[#403E43] max-w-3xl mx-auto mb-8">
             Join hundreds of businesses that trust our outbound systems to drive predictable growth
           </p>
           <div className="relative">
@@ -177,11 +176,11 @@ const Index = () => {
         <div className="container relative z-10">
           <div className="grid md:grid-cols-2 gap-6 items-center py-[2px] my-[50px]">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-[#1E293B]">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-[#1A1F2C]">
                 You're great at closing deals.<br />
                 We're great at starting them.
               </h2>
-              <p className="text-xl text-[#4B5563] mb-4">
+              <p className="text-xl text-[#403E43] mb-4">
                 We work with:
               </p>
               
@@ -194,7 +193,7 @@ const Index = () => {
                       Need predictable lead flow?
                     </span>
                   </div>
-                  <span className="text-lg text-[#1E293B]">B2B consultants & agency owners</span>
+                  <span className="text-lg text-[#1A1F2C]">B2B consultants & agency owners</span>
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
@@ -204,7 +203,7 @@ const Index = () => {
                       Ready to scale?
                     </span>
                   </div>
-                  <span className="text-lg text-[#1E293B]">SaaS founders & startups</span>
+                  <span className="text-lg text-[#1A1F2C]">SaaS founders & startups</span>
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
@@ -214,7 +213,7 @@ const Index = () => {
                       Grow your client base?
                     </span>
                   </div>
-                  <span className="text-lg text-[#1E293B]">Fractional execs & coaches</span>
+                  <span className="text-lg text-[#1A1F2C]">Fractional execs & coaches</span>
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
@@ -224,7 +223,7 @@ const Index = () => {
                       Need top-of-funnel support?
                     </span>
                   </div>
-                  <span className="text-lg text-[#1E293B]">Sales teams needing top-of-funnel support</span>
+                  <span className="text-lg text-[#1A1F2C]">Sales teams needing top-of-funnel support</span>
                 </li>
               </ul>
             </div>
@@ -302,7 +301,21 @@ const Index = () => {
       </section>
 
       {/* Why Our Clients Choose Us - Light Gray Background */}
-      
+      <section className="py-16 bg-[#F8FAFC] text-[#1E293B] relative">
+        <div className="container">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl font-bold mb-2 text-[#1E293B]">Why Our Clients Choose Us</h2>
+            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
+              We deliver real results with a personal touch
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <ClientBenefitCard title="Expertise & Strategy" description="Our team brings years of experience in B2B lead generation, crafting strategies tailored to your specific needs." icon={<Briefcase />} />
+            <ClientBenefitCard title="Personalized Approach" description="We don't believe in one-size-fits-all solutions. Every campaign is customized to resonate with your target audience." icon={<User />} />
+            <ClientBenefitCard title="Data-Driven Results" description="We track, analyze, and optimize every campaign to ensure maximum ROI and continuous improvement." icon={<ChartBar />} />
+          </div>
+        </div>
+      </section>
 
       {/* New Testimonials Section - Using the new component */}
       <Testimonials />
