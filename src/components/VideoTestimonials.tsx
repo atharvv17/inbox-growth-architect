@@ -25,8 +25,8 @@ const testimonialVideos: VideoTestimonial[] = [
   {
     id: 2,
     title: "From struggling to 15+ qualified calls monthly",
-    author: "Michael Chen",
-    role: "CEO, GrowthGenius",
+    author: "Bailey",
+    role: "SaaS Founder",
     videoUrl: "https://www.youtube.com/embed/gab_qaJXTiY",
     thumbnail: "https://img.youtube.com/vi/gab_qaJXTiY/maxresdefault.jpg"
   },
