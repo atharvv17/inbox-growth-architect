@@ -11,11 +11,9 @@ import FAQSection from "@/components/FAQSection";
 import TestimonialsColumn from "@/components/TestimonialsColumn";
 import { FlowingProcessTimeline } from "@/components/FlowingProcessTimeline";
 import Testimonials from "@/components/Testimonials";
-import AboutUs from "@/components/AboutUs";
 import { CheckCircle, Mail, MessageSquare, Briefcase, Zap, Tag, User, Calendar, ChartBar, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
-
 const Index = () => {
   // Process steps data
   const processSteps = [{
@@ -173,19 +171,16 @@ const Index = () => {
         <div className="py-[0px]"></div>
       </section>
       
-      {/* NEW SECTION: About Us */}
-      <AboutUs />
-      
       {/* Who We Serve Section with reduced spacing between sections */}
-      <section className="pb-20 -mt-10 bg-[#0A0A0A] text-[#1E293B] relative py-0 rounded-md">
+      <section className="pb-20 -mt-10 bg-white text-[#1E293B] relative py-0 rounded-md">
         <div className="container relative z-10">
           <div className="grid md:grid-cols-2 gap-6 items-center py-[2px] my-[50px]">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-[#1E293B]">
                 You're great at closing deals.<br />
                 We're great at starting them.
               </h2>
-              <p className="text-xl text-gray-300 mb-4">
+              <p className="text-xl text-[#4B5563] mb-4">
                 We work with:
               </p>
               
@@ -198,7 +193,7 @@ const Index = () => {
                       Need predictable lead flow?
                     </span>
                   </div>
-                  <span className="text-lg text-white">B2B consultants & agency owners</span>
+                  <span className="text-lg text-[#1E293B]">B2B consultants & agency owners</span>
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
@@ -208,7 +203,7 @@ const Index = () => {
                       Ready to scale?
                     </span>
                   </div>
-                  <span className="text-lg text-white">SaaS founders & startups</span>
+                  <span className="text-lg text-[#1E293B]">SaaS founders & startups</span>
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
@@ -218,7 +213,7 @@ const Index = () => {
                       Grow your client base?
                     </span>
                   </div>
-                  <span className="text-lg text-white">Fractional execs & coaches</span>
+                  <span className="text-lg text-[#1E293B]">Fractional execs & coaches</span>
                 </li>
                 <li className="flex items-center group">
                   <div className="relative">
@@ -228,11 +223,11 @@ const Index = () => {
                       Need top-of-funnel support?
                     </span>
                   </div>
-                  <span className="text-lg text-white">Sales teams needing top-of-funnel support</span>
+                  <span className="text-lg text-[#1E293B]">Sales teams needing top-of-funnel support</span>
                 </li>
               </ul>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-xl bg-[#111111] p-1 relative group">
+            <div className="rounded-xl overflow-hidden shadow-xl bg-[#F8FAFC] p-1 relative group">
               <div className="rounded-lg overflow-hidden">
                 <AspectRatio ratio={16 / 9}>
                   <iframe className="w-full h-full" src="https://www.youtube.com/embed/SfD6BD-NaO0" title="Testimonial Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
