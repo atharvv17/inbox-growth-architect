@@ -27,8 +27,8 @@ export function LogoCarousel({
   const containerWidth = logos.length * logoWidth; 
   
   useEffect(() => {
-    // Animation speed control - slower speed
-    const speed = 0.3; // pixels per millisecond (reduced from 0.5)
+    // Animation speed control - slower speed (reduced further)
+    const speed = 0.15; // pixels per millisecond (reduced from 0.3)
     
     const startTime = Date.now();
     
@@ -66,21 +66,20 @@ export function LogoCarousel({
                 className="flex-shrink-0"
               >
                 {typeof logo.img === 'string' ? (
-                  <div className="rounded-full bg-white h-24 w-24 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                    <div className="w-[85%] h-[85%] overflow-hidden flex items-center justify-center">
+                  <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
+                    <div className="w-[90%] h-[90%] flex items-center justify-center">
                       <img 
                         src={logo.img} 
                         alt={logo.name} 
-                        className="object-contain max-w-full max-h-full"
-                        style={{ maxWidth: "85%", maxHeight: "85%" }}
+                        className="object-contain w-full h-full p-2"
                       />
                     </div>
                   </div>
                 ) : (
-                  <div className="rounded-full bg-white h-24 w-24 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                    <div className="w-[85%] h-[85%] overflow-hidden flex items-center justify-center">
+                  <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
+                    <div className="w-[90%] h-[90%] flex items-center justify-center">
                       {React.createElement(logo.img, {
-                        className: "h-full w-full text-gray-800 object-contain p-3"
+                        className: "w-full h-full text-gray-800 object-contain p-3"
                       })}
                     </div>
                   </div>
@@ -95,21 +94,20 @@ export function LogoCarousel({
                 className="flex-shrink-0"
               >
                 {typeof logo.img === 'string' ? (
-                  <div className="rounded-full bg-white h-24 w-24 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                    <div className="w-[85%] h-[85%] overflow-hidden flex items-center justify-center">
+                  <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center overflow-hidden border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
+                    <div className="w-[90%] h-[90%] flex items-center justify-center">
                       <img 
                         src={logo.img} 
                         alt={logo.name} 
-                        className="object-contain max-w-full max-h-full"
-                        style={{ maxWidth: "85%", maxHeight: "85%" }}
+                        className="object-contain w-full h-full p-2"
                       />
                     </div>
                   </div>
                 ) : (
-                  <div className="rounded-full bg-white h-24 w-24 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
-                    <div className="w-[85%] h-[85%] overflow-hidden flex items-center justify-center">
+                  <div className="rounded-full bg-white h-28 w-28 flex items-center justify-center border-2 border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:border-logo-blue/50 transition-all duration-300">
+                    <div className="w-[90%] h-[90%] flex items-center justify-center">
                       {React.createElement(logo.img, {
-                        className: "h-full w-full text-gray-800 object-contain p-3"
+                        className: "w-full h-full text-gray-800 object-contain p-3"
                       })}
                     </div>
                   </div>
