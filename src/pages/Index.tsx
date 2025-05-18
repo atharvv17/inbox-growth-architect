@@ -294,12 +294,7 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Wave transition to next section with logo-matching blue color */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px]">
-            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="fill-[#0A0A0A]"></path>
-          </svg>
-        </div>
+        {/* Bottom wave transition removed as requested */}
       </section>
 
       {/* Add our new Video Testimonials section here, after the "Our Offers" section */}
@@ -307,7 +302,6 @@ const Index = () => {
 
       {/* Why Our Clients Choose Us - Light Gray Background */}
       
-
       {/* New Testimonials Section - Using the new component */}
       <Testimonials />
 
