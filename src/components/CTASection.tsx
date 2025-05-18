@@ -1,20 +1,20 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
-
 interface CTASectionProps {
   title: string;
   subtitle: string;
   buttonText: string;
 }
-
-const CTASection: React.FC<CTASectionProps> = ({ title, subtitle, buttonText }) => {
-  return (
-    <section className="py-16 bg-gradient-to-b from-[#F3F4F6] to-[#E5E7EB] relative">
+const CTASection: React.FC<CTASectionProps> = ({
+  title,
+  subtitle,
+  buttonText
+}) => {
+  return <section className="py-16 bg-gradient-to-b from-[#F3F4F6] to-[#E5E7EB] relative">
       {/* Top curved transition */}
       <div className="absolute top-0 left-0 right-0 h-16 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-32 bg-background rounded-b-[50%] transform translate-y-[-50%]"></div>
+        
       </div>
       
       <div className="container relative z-10">
@@ -27,8 +27,6 @@ const CTASection: React.FC<CTASectionProps> = ({ title, subtitle, buttonText }) 
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CTASection;
