@@ -24,9 +24,8 @@ const CTASection: React.FC<CTASectionProps> = ({
       
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-3 text-white">We don't work with everyone.</h2>
-          <p className="text-lg text-gray-300 mb-4">To ensure maximum value and focused attention, we only onboard a limited number of B2B clients each quarter.</p>
-          <p className="text-lg text-gray-300 mb-6">Join our waiting list for a Growth Audit and secure your spot — only 30 businesses accepted every 90 days.</p>
+          <h2 className="text-3xl font-bold mb-3 text-white">{title}</h2>
+          <p className="text-lg text-gray-300 mb-6">{subtitle}</p>
           <Button 
             className="bg-[#00CFFF] hover:bg-[#00CFFF]/90 text-black font-bold text-base px-6 py-5 h-auto transition-all duration-300 hover:shadow-lg hover:shadow-[#00CFFF]/30 hover:scale-105" 
             size="lg"
