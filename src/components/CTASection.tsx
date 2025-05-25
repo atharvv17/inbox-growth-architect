@@ -24,15 +24,15 @@ const CTASection: React.FC<CTASectionProps> = ({
       
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-3 text-white">{title}</h2>
-          <p className="text-lg text-gray-300 mb-6">{subtitle}</p>
+          <h2 className="text-3xl font-bold mb-3 text-white">Join the Waiting List for Your Predictable Sales Pipeline</h2>
+          <p className="text-lg text-gray-300 mb-6">Spaces are limited — secure your spot before capacity fills up.</p>
           <Button 
             className="bg-[#00CFFF] hover:bg-[#00CFFF]/90 text-black font-bold text-base px-6 py-5 h-auto transition-all duration-300 hover:shadow-lg hover:shadow-[#00CFFF]/30 hover:scale-105" 
             size="lg"
             onClick={() => window.open("https://calendly.com/leveragegrowthbiz/30min?month=2025-05", "_blank")}
           >
             <Calendar className="mr-2 h-5 w-5" />
-            Apply to Work With Us
+            Request Your Free Growth Assessment Today
           </Button>
         </div>
       </div>
