@@ -32,7 +32,7 @@ const CTASection: React.FC<CTASectionProps> = ({
             onClick={() => window.open("https://calendly.com/leveragegrowthbiz/30min?month=2025-05", "_blank")}
           >
             <Calendar className="mr-2 h-5 w-5" />
-            {buttonText}
+            Apply to Work With Us
           </Button>
         </div>
       </div>

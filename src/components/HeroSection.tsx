@@ -226,7 +226,7 @@ const HeroSection: React.FC = () => {
                 onClick={() => window.open("https://calendly.com/leveragegrowthbiz/30min?month=2025-05", "_blank")}
               >
                 <Calendar className="mr-2 h-5 w-5" />
-                <span>Book a Free Growth Audit</span>
+                <span>Apply to Work With Us</span>
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               

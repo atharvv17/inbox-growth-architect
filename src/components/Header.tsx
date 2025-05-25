@@ -44,7 +44,7 @@ const Header: React.FC = () => {
                 className="bg-primary hover:bg-primary/90 text-black font-medium px-5 py-2 rounded-md transition-colors shadow-lg shadow-primary/20"
                 onClick={() => window.open("https://calendly.com/leveragegrowthbiz/30min?month=2025-05", "_blank")}
               >
-                Book a Call
+                Apply to Work With Us
               </Button>
             </nav>
           </div>
@@ -91,7 +91,7 @@ const Header: React.FC = () => {
                   setMobileMenuOpen(false);
                 }}
               >
-                Book a Call
+                Apply to Work With Us
               </Button>
             </nav>
           </div>
