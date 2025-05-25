@@ -29,7 +29,7 @@ const CTASection: React.FC<CTASectionProps> = ({
           <Button 
             className="bg-[#00CFFF] hover:bg-[#00CFFF]/90 text-black font-bold text-base px-6 py-5 h-auto transition-all duration-300 hover:shadow-lg hover:shadow-[#00CFFF]/30 hover:scale-105" 
             size="lg"
-            onClick={() => window.open("https://calendly.com/leveragegrowthbiz/30min?month=2025-05", "_blank")}
+            onClick={() => window.open("https://form.typeform.com/to/LCpxCHwo", "_blank")}
           >
             <Calendar className="mr-2 h-5 w-5" />
             Request Your Free Growth Assessment Today
