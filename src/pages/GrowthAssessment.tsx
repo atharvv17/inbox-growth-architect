@@ -130,16 +130,7 @@ const GrowthAssessment = () => {
       
 
       {/* Why We Use This Approach */}
-      <section className="py-16 bg-[#F8FAFC]">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4 text-[#1E293B]">Why We Use This Approach</h2>
-            <p className="text-lg text-[#4B5563] leading-relaxed">
-              At LeveragedGrowth.co, we don't pitch — we attract. With a limited intake each quarter, our focus stays razor-sharp on delivering results. That's why we keep a waiting list and start with a Growth Assessment — to ensure mutual fit, save time, and set the stage for success.
-            </p>
-          </div>
-        </div>
-      </section>
+      
 
       {/* What You'll Get */}
       <section className="py-16 bg-white">
