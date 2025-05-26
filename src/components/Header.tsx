@@ -3,13 +3,19 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const handleApplyClick = () => {
+    navigate('/growth-assessment');
   };
 
   return (
@@ -42,7 +48,7 @@ const Header: React.FC = () => {
               </a>
               <Button 
                 className="bg-primary hover:bg-primary/90 text-black font-medium px-5 py-2 rounded-md transition-colors shadow-lg shadow-primary/20"
-                onClick={() => window.open("https://form.typeform.com/to/LCpxCHwo", "_blank")}
+                onClick={handleApplyClick}
               >
                 Apply to Work With Us
               </Button>
@@ -87,7 +93,7 @@ const Header: React.FC = () => {
               <Button 
                 className="bg-primary hover:bg-primary/90 text-black font-medium px-5 py-2 w-4/5 rounded-md"
                 onClick={() => {
-                  window.open("https://form.typeform.com/to/LCpxCHwo", "_blank");
+                  handleApplyClick();
                   setMobileMenuOpen(false);
                 }}
               >
