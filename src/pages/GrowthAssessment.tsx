@@ -148,19 +148,7 @@ const GrowthAssessment = () => {
       </section>
 
       {/* Who This Is For */}
-      <section className="py-16 bg-[#F8FAFC]">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center text-[#1E293B]">Who This Is For</h2>
-            <div className="space-y-4">
-              {targetAudience.map((audience, index) => <div key={index} className="flex items-start">
-                  <CheckCircle className="text-[#00CFFF] mr-3 h-5 w-5 flex-shrink-0 mt-1" />
-                  <span className="text-[#1E293B]">{audience}</span>
-                </div>)}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* How It Works */}
       <section className="py-16 bg-white">
