@@ -42,7 +42,7 @@ const Header: React.FC = () => {
               </a>
               <Button 
                 className="bg-primary hover:bg-primary/90 text-black font-medium px-5 py-2 rounded-md transition-colors shadow-lg shadow-primary/20"
-                onClick={() => window.open("https://calendly.com/leveragegrowthbiz/30min?month=2025-05", "_blank")}
+                onClick={() => window.open("https://form.typeform.com/to/LCpxCHwo", "_blank")}
               >
                 Apply to Work With Us
               </Button>
@@ -87,7 +87,7 @@ const Header: React.FC = () => {
               <Button 
                 className="bg-primary hover:bg-primary/90 text-black font-medium px-5 py-2 w-4/5 rounded-md"
                 onClick={() => {
-                  window.open("https://calendly.com/leveragegrowthbiz/30min?month=2025-05", "_blank");
+                  window.open("https://form.typeform.com/to/LCpxCHwo", "_blank");
                   setMobileMenuOpen(false);
                 }}
               >
