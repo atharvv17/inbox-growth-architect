@@ -1,7 +1,8 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FAQSection from "@/components/FAQSection";
+import { TestimonialsColumn } from "@/components/ui/testimonials-columns-1";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Calendar, Users, Target, TrendingUp, ArrowRight } from "lucide-react";
 
@@ -48,18 +49,49 @@ const GrowthAssessment = () => {
     }
   ];
 
+  // Testimonials from main page
   const testimonials = [
     {
-      text: "The Growth Assessment was an eye-opener — it highlighted what we were missing and gave us a clear roadmap. After working with LeveragedGrowth, our sales calls doubled.",
-      author: "Sarah M.",
-      role: "SaaS Founder"
+      text: "Their outbound system transformed our lead generation. We're now booking 15+ qualified calls every month without lifting a finger.",
+      image: "https://randomuser.me/api/portraits/women/1.jpg",
+      name: "Briana Patton",
+      role: "Agency Owner",
     },
     {
-      text: "We struggled with inconsistent leads for years. Their assessment showed us exactly where to focus, and now our calendar is booked weeks in advance.",
-      author: "Daniel T.", 
-      role: "Executive Coach"
+      text: "The personalized outreach campaigns they built feel completely human. Our prospects respond because the messaging actually resonates with them.",
+      image: "https://randomuser.me/api/portraits/men/2.jpg",
+      name: "Bilal Ahmed",
+      role: "SaaS Founder",
+    },
+    {
+      text: "Their team took care of everything—from setup to optimization. All I have to do is show up to the calls they book for me.",
+      image: "https://randomuser.me/api/portraits/women/3.jpg",
+      name: "Saman Malik",
+      role: "Fractional CMO",
+    },
+    {
+      text: "After trying 3 other agencies with disappointing results, their approach finally delivered consistent, quality leads for our high-ticket service.",
+      image: "https://randomuser.me/api/portraits/men/4.jpg",
+      name: "Omar Raza",
+      role: "Consulting Firm CEO",
+    },
+    {
+      text: "The leads they generate convert at nearly twice the rate of our other channels. Their targeting and messaging is simply on another level.",
+      image: "https://randomuser.me/api/portraits/women/5.jpg",
+      name: "Zainab Hussain",
+      role: "Sales Director",
+    },
+    {
+      text: "I was skeptical about outbound, but they proved me wrong. Their approach is respectful, personalized, and incredibly effective.",
+      image: "https://randomuser.me/api/portraits/women/6.jpg",
+      name: "Aliza Khan",
+      role: "B2B Coach",
     }
   ];
+
+  const firstColumn = testimonials.slice(0, 2);
+  const secondColumn = testimonials.slice(2, 4);
+  const thirdColumn = testimonials.slice(4, 6);
 
   const faqs = [
     {
@@ -259,41 +291,22 @@ const GrowthAssessment = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials - Updated to use main page testimonials */}
       <section className="py-16 bg-white">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center text-[#1E293B]">Testimonials</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="bg-[#F8FAFC] rounded-lg p-6 border border-[#00CFFF]/20">
-                  <p className="text-[#4B5563] italic mb-4">"{testimonial.text}"</p>
-                  <div className="text-[#1E293B] font-semibold">
-                    — {testimonial.author}, {testimonial.role}
-                  </div>
-                </div>
-              ))}
+            <h2 className="text-3xl font-bold mb-12 text-center text-[#1E293B]">What Our Clients Say</h2>
+            <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[500px] overflow-hidden">
+              <TestimonialsColumn testimonials={firstColumn} duration={15} darkMode={false} />
+              <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} darkMode={false} />
+              <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} darkMode={false} />
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16 bg-[#F8FAFC]">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center text-[#1E293B]">FAQ</h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-lg p-6 border border-[#00CFFF]/20">
-                  <h3 className="text-lg font-bold mb-2 text-[#1E293B]">{faq.question}</h3>
-                  <p className="text-[#4B5563]">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* FAQ - Updated to use dark background with FAQSection component */}
+      <FAQSection faqs={faqs} />
 
       <Footer />
     </div>
