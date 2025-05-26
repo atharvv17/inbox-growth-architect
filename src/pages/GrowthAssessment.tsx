@@ -119,7 +119,7 @@ const GrowthAssessment = () => {
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-1/4 left-0 w-full h-[0.5px] bg-gradient-to-r from-transparent via-logo-blue/60 to-transparent animate-pulse"></div>
             <div className="absolute top-0 left-1/3 w-[0.5px] h-full bg-gradient-to-b from-transparent via-logo-blue/40 to-transparent"></div>
-            <div className="absolute top-2/3 right-1/4 w-2 h-2 rounded-full bg-logo-blue/40 animate-pulse shadow-glow"></div>
+            <div className="absolute top-2/3 right-1/4 w-2 h-2 rounded-full bg-logo-blue/40 animate-pulse"></div>
             <div className="absolute top-1/3 left-1/5 w-1 h-1 rounded-full bg-logo-blue/30 animate-[pulse_4s_infinite_1s] shadow-glow"></div>
             <div className="absolute bottom-1/4 right-1/4 w-1 h-1 rounded-full bg-logo-blue/20 animate-[pulse_3s_infinite_0.5s] shadow-glow"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-16 w-80 h-80 rounded-full bg-logo-blue/10 blur-[100px]"></div>
@@ -291,15 +291,15 @@ const GrowthAssessment = () => {
         </div>
       </section>
 
-      {/* Testimonials - Updated to use main page testimonials */}
-      <section className="py-16 bg-white">
+      {/* Testimonials - Updated to dark theme */}
+      <section className="py-16 bg-[#000000]">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center text-[#1E293B]">What Our Clients Say</h2>
+            <h2 className="text-3xl font-bold mb-12 text-center text-white">What Our Clients Say</h2>
             <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[500px] overflow-hidden">
-              <TestimonialsColumn testimonials={firstColumn} duration={15} darkMode={false} />
-              <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} darkMode={false} />
-              <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} darkMode={false} />
+              <TestimonialsColumn testimonials={firstColumn} duration={15} darkMode={true} />
+              <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} darkMode={true} />
+              <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} darkMode={true} />
             </div>
           </div>
         </div>
