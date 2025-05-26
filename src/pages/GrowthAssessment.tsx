@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -205,7 +206,7 @@ const GrowthAssessment = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-[#1E293B]">Why We Use This Approach</h2>
             <p className="text-lg text-[#4B5563] leading-relaxed">
-              At LeveragedGrowth.co, we don't just chase clients — <strong className="text-[#1E293B]">clients chase us</strong>. We maintain a <strong className="text-[#1E293B]">waiting list</strong> and only accept a limited number of businesses each quarter to ensure quality and focus. Our Growth Assessment helps us and you decide if we're a good fit — saving time and ensuring success.
+              At LeveragedGrowth.co, we don't pitch — we attract. With a limited intake each quarter, our focus stays razor-sharp on delivering results. That's why we keep a waiting list and start with a Growth Assessment — to ensure mutual fit, save time, and set the stage for success.
             </p>
           </div>
         </div>
