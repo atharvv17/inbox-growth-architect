@@ -76,7 +76,7 @@ const GrowthAssessment = () => {
     answer: "No problem! The assessment gives you valuable insights regardless of your decision."
   }];
   return <div className="min-h-screen bg-[#FAFAFA] text-[#374151]">
-      <Header />
+      <Header showOnlyHome={true} />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-midnight-background">
